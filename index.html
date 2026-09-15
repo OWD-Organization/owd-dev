@@ -125,7 +125,9 @@ body{font-family:var(--body);color:var(--text);background:var(--bg);line-height:
   -webkit-font-smoothing:antialiased;overflow-x:clip}
 .wrap{max-width:1120px;margin:0 auto;padding-inline:32px}
 h1,h2,h3,h4{font-family:var(--head);font-weight:700;line-height:1.12;
-  letter-spacing:-.015em;color:var(--text)}
+  /* balance stops a heading dropping one lonely word onto its own line --
+     "Every Tool You Need to Win / Online" was the case that prompted this */
+  letter-spacing:-.015em;color:var(--text);text-wrap:balance}
 
 /* --- placeholder --- */
 .ph{background:var(--box);border:1px dashed var(--accent);border-radius:var(--radius);
