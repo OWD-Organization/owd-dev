@@ -238,8 +238,13 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
 @media (prefers-reduced-motion:reduce){.js .hero-light::after{animation:none}}
 .hero h1{font-size:clamp(34px,6vw,60px);margin:0 auto 18px;max-width:760px}
 .hero .lead{margin:0 auto 36px;font-size:var(--fs-body)}
-.hero-img{height:clamp(320px,46vw,520px);width:100%;object-fit:cover;
-  object-position:30% 62%;border-radius:var(--radius);display:block;margin-top:8px}
+/* A UI screenshot rather than a photo, so it keeps its own 2:1 ratio and is
+   never cropped -- cropping a dashboard cuts off the very numbers it exists to
+   show, and at phone widths the old fixed height would have kept barely half of
+   it. The previous height clamp and 30%/62% focal point were tuned for the
+   Sedona photograph this replaced. */
+.hero-img{width:100%;aspect-ratio:1774/887;height:auto;object-fit:cover;
+  border-radius:var(--radius);display:block;margin-top:8px}
 
 /* =============================================================
    BAND  ·  alternating section bg
@@ -929,7 +934,7 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
 <section class="hero wrap">
   <h1>The Agency Built for Home Service Contractors</h1>
   <p class="lead">No fluff. No excuses. Just transparent marketing that fills your pipeline and grows your business.</p>
-  <img class="hero-img" src="/img/ryan-jana167757.jpg" alt="Ryan and Jana at the red rock landscape of Sedona, Arizona at dusk">
+  <img class="hero-img" src="/img/lead-revenue-dashboard.webp" width="1774" height="887" alt="A lead and revenue dashboard: 124 leads, 48 quote requests, $36,450 closed revenue and 4.8x ROI over 30 days, above a table of recent leads showing each one's source, status and quote value">
 </section>
 </div>
 
