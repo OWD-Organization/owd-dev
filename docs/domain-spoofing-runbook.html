@@ -251,7 +251,7 @@ footer p{margin:0 0 6px;max-width:var(--measure)}
     <p class="eyebrow">Outwork'em Digital &middot; Operations</p>
     <h1>Stopping Fraudulent Email Sent as Us</h1>
     <p class="standfirst">Right now anyone on the internet can send email that appears to come from
-    <code style="background:rgba(255,255,255,.12);border-color:transparent;color:inherit">@outworkemdigital.com</code>,
+    <code style="background:rgba(255,255,255.12);border-color:transparent;color:inherit">@outworkemdigital.com</code>,
     and mailbox providers will deliver it. This is how we shut that down, in the order it has to be done.</p>
   </div>
 </header>
@@ -299,7 +299,7 @@ footer p{margin:0 0 6px;max-width:var(--measure)}
       <div class="rec">
         <div class="rec-name">SPF</div>
         <div class="rec-body">The guest list. It names which mail services are allowed to send
-        on our behalf &mdash; Google Workspace, our CRM, our invoicing tool.
+        on our behalf: Google Workspace, our CRM, our invoicing tool.
         <em>Ours exists, but it ends with a "soft" instruction, closer to a suggestion than a rule.</em></div>
       </div>
       <div class="rec">
@@ -320,7 +320,7 @@ footer p{margin:0 0 6px;max-width:var(--measure)}
     <h3>Why we cannot just flip the switch</h3>
     <div class="prose">
       <p>Setting the standing order to "refuse" today would stop the impersonation immediately.
-      It would also stop any of our own legitimate mail that is not correctly signed &mdash; which
+      It would also stop any of our own legitimate mail that is not correctly signed, which
       can quietly include invoicing, the CRM, appointment reminders, and newsletters. Those tools
       often send as us without being on the guest list, and nobody notices until the day they stop
       arriving.</p>
@@ -405,7 +405,7 @@ footer p{margin:0 0 6px;max-width:var(--measure)}
           <span class="task-meta">
             <span class="tag">7 days &middot; no work</span>
           </span>
-          <p class="task-body">A week catches the senders that only fire occasionally &mdash; monthly
+          <p class="task-body">A week catches the senders that only fire occasionally, monthly
           invoices, quarterly newsletters, a proposal tool nobody has opened since spring. These
           are exactly the ones that break when a policy is tightened too early.</p>
           <p class="done-when"><b>Done when</b> a full week has passed with no unexplained failures from our own senders.</p>
@@ -448,8 +448,7 @@ footer p{margin:0 0 6px;max-width:var(--measure)}
     </div>
 
     <div class="note" style="margin-top:20px">
-      <strong>What the finished record looks like.</strong> For reference when we get to step 6 &mdash;
-      keep the existing reporting addresses exactly as they are.
+      <strong>What the finished record looks like.</strong> For reference when we get to step 6, keep the existing reporting addresses exactly as they are.
       <pre style="margin-top:12px"><code>v=DMARC1; p=reject; pct=100;
 rua=mailto:3cfeaa8ffd@rua.easydmarc.us;
 ruf=mailto:3cfeaa8ffd@ruf.easydmarc.us; fo=1;</code></pre>
@@ -470,12 +469,12 @@ ruf=mailto:3cfeaa8ffd@ruf.easydmarc.us; fo=1;</code></pre>
       need different fixes. Anti-spam work aimed at one of them cannot touch the other, which is
       probably why nothing tried so far has helped.</p>
       <p>The <strong>HighLevel contact form</strong> (<code>FvDrMMo4Y5Y85peXUi4K</code>) sits on
-      every single page &mdash; it is in the global template. Its submissions never touch our
+      every single page, it is in the global template. Its submissions never touch our
       website or our hosting, so no WordPress plugin can see them. It is fixed inside HighLevel.</p>
       <p>The <strong>Elementor "Blog Optin" form</strong> is a real WordPress form, on 40 pages:
       every blog post, every news post and all six service pages. It posts straight to our own
       server, and right now it has <strong>one email field and no protection of any kind</strong>
-      &mdash; no CAPTCHA, no honeypot, not even a nonce. A script can submit it in a loop. This is
+      no CAPTCHA, no honeypot, not even a nonce. A script can submit it in a loop. This is
       the most likely source of the junk.</p>
     </div>
 
@@ -490,7 +489,7 @@ ruf=mailto:3cfeaa8ffd@ruf.easydmarc.us; fo=1;</code></pre>
             <span class="tag">Do this first</span>
           </span>
           <p class="task-body">This is the wide-open one. Elementor ships both a honeypot field
-          and reCAPTCHA v3 &mdash; neither is enabled. Turn on both. The form appears on 40 pages
+          and reCAPTCHA v3, neither is enabled. Turn on both. The form appears on 40 pages
           but is a single saved widget, so fixing it once fixes all of them.</p>
           <p class="done-when"><b>Done when</b> the page source of any blog post shows a honeypot or reCAPTCHA field inside the form.</p>
         </span>
@@ -604,7 +603,7 @@ ruf=mailto:3cfeaa8ffd@ruf.easydmarc.us; fo=1;</code></pre>
           </span>
           <p class="task-body">The address <code>/wp-json/wp/v2/users</code> is open to the public
           and returns the administrator account. Anyone who reads it gets half of what they need
-          to guess their way in &mdash; the other half being the password. Disable the endpoint for
+          to guess their way in, the other half being the password. Disable the endpoint for
           logged-out visitors and turn off author archives.</p>
           <p class="done-when"><b>Done when</b> that address returns an error to a logged-out visitor.</p>
         </span>
@@ -631,7 +630,7 @@ ruf=mailto:3cfeaa8ffd@ruf.easydmarc.us; fo=1;</code></pre>
 
 <footer class="wrap">
   <p>Prepared from a live inspection of outworkemdigital.com and its public DNS records.
-  Progress on this page is saved in your own browser only &mdash; it is not shared between people,
+  Progress on this page is saved in your own browser only, it is not shared between people,
   so each person tracking this keeps their own copy.</p>
 </footer>
 
