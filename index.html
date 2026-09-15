@@ -66,8 +66,8 @@
   /* ---- roles: components reference these, never the ramp -------------- */
   --on-bold:        oklch(0.99 0.005 70);   /* 10.3:1 on navy-600 */
   --on-bold-muted:  oklch(0.90 0.020 240);  /*  7.7:1 on navy-600 */
-  --on-warm:        oklch(0.22 0.045 45);   /*  7.3:1 on warm-200 */
-  --on-warm-muted: oklch(0.25 0.050 45);   /* 4.7:1 on warm-400, the gradient's dark stop */
+  --on-warm:        oklch(0.150 0.040 45);   /* 5.7:1 on warm-400, the gradient dark stop */
+  --on-warm-muted: oklch(0.175 0.045 45);   /* 5.5:1 on warm-400; pure black only reaches 6.1:1 there */
   --edge-bold:      var(--navy-700);
   --edge-warm:      oklch(0.55 0.155 45);
   --grad-navy:  linear-gradient(140deg, var(--navy-500) 0%, var(--navy-600) 100%);
@@ -334,7 +334,10 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
 .svc h3{font-family:var(--head);font-size:clamp(22px,2.1vw,29px);font-weight:800;
   text-transform:uppercase;letter-spacing:-.02em;line-height:1.04;
   margin-bottom:14px;color:inherit}
-.svc p{font-family:var(--body);font-size:15px;line-height:1.55;max-width:34ch}
+/* Lora at 400 is a light serif; on the saturated orange fill its thin strokes
+   were the other half of the legibility problem, so the card copy runs at 500. */
+.svc p{font-family:var(--body);font-size:15px;line-height:1.55;max-width:34ch;
+  font-weight:500}
 .svc:nth-child(odd) p{color:var(--on-bold-muted)}
 .svc:nth-child(even) p{color:var(--on-warm-muted)}
 .svc-foot{margin-top:auto;display:flex;align-items:flex-end;

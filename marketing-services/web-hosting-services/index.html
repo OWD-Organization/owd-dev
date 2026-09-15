@@ -59,8 +59,8 @@
   --on-bold:       oklch(0.99 0.005 70);
   --on-bold-muted: oklch(0.90 0.020 240);
   --on-bold-warm:  oklch(0.82 0.112 58);
-  --on-warm:       oklch(0.22 0.045 45);
-  --on-warm-muted: oklch(0.25 0.050 45);
+  --on-warm:       oklch(0.150 0.040 45);   /* 5.7:1 on warm-400, the gradient dark stop */
+  --on-warm-muted: oklch(0.175 0.045 45);   /* 5.5:1 on warm-400; pure black only reaches 6.1:1 there */
   --edge-bold:     var(--navy-700);
   --edge-warm:     oklch(0.55 0.155 45);
   --grad-navy: linear-gradient(140deg, var(--navy-500) 0%, var(--navy-600) 100%);
@@ -363,11 +363,13 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
   line-height:1;color:var(--amount-c);margin-bottom:6px}
 .price-amount span{font-family:var(--sans);font-size:15px;color:var(--copy-c);
   font-weight:400;margin-left:2px}
+/* Lora at 400 goes thin on the warm plan fill, same as the service cards. */
 .price-blurb{font-family:var(--body);font-size:13px;color:var(--copy-c);
-  font-style:italic;margin-bottom:24px;line-height:1.6}
+  font-style:italic;margin-bottom:24px;line-height:1.6;font-weight:500}
 .price-features{list-style:none;margin-bottom:28px;flex:1}
 .price-features li{font-family:var(--body);font-size:14px;color:var(--amount-c);
-  padding:9px 0 9px 28px;position:relative;border-bottom:1px solid var(--rule-c)}
+  padding:9px 0 9px 28px;position:relative;border-bottom:1px solid var(--rule-c);
+  font-weight:500}
 .price-features li:last-child{border-bottom:none}
 .price-features li::before{content:"✓";position:absolute;left:0;
   color:var(--tick-c);font-weight:700;font-family:var(--head)}
