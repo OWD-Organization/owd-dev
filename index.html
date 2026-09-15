@@ -212,7 +212,9 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
 /* =============================================================
    HERO
    ============================================================= */
-.hero{padding-block:clamp(2.25rem,7vw,3.5rem) 0;text-align:center}
+/* The bottom padding was 0, which is what made this feel cramped: the dashboard
+   ran straight into the section below it with nothing underneath. */
+.hero{padding-block:clamp(3rem,7.5vw,4.5rem) clamp(2.5rem,6vw,4rem);text-align:center}
 /* Both hero lights sit on this full-width wrapper rather than on .hero itself.
    .hero is a .wrap (max-width 1120px), so painting a glow there ended it at the
    container's edges and the falloff read as a rectangle. The wrapper spans the
@@ -237,7 +239,7 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
   to  {transform:translate3d(2.5%,1.5%,0) scale(1.07)}}
 @media (prefers-reduced-motion:reduce){.js .hero-light::after{animation:none}}
 .hero h1{font-size:clamp(34px,6vw,60px);margin:0 auto 18px;max-width:760px}
-.hero .lead{margin:0 auto 36px;font-size:var(--fs-body)}
+.hero .lead{margin:0 auto clamp(36px,4vw,52px);font-size:var(--fs-body)}
 /* A UI screenshot rather than a photo, so it keeps its own 2:1 ratio and is
    never cropped -- cropping a dashboard cuts off the very numbers it exists to
    show, and at phone widths the old fixed height would have kept barely half of
