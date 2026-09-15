@@ -424,6 +424,11 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
 .podcast{padding-block:clamp(3.25rem,8vw,5rem) clamp(3.75rem,10vw,6.25rem)}
 .podcast-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
 .episode{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
+/* The iframe is positioned into a 16/9 box rather than sized directly, so the
+   ratio holds regardless of the width/height attributes an embed arrives with. */
+.episode-embed{position:relative;aspect-ratio:16/9;border-radius:var(--radius);
+  overflow:hidden;background:var(--box)}
+.episode-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 .play{width:64px;height:64px;border-radius:50%;background:var(--card);
   border:1px solid var(--line);display:flex;align-items:center;
   justify-content:center;z-index:1}
@@ -1084,16 +1089,21 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
         <span class="platform">Apple Podcasts</span>
         <span class="platform">YouTube</span>
       </div>
-      <a class="btn-cta" href="/podcast/">Listen Now</a>
+      <a class="btn-cta" href="https://www.youtube.com/channel/UC2lKfBAB2ymPLDRJ8gycFAA"
+         target="_blank" rel="noopener">Listen Now</a>
     </div>
     <div class="podcast-player">
-      <div class="ph episode filled" style="background-image:url('/img/ryan-jana168064-2.jpg')">
-        <span class="play"><span class="material-symbols-outlined">play_arrow</span></span>
+      <div class="episode-embed">
+        <iframe src="https://www.youtube.com/embed/x36nbhbt7KY?si=KgMYS3LCArT9bLmP"
+                title="How One Podcast Interview Gets Turned Into an Entire Marketing Engine"
+                loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
       </div>
       <div class="ep-meta">
         <span class="ep-tag">Latest Episode</span>
-        <span class="ep-title">[Episode title]</span>
-        <span class="ep-dur">EP 12 · 48 min</span>
+        <span class="ep-title">How One Podcast Interview Gets Turned Into an Entire Marketing Engine</span>
+        <span class="ep-dur">6 min</span>
       </div>
     </div>
   </div>
