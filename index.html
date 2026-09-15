@@ -366,6 +366,8 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
 .testimonial{padding-block:clamp(3.25rem,8vw,5rem)}
 /* navy surface: a testimonial carries far more weight as a bold block than
    as another white card in a page already full of them */
+/* Kept while the markup is pulled: testimonials return once the client clips
+   are in hand, and these rules make that a markup-only change. */
 .quote-card{background:var(--grad-navy);border:1px solid var(--edge-bold);
   border-radius:var(--radius);display:grid;
   grid-template-columns:1.1fr .9fr;gap:0;overflow:hidden}
@@ -1019,25 +1021,9 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
   </div>
 </section>
 
-<!-- ============ TESTIMONIAL ============ -->
-<section class="testimonial wrap">
-  <div class="section-head">
-    <div class="kicker"><span class="label">Testimonials</span><span class="rule"></span></div>
-    <h2>Results That Speak for Themselves</h2>
-    <p class="lead">Real contractors. Real campaigns. Real growth — here's what our clients have to say.</p>
-  </div>
-  <div class="quote-card">
-    <div class="quote-body">
-      <blockquote>"Working with Outwork'em Digital changed how we look at marketing. They took the time to understand our business, built us a site we're proud of, and the leads started coming in within weeks. No runaround, no surprises — just a team that actually does what they say they'll do."</blockquote>
-      <div class="author">[Client Name] <span>[Title, Company]</span></div>
-      <div class="quote-controls">
-        <button class="ctrl"><span class="material-symbols-outlined">chevron_left</span></button>
-        <button class="ctrl active"><span class="material-symbols-outlined">chevron_right</span></button>
-      </div>
-    </div>
-    <div class="ph quote-img filled" style="background-image:url('/img/ryan-jana168068.jpg')"></div>
-  </div>
-</section>
+<!-- Testimonials are out until real client clips are ready: the section was
+     running on placeholder copy with a [Client Name] byline. Styles kept so it
+     can go back as markup alone. -->
 
 <!-- ============ PORTFOLIO ============ -->
 <section class="portfolio wrap band">
@@ -1310,7 +1296,7 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
 
   /* ---- scroll reveals (staggered by sibling index) ---- */
   var sel = ['.section-head','.svc','.pcard','.about-card',
-    '.quote-card','.podcast-text','.podcast-player','.ig-card','.cta-band'].join(',');
+    '.podcast-text','.podcast-player','.ig-card','.cta-band'].join(',');
   var items = [].slice.call(document.querySelectorAll(sel));
   items.forEach(function(el){ el.classList.add('reveal'); });
   items.forEach(function(el){
