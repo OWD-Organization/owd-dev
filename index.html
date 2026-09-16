@@ -574,14 +574,13 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
   .js .hero-img{opacity:0;animation:od-fade 1s ease .45s forwards}
   @keyframes od-in{to{opacity:1;transform:none}}
   @keyframes od-fade{to{opacity:1}}
-  @supports (animation-timeline: scroll()){
-    .js .hero-img{
-      animation:od-fade 1s ease .45s forwards, od-par linear both;
-      animation-timeline:auto, scroll(root);
-      animation-range:auto, 0 78vh
-    }
-    @keyframes od-par{from{transform:translateY(0) scale(1)}to{transform:translateY(48px) scale(1.06)}}
-  }
+  /* The hero image used to carry a scroll-driven parallax that scaled it to
+     1.06. Two problems: a transform-animated layer makes the browser resample
+     the bitmap, which is what made a screenshot full of small text look
+     pixelated, and the effect was never actually seen -- the range was measured
+     against the whole document scroll, so it reached about scale 1.007 and 6px
+     of the intended 48. It is gone; the image renders at its own raster and
+     keeps the fade-in. */
 }
 
 /* smooth theme transition — only active during the .switching frame */
