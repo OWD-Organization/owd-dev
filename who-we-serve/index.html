@@ -568,7 +568,15 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
 .ig-icon .material-symbols-outlined{font-size:26px;color:var(--orange-text)}
 /* The Elfsight feed stands where .ig-card did, so it keeps the same 48px
    offset from the section heading rather than butting against the lead. */
-.instagram [data-elfsight-app-lazy]{margin-top:48px}
+/* This section runs wider than the rest of the page: 1264 outer against the
+   1120 of .wrap, which leaves the feed 1200 across once the 32px gutters are
+   taken off. */
+.instagram.wrap{max-width:1264px}
+/* The feed sits on a light panel. It also earns its keep: the widget draws its
+   own header into a shadow root we cannot style, and that header is dark text,
+   so on the page's dark ground it was invisible. On this one it reads. */
+.instagram [data-elfsight-app-lazy]{margin-top:48px;background:#F7F5F1;
+  border-radius:var(--radius);padding:clamp(16px,2vw,28px);overflow:hidden}
 /* .ig-card and its children styled the mock account panel that the Elfsight
    feed replaced. Kept for now: the widget renders in its own container, so
    these are inert, and .ig-icon above is still in use by the section heading. */
