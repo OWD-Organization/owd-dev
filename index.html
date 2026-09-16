@@ -123,7 +123,7 @@ html[data-theme="dark"] {
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--body);color:var(--text);background:var(--bg);line-height:1.5;
   -webkit-font-smoothing:antialiased;overflow-x:clip}
-.wrap{max-width:1120px;margin:0 auto;padding-inline:32px}
+.wrap{max-width:1250px;margin:0 auto;padding-inline:32px}
 h1,h2,h3,h4{font-family:var(--head);font-weight:700;line-height:1.12;
   /* balance stops a heading dropping one lonely word onto its own line --
      "Every Tool You Need to Win / Online" was the case that prompted this */
@@ -218,7 +218,7 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
    ran straight into the section below it with nothing underneath. */
 .hero{padding-block:clamp(3rem,7.5vw,4.5rem) clamp(2.5rem,6vw,4rem);text-align:center}
 /* Both hero lights sit on this full-width wrapper rather than on .hero itself.
-   .hero is a .wrap (max-width 1120px), so painting a glow there ended it at the
+   .hero is a .wrap (max-width 1250px), so painting a glow there ended it at the
    container's edges and the falloff read as a rectangle. The wrapper spans the
    viewport, so the light fades out in open space instead. Width comes from the
    wrapper, never 100vw, which would count the scrollbar and widen the document. */
@@ -465,10 +465,6 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
 .ig-icon .material-symbols-outlined{font-size:26px;color:var(--orange-text)}
 /* The Elfsight feed stands where .ig-card did, so it keeps the same 48px
    offset from the section heading rather than butting against the lead. */
-/* This section runs wider than the rest of the page: 1264 outer against the
-   1120 of .wrap, which leaves the feed 1200 across once the 32px gutters are
-   taken off. */
-.instagram.wrap{max-width:1264px}
 /* The feed sits on a light panel. It also earns its keep: the widget draws its
    own header into a shadow root we cannot style, and that header is dark text,
    so on the page's dark ground it was invisible. On this one it reads. */
@@ -976,14 +972,14 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
 <section class="hero wrap">
   <h1>The Agency Built for Home Service Contractors</h1>
   <p class="lead">No fluff. No excuses. Just transparent marketing that fills your pipeline and grows your business.</p>
-  <!-- Two widths: the card tops out at 1056 CSS px, so a 2x screen wants 2112
-       device px and the 1120 file alone had to be stretched. sizes mirrors
-       .wrap (max 1120 less its 32px gutters, 20px under 600px). -->
-  <img class="hero-img" src="/img/lead-revenue-dashboard-1120.webp"
-       srcset="/img/lead-revenue-dashboard-1120.webp 1120w,
-               /img/lead-revenue-dashboard-2240.webp 2240w"
-       sizes="(max-width:600px) calc(100vw - 40px), (max-width:1120px) calc(100vw - 64px), 1056px"
-       width="2240" height="1260" fetchpriority="high" decoding="async"
+  <!-- Two widths: the card tops out at 1186 CSS px, so a 2x screen wants 2372
+       device px and the old 2240 file would have been stretched again. sizes
+       mirrors .wrap (max 1250 less its 32px gutters, 20px under 600px). -->
+  <img class="hero-img" src="/img/lead-revenue-dashboard-1280.webp"
+       srcset="/img/lead-revenue-dashboard-1280.webp 1280w,
+               /img/lead-revenue-dashboard-2400.webp 2400w"
+       sizes="(max-width:600px) calc(100vw - 40px), (max-width:1250px) calc(100vw - 64px), 1186px"
+       width="2400" height="1350" fetchpriority="high" decoding="async"
        alt="A lead and revenue dashboard: 248 leads, 93 quotes sent, a 37.6% close rate and $186,450 in revenue, each rising on the month, above a table of recent leads showing every one's source, quote number and value">
 </section>
 </div>
