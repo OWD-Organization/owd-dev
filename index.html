@@ -411,7 +411,10 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
 .about-card{background:var(--grad-navy);border:1px solid var(--edge-bold);
   border-radius:var(--radius);padding:40px;
   display:grid;grid-template-columns:.85fr 1fr;gap:44px;align-items:center}
-.about-card .photo{min-height:440px}
+/* 4/3 is the artwork's own ratio, so cover has nothing to trim. A min-height
+   here would stretch the box back towards square and crop the panels off the
+   sides, which is exactly what this illustration cannot take. */
+.about-card .photo{aspect-ratio:4/3;min-height:0}
 .about-card h3{font-family:var(--head);font-size:clamp(22px,3vw,30px);
   text-transform:uppercase;font-weight:800;letter-spacing:.01em;
   line-height:1.15;margin-bottom:20px;color:var(--on-bold)}
@@ -604,7 +607,7 @@ html.switching *,html.switching *::before,html.switching *::after{
   .quote-card{grid-template-columns:1fr}
   .quote-img{min-height:240px}
   .about-card{grid-template-columns:1fr;gap:28px;padding:28px}
-  .about-card .photo{min-height:300px}
+  .about-card .photo{min-height:0}
   .nav-links{display:none}
   .review-grid{grid-template-columns:1fr}
   .clogo{min-width:40%}
@@ -1069,8 +1072,8 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
     <p class="lead">We are here to change the narrative. We don't believe in quick fixes; instead, we offer complete transparency and cap our client roster to focus on your business's sustainable growth and lasting success.</p>
   </div>
   <div class="about-card">
-    <div class="ph photo filled" style="background-image:url('/img/dashboard-square-1024.webp')"
-         role="img" aria-label="The same lead and revenue dashboard, showing 124 leads, 48 quote requests, $36,450 closed revenue and 4.8x ROI against the previous 30 days"></div>
+    <div class="ph photo filled" style="background-image:url('/img/marketing-that-makes-sense.webp')"
+         role="img" aria-label="A comic-strip illustration titled Finally, Marketing That Makes Sense. On the left, contractors in HVAC, roofing, plumbing and landscaping caps hold their heads over wasted ad spend, confusing reports and no results. On the right, two men present a Real Growth dashboard reading 1,248 leads, 892 calls, 317 jobs booked and $98,450 revenue, all rising, under the promise of clear strategy, real results and no fluff."></div>
     <div>
       <h3>A different approach: transparency &amp; real results</h3>
       <p>If you are like many home service contractors, you have likely had poor experiences with agencies that overpromise and underdeliver. We founded Outwork'em Digital to change that narrative. Unlike others, we cap our client roster to ensure you get the attention you deserve, maintain market exclusivity, and focus on your business's sustainable growth with complete transparency. We don't believe in quick fixes. We are here to build lasting success alongside you.</p>
