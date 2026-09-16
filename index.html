@@ -463,6 +463,12 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
   border:1px solid var(--orange);margin:0 auto 18px;
   display:flex;align-items:center;justify-content:center}
 .ig-icon .material-symbols-outlined{font-size:26px;color:var(--orange-text)}
+/* The Elfsight feed stands where .ig-card did, so it keeps the same 48px
+   offset from the section heading rather than butting against the lead. */
+.instagram [data-elfsight-app-lazy]{margin-top:48px}
+/* .ig-card and its children styled the mock account panel that the Elfsight
+   feed replaced. Kept for now: the widget renders in its own container, so
+   these are inert, and .ig-icon above is still in use by the section heading. */
 .ig-card{background:var(--card);border:1px solid var(--line);
   border-radius:var(--radius);padding:28px;margin-top:48px}
 .ig-head{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-bottom:22px}
@@ -1116,33 +1122,11 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
     <h2 style="font-size:clamp(28px,4.5vw,44px);text-transform:uppercase">Follow us on Instagram</h2>
     <p class="lead" style="margin:14px auto 0">Stay up to date on marketing tips, client wins, and behind-the-scenes content from the team working for your growth.</p>
   </div>
-  <div class="ig-card">
-    <div class="ig-head">
-      <div class="ig-id">
-        <span class="ig-avatar"></span>
-        <div>
-          <div class="ig-name">Home Service Marketing 🇺🇸</div>
-          <div class="ig-handle">@outworkem.digital</div>
-        </div>
-      </div>
-      <div class="ig-stats">
-        <div class="ig-stat"><b>257</b> Posts</div>
-        <div class="ig-stat"><b>408</b> Followers</div>
-        <div class="ig-stat"><b>440</b> Following</div>
-      </div>
-      <button class="ig-follow">Follow</button>
-    </div>
-    <div class="ig-grid">
-      <div class="ph ig-post filled" style="background-image:url('/img/ryan-jana167591.jpg');background-position:center center"><span class="reel"></span></div>
-      <div class="ph ig-post filled" style="background-image:url('/img/ryan-jana167865.jpg');background-position:center center"><span class="reel"></span></div>
-      <div class="ph ig-post filled" style="background-image:url('/img/ryan-jana166422.jpg');background-position:center center"><span class="reel"></span></div>
-      <div class="ph ig-post filled" style="background-image:url('/img/ryan-jana167433.jpg');background-position:center center"><span class="reel"></span></div>
-      <div class="ph ig-post filled" style="background-image:url('/img/ryan-jana167549.jpg');background-position:center center"><span class="reel"></span></div>
-      <div class="ph ig-post filled" style="background-image:url('/img/ryan-jana166584.jpg');background-position:center center"><span class="reel"></span></div>
-      <div class="ph ig-post filled" style="background-image:url('/img/ryan-jana166687.jpg');background-position:center center"><span class="reel"></span></div>
-      <div class="ph ig-post filled" style="background-image:url('/img/ryan-jana166717.jpg');background-position:center center"><span class="reel"></span></div>
-    </div>
-  </div>
+  <!-- Elfsight Instagram Feed, replacing the mock account card. The script is
+       async and the widget carries data-elfsight-app-lazy, so it only fetches
+       once the section is close to view. -->
+  <script src="https://elfsightcdn.com/platform.js" async></script>
+  <div class="elfsight-app-fc920788-46fc-4895-9301-6b1bb08484dd" data-elfsight-app-lazy></div>
 </section>
 
 <!-- ============ FINAL CTA ============ -->
@@ -1313,7 +1297,7 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
 
   /* ---- scroll reveals (staggered by sibling index) ---- */
   var sel = ['.section-head','.svc','.pcard','.about-card',
-    '.podcast-text','.podcast-player','.ig-card','.cta-band'].join(',');
+    '.podcast-text','.podcast-player','.cta-band'].join(',');
   var items = [].slice.call(document.querySelectorAll(sel));
   items.forEach(function(el){ el.classList.add('reveal'); });
   items.forEach(function(el){
