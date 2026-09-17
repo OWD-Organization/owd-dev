@@ -291,6 +291,15 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
 .page-hero h1{font-size:clamp(30px,5vw,52px);margin-bottom:20px}
 .page-hero .lead{font-size:var(--fs-body);max-width:100%;margin-bottom:32px}
 .page-hero-img{height:480px;border-radius:var(--radius);overflow:hidden}
+/* The source is a tall 2048x3078 portrait dropped into a wide box, so plain
+   cover left Ryan small and low in the frame. Sizing from the box height
+   instead zooms him up, and the offsets put his centre line on the box centre
+   and his face a little above it. Kept off .page-hero-img itself so the other
+   heroes using that class are untouched. */
+/* .ph.filled sets cover with two classes, so this needs three to win */
+.ph.filled.hero-ry{background-size:auto 240%;background-position:28% 52%}
+@media(max-width:900px){.ph.filled.hero-ry{background-size:auto 215%;background-position:33% 54%}}
+
 .svc-chip{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);
   font-size:12px;letter-spacing:.10em;text-transform:uppercase;font-weight:700;
   color:var(--orange-text);background:var(--orange-tint);border:1px solid var(--orange);
@@ -1027,7 +1036,8 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
       </a>
     </div>
 
-    <div class="ph page-hero-img filled" style="background-image:url('/img/ryan-jana166030.jpg');background-position:center 18%"></div>
+    <div class="ph page-hero-img filled hero-ry" style="background-image:url('/img/ryan-jana166030.jpg')"
+         role="img" aria-label="Ryan Kearney standing against the red rock of Sedona"></div>
 
   </div>
 </section>
