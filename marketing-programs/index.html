@@ -359,6 +359,58 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
 
 /* TIMELINE */
 .timeline{padding-block:clamp(3.25rem,8vw,5rem)}
+/* =============================================================
+   TIMELINE CHARTS
+   Two single-series range bands. The values are ranges, not points,
+   so the band is the honest mark: it shows the spread the copy
+   states instead of inventing a precise line through it.
+   Series colours are their own steps per theme, each validated
+   against that theme's card surface rather than flipped from the
+   other: light #D35F00 on #FFFDFA, dark #DE7014 on #27221E.
+   ============================================================= */
+.tlc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:34px 0 8px}
+.tlc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 20px 16px;position:relative;
+  /* grid items default to min-width:auto, which lets the scrollable chart push
+     the whole page wider instead of scrolling inside its own box */
+  min-width:0;
+  --tlc-mark:#D35F00;--tlc-fill:rgba(211,95,0,.16);--tlc-grid:var(--line);
+  --tlc-phase:rgba(90,100,116,.055);--tlc-surface:var(--card)}
+html[data-theme="dark"] .tlc{--tlc-mark:#DE7014;--tlc-fill:rgba(222,112,20,.20);
+  --tlc-phase:rgba(255,255,255,.035)}
+.tlc h3{font-family:var(--head);font-size:16px;font-weight:700;color:var(--text);margin:0 0 2px}
+.tlc-sub{font-family:var(--head);font-size:12.5px;color:var(--muted);margin:0 0 10px}
+.tlc-svg{display:block;width:100%;height:auto}
+/* Below the stacking breakpoint the chart would shrink until the axis type is
+   a few pixels tall, so it keeps a legible minimum and the container scrolls
+   instead. Only the chart scrolls; the page never does. */
+.tlc-scroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+@media(max-width:760px){.tlc-svg{min-width:600px}}
+.tlc-tick{font-family:var(--head);font-size:12px;fill:var(--muted);text-anchor:middle;
+  font-variant-numeric:tabular-nums}
+.tlc-tick-y{text-anchor:end}
+.tlc-axis-title{font-family:var(--head);font-size:12px;fill:var(--muted);text-anchor:middle}
+.tlc-phase-lab{font-family:var(--head);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  fill:var(--muted);text-anchor:middle}
+.tlc-dlabel{font-family:var(--head);font-size:14px;font-weight:700;fill:var(--text);text-anchor:middle}
+.tlc-milestone{font-family:var(--head);font-size:11.5px;fill:var(--muted)}
+.tlc-hit{cursor:crosshair}
+.tlc-hit:focus-visible{outline:2px solid var(--orange);outline-offset:-2px}
+.tlc-tip{position:absolute;pointer-events:none;opacity:0;transform:translate(-50%,-100%);
+  background:var(--text);color:var(--bg);font-family:var(--head);font-size:12.5px;
+  padding:7px 10px;border-radius:8px;white-space:nowrap;transition:opacity .12s ease;z-index:3;
+  font-variant-numeric:tabular-nums}
+.tlc-note{font-family:var(--body);font-size:12.5px;line-height:1.5;color:var(--muted);margin:10px 0 0}
+.tlc-details{margin-top:8px}
+.tlc-details summary{font-family:var(--head);font-size:12.5px;color:var(--muted);cursor:pointer}
+.tlc-table{width:100%;border-collapse:collapse;margin-top:10px;font-family:var(--head);font-size:12.5px;
+  font-variant-numeric:tabular-nums}
+.tlc-table th,.tlc-table td{border-bottom:1px solid var(--line);padding:5px 8px;text-align:right;color:var(--copy)}
+.tlc-table th:first-child,.tlc-table td:first-child{text-align:left}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:900px){.tlc-wrap{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.tlc-tip{transition:none}}
+
 .phase-list{display:flex;flex-direction:column;gap:32px}
 .phase{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 .phase-head{display:flex;align-items:center;gap:20px;padding:24px 28px;
@@ -1003,6 +1055,121 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
     <p class="lead">Most HVAC and home services companies struggle for months trying to get results. Our systematic approach delivers predictable results in three phases.</p>
   </div>
 
+  <div class="tlc-wrap reveal">
+    <figure class="tlc">
+      <h3>Qualified leads per month</h3>
+      <p class="tlc-sub">Expected range, months 1 to 12</p>
+      <div class="tlc-scroll"><svg class="tlc-svg" viewBox="0 0 760 320" role="img" aria-labelledby="tlc-a-t tlc-a-d" preserveAspectRatio="xMidYMid meet">
+      <title id="tlc-a-t">Qualified leads per month</title>
+      <desc id="tlc-a-d">Expected range over twelve months, reaching 25 to 50 qualified leads per month by month twelve. The figures are also in the table below.</desc>
+      <rect x="224.5" y="24" width="168.5" height="226" fill="var(--tlc-phase)"/>
+      <line x1="56" y1="250.0" x2="730" y2="250.0" stroke="var(--tlc-grid)" stroke-width="1"/>
+      <text x="44" y="254.0" class="tlc-tick tlc-tick-y">0</text>
+      <line x1="56" y1="204.8" x2="730" y2="204.8" stroke="var(--tlc-grid)" stroke-width="1"/>
+      <text x="44" y="208.8" class="tlc-tick tlc-tick-y">10</text>
+      <line x1="56" y1="159.6" x2="730" y2="159.6" stroke="var(--tlc-grid)" stroke-width="1"/>
+      <text x="44" y="163.6" class="tlc-tick tlc-tick-y">20</text>
+      <line x1="56" y1="114.4" x2="730" y2="114.4" stroke="var(--tlc-grid)" stroke-width="1"/>
+      <text x="44" y="118.4" class="tlc-tick tlc-tick-y">30</text>
+      <line x1="56" y1="69.2" x2="730" y2="69.2" stroke="var(--tlc-grid)" stroke-width="1"/>
+      <text x="44" y="73.2" class="tlc-tick tlc-tick-y">40</text>
+      <line x1="56" y1="24.0" x2="730" y2="24.0" stroke="var(--tlc-grid)" stroke-width="1"/>
+      <text x="44" y="28.0" class="tlc-tick tlc-tick-y">50</text>
+      <text x="140.2" y="16" class="tlc-phase-lab">Foundation</text>
+      <text x="308.8" y="16" class="tlc-phase-lab">Acceleration</text>
+      <text x="561.5" y="16" class="tlc-phase-lab">Breakthrough</text>
+      <path d="M 56.0,250.0 112.2,245.5 168.3,231.9 224.5,182.2 280.7,182.2 336.8,182.2 393.0,182.2 449.2,155.1 505.3,128.0 561.5,100.8 617.7,73.7 673.8,46.6 730.0,24.0 L 730.0,137.0 673.8,141.5 617.7,150.6 561.5,164.1 505.3,177.7 449.2,191.2 393.0,204.8 336.8,204.8 280.7,204.8 224.5,204.8 168.3,241.0 112.2,250.0 56.0,250.0 Z" fill="var(--tlc-fill)"/>
+      <path d="M 56.0,250.0 L 112.2,250.0 L 168.3,241.0 L 224.5,204.8 L 280.7,204.8 L 336.8,204.8 L 393.0,204.8 L 449.2,191.2 L 505.3,177.7 L 561.5,164.1 L 617.7,150.6 L 673.8,141.5 L 730.0,137.0" fill="none" stroke="var(--tlc-mark)" stroke-width="2" stroke-opacity=".55" stroke-linejoin="round"/>
+      <path d="M 56.0,250.0 L 112.2,245.5 L 168.3,231.9 L 224.5,182.2 L 280.7,182.2 L 336.8,182.2 L 393.0,182.2 L 449.2,155.1 L 505.3,128.0 L 561.5,100.8 L 617.7,73.7 L 673.8,46.6 L 730.0,24.0" fill="none" stroke="var(--tlc-mark)" stroke-width="2" stroke-linejoin="round"/>
+      <text x="56.0" y="272" class="tlc-tick">Month 0</text>
+      <text x="168.3" y="272" class="tlc-tick">2</text>
+      <text x="280.7" y="272" class="tlc-tick">4</text>
+      <text x="393.0" y="272" class="tlc-tick">6</text>
+      <text x="505.3" y="272" class="tlc-tick">8</text>
+      <text x="617.7" y="272" class="tlc-tick">10</text>
+      <text x="730.0" y="272" class="tlc-tick">12</text>
+      <text x="393" y="300" class="tlc-axis-title">Month</text>
+      <text x="14" y="140" class="tlc-axis-title" transform="rotate(-90 14 140)">Leads / month</text>
+      <circle cx="393.0" cy="182.2" r="5" fill="var(--tlc-mark)" stroke="var(--tlc-surface)" stroke-width="2"/>
+      <text x="393.0" y="170.2" class="tlc-dlabel">10-15</text>
+      <circle cx="730.0" cy="24.0" r="5" fill="var(--tlc-mark)" stroke="var(--tlc-surface)" stroke-width="2"/>
+      <text x="720.0" y="12.0" class="tlc-dlabel">25-50</text>
+      <rect class="tlc-hit" x="30.0" y="24" width="52" height="226" fill="transparent" data-m="0" data-lo="0" data-hi="0" data-x="56.0" tabindex="0" role="button" aria-label="Month 0: 0 to 0 qualified leads per month"/>
+      <rect class="tlc-hit" x="86.2" y="24" width="52" height="226" fill="transparent" data-m="1" data-lo="0" data-hi="1" data-x="112.2" tabindex="0" role="button" aria-label="Month 1: 0 to 1 qualified leads per month"/>
+      <rect class="tlc-hit" x="142.3" y="24" width="52" height="226" fill="transparent" data-m="2" data-lo="2" data-hi="4" data-x="168.3" tabindex="0" role="button" aria-label="Month 2: 2 to 4 qualified leads per month"/>
+      <rect class="tlc-hit" x="198.5" y="24" width="52" height="226" fill="transparent" data-m="3" data-lo="10" data-hi="15" data-x="224.5" tabindex="0" role="button" aria-label="Month 3: 10 to 15 qualified leads per month"/>
+      <rect class="tlc-hit" x="254.7" y="24" width="52" height="226" fill="transparent" data-m="4" data-lo="10" data-hi="15" data-x="280.7" tabindex="0" role="button" aria-label="Month 4: 10 to 15 qualified leads per month"/>
+      <rect class="tlc-hit" x="310.8" y="24" width="52" height="226" fill="transparent" data-m="5" data-lo="10" data-hi="15" data-x="336.8" tabindex="0" role="button" aria-label="Month 5: 10 to 15 qualified leads per month"/>
+      <rect class="tlc-hit" x="367.0" y="24" width="52" height="226" fill="transparent" data-m="6" data-lo="10" data-hi="15" data-x="393.0" tabindex="0" role="button" aria-label="Month 6: 10 to 15 qualified leads per month"/>
+      <rect class="tlc-hit" x="423.2" y="24" width="52" height="226" fill="transparent" data-m="7" data-lo="13" data-hi="21" data-x="449.2" tabindex="0" role="button" aria-label="Month 7: 13 to 21 qualified leads per month"/>
+      <rect class="tlc-hit" x="479.3" y="24" width="52" height="226" fill="transparent" data-m="8" data-lo="16" data-hi="27" data-x="505.3" tabindex="0" role="button" aria-label="Month 8: 16 to 27 qualified leads per month"/>
+      <rect class="tlc-hit" x="535.5" y="24" width="52" height="226" fill="transparent" data-m="9" data-lo="19" data-hi="33" data-x="561.5" tabindex="0" role="button" aria-label="Month 9: 19 to 33 qualified leads per month"/>
+      <rect class="tlc-hit" x="591.7" y="24" width="52" height="226" fill="transparent" data-m="10" data-lo="22" data-hi="39" data-x="617.7" tabindex="0" role="button" aria-label="Month 10: 22 to 39 qualified leads per month"/>
+      <rect class="tlc-hit" x="647.8" y="24" width="52" height="226" fill="transparent" data-m="11" data-lo="24" data-hi="45" data-x="673.8" tabindex="0" role="button" aria-label="Month 11: 24 to 45 qualified leads per month"/>
+      <rect class="tlc-hit" x="704.0" y="24" width="52" height="226" fill="transparent" data-m="12" data-lo="25" data-hi="50" data-x="730.0" tabindex="0" role="button" aria-label="Month 12: 25 to 50 qualified leads per month"/>
+      <line class="tlc-cross" x1="0" y1="24" x2="0" y2="250" stroke="var(--tlc-mark)" stroke-width="1" opacity="0"/>
+      </svg></div>
+      <div class="tlc-tip" aria-hidden="true"></div>
+      <p class="tlc-note">Built from the figures this page already states: 10 to 15 additional qualified leads a month through Acceleration, held flat across that phase, then climbing to the 25 to 50 a month from organic search that Breakthrough states. Months 1 to 3 carry no stated figure, so the band opens at zero. Ranges, not forecasts: actual numbers vary with market size, competition and budget.</p>
+      <details class="tlc-details"><summary>See the figures</summary><table class="tlc-table"><caption class="sr-only">Qualified leads per month by month</caption><thead><tr><th>Month</th><th>Low</th><th>High</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>0</td><td>1</td></tr><tr><td>2</td><td>2</td><td>4</td></tr><tr><td>3</td><td>10</td><td>15</td></tr><tr><td>4</td><td>10</td><td>15</td></tr><tr><td>5</td><td>10</td><td>15</td></tr><tr><td>6</td><td>10</td><td>15</td></tr><tr><td>7</td><td>13</td><td>21</td></tr><tr><td>8</td><td>16</td><td>27</td></tr><tr><td>9</td><td>19</td><td>33</td></tr><tr><td>10</td><td>22</td><td>39</td></tr><tr><td>11</td><td>24</td><td>45</td></tr><tr><td>12</td><td>25</td><td>50</td></tr></tbody></table></details>
+    </figure>
+    <figure class="tlc">
+      <h3>Qualified leads delivered, running total</h3>
+      <p class="tlc-sub">Cumulative over the same twelve months</p>
+      <div class="tlc-scroll"><svg class="tlc-svg" viewBox="0 0 760 320" role="img" aria-labelledby="tlc-b-t tlc-b-d" preserveAspectRatio="xMidYMid meet">
+      <title id="tlc-b-t">Qualified leads delivered, running total</title>
+      <desc id="tlc-b-d">Expected range over twelve months, reaching 161 to 280 leads in total by month twelve. The figures are also in the table below.</desc>
+      <rect x="224.5" y="24" width="168.5" height="226" fill="var(--tlc-phase)"/>
+      <line x1="56" y1="250.0" x2="730" y2="250.0" stroke="var(--tlc-grid)" stroke-width="1"/>
+      <text x="44" y="254.0" class="tlc-tick tlc-tick-y">0</text>
+      <line x1="56" y1="193.5" x2="730" y2="193.5" stroke="var(--tlc-grid)" stroke-width="1"/>
+      <text x="44" y="197.5" class="tlc-tick tlc-tick-y">75</text>
+      <line x1="56" y1="137.0" x2="730" y2="137.0" stroke="var(--tlc-grid)" stroke-width="1"/>
+      <text x="44" y="141.0" class="tlc-tick tlc-tick-y">150</text>
+      <line x1="56" y1="80.5" x2="730" y2="80.5" stroke="var(--tlc-grid)" stroke-width="1"/>
+      <text x="44" y="84.5" class="tlc-tick tlc-tick-y">225</text>
+      <line x1="56" y1="24.0" x2="730" y2="24.0" stroke="var(--tlc-grid)" stroke-width="1"/>
+      <text x="44" y="28.0" class="tlc-tick tlc-tick-y">300</text>
+      <text x="140.2" y="16" class="tlc-phase-lab">Foundation</text>
+      <text x="308.8" y="16" class="tlc-phase-lab">Acceleration</text>
+      <text x="561.5" y="16" class="tlc-phase-lab">Breakthrough</text>
+      <path d="M 56.0,250.0 112.2,249.2 168.3,246.2 224.5,234.9 280.7,223.6 336.8,212.3 393.0,201.0 449.2,185.2 505.3,164.9 561.5,140.0 617.7,110.6 673.8,76.7 730.0,39.1 L 730.0,128.7 673.8,147.5 617.7,165.6 561.5,182.2 505.3,196.5 449.2,208.6 393.0,218.4 336.8,225.9 280.7,233.4 224.5,241.0 168.3,248.5 112.2,250.0 56.0,250.0 Z" fill="var(--tlc-fill)"/>
+      <path d="M 56.0,250.0 L 112.2,250.0 L 168.3,248.5 L 224.5,241.0 L 280.7,233.4 L 336.8,225.9 L 393.0,218.4 L 449.2,208.6 L 505.3,196.5 L 561.5,182.2 L 617.7,165.6 L 673.8,147.5 L 730.0,128.7" fill="none" stroke="var(--tlc-mark)" stroke-width="2" stroke-opacity=".55" stroke-linejoin="round"/>
+      <path d="M 56.0,250.0 L 112.2,249.2 L 168.3,246.2 L 224.5,234.9 L 280.7,223.6 L 336.8,212.3 L 393.0,201.0 L 449.2,185.2 L 505.3,164.9 L 561.5,140.0 L 617.7,110.6 L 673.8,76.7 L 730.0,39.1" fill="none" stroke="var(--tlc-mark)" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="336.8" y1="24" x2="336.8" y2="250" stroke="var(--tlc-mark)" stroke-width="2" stroke-opacity=".5"/>
+      <text x="344.8" y="40" class="tlc-milestone">ROI turns positive</text>
+      <text x="56.0" y="272" class="tlc-tick">Month 0</text>
+      <text x="168.3" y="272" class="tlc-tick">2</text>
+      <text x="280.7" y="272" class="tlc-tick">4</text>
+      <text x="393.0" y="272" class="tlc-tick">6</text>
+      <text x="505.3" y="272" class="tlc-tick">8</text>
+      <text x="617.7" y="272" class="tlc-tick">10</text>
+      <text x="730.0" y="272" class="tlc-tick">12</text>
+      <text x="393" y="300" class="tlc-axis-title">Month</text>
+      <text x="14" y="140" class="tlc-axis-title" transform="rotate(-90 14 140)">Leads, running total</text>
+      <circle cx="730.0" cy="39.1" r="5" fill="var(--tlc-mark)" stroke="var(--tlc-surface)" stroke-width="2"/>
+      <text x="720.0" y="27.1" class="tlc-dlabel">161-280</text>
+      <rect class="tlc-hit" x="30.0" y="24" width="52" height="226" fill="transparent" data-m="0" data-lo="0" data-hi="0" data-x="56.0" tabindex="0" role="button" aria-label="Month 0: 0 to 0 leads in total"/>
+      <rect class="tlc-hit" x="86.2" y="24" width="52" height="226" fill="transparent" data-m="1" data-lo="0" data-hi="1" data-x="112.2" tabindex="0" role="button" aria-label="Month 1: 0 to 1 leads in total"/>
+      <rect class="tlc-hit" x="142.3" y="24" width="52" height="226" fill="transparent" data-m="2" data-lo="2" data-hi="5" data-x="168.3" tabindex="0" role="button" aria-label="Month 2: 2 to 5 leads in total"/>
+      <rect class="tlc-hit" x="198.5" y="24" width="52" height="226" fill="transparent" data-m="3" data-lo="12" data-hi="20" data-x="224.5" tabindex="0" role="button" aria-label="Month 3: 12 to 20 leads in total"/>
+      <rect class="tlc-hit" x="254.7" y="24" width="52" height="226" fill="transparent" data-m="4" data-lo="22" data-hi="35" data-x="280.7" tabindex="0" role="button" aria-label="Month 4: 22 to 35 leads in total"/>
+      <rect class="tlc-hit" x="310.8" y="24" width="52" height="226" fill="transparent" data-m="5" data-lo="32" data-hi="50" data-x="336.8" tabindex="0" role="button" aria-label="Month 5: 32 to 50 leads in total"/>
+      <rect class="tlc-hit" x="367.0" y="24" width="52" height="226" fill="transparent" data-m="6" data-lo="42" data-hi="65" data-x="393.0" tabindex="0" role="button" aria-label="Month 6: 42 to 65 leads in total"/>
+      <rect class="tlc-hit" x="423.2" y="24" width="52" height="226" fill="transparent" data-m="7" data-lo="55" data-hi="86" data-x="449.2" tabindex="0" role="button" aria-label="Month 7: 55 to 86 leads in total"/>
+      <rect class="tlc-hit" x="479.3" y="24" width="52" height="226" fill="transparent" data-m="8" data-lo="71" data-hi="113" data-x="505.3" tabindex="0" role="button" aria-label="Month 8: 71 to 113 leads in total"/>
+      <rect class="tlc-hit" x="535.5" y="24" width="52" height="226" fill="transparent" data-m="9" data-lo="90" data-hi="146" data-x="561.5" tabindex="0" role="button" aria-label="Month 9: 90 to 146 leads in total"/>
+      <rect class="tlc-hit" x="591.7" y="24" width="52" height="226" fill="transparent" data-m="10" data-lo="112" data-hi="185" data-x="617.7" tabindex="0" role="button" aria-label="Month 10: 112 to 185 leads in total"/>
+      <rect class="tlc-hit" x="647.8" y="24" width="52" height="226" fill="transparent" data-m="11" data-lo="136" data-hi="230" data-x="673.8" tabindex="0" role="button" aria-label="Month 11: 136 to 230 leads in total"/>
+      <rect class="tlc-hit" x="704.0" y="24" width="52" height="226" fill="transparent" data-m="12" data-lo="161" data-hi="280" data-x="730.0" tabindex="0" role="button" aria-label="Month 12: 161 to 280 leads in total"/>
+      <line class="tlc-cross" x1="0" y1="24" x2="0" y2="250" stroke="var(--tlc-mark)" stroke-width="1" opacity="0"/>
+      </svg></div>
+      <div class="tlc-tip" aria-hidden="true"></div>
+      <p class="tlc-note">The same monthly range added up, which is where compounding shows: 161 to 280 qualified leads over the year. The marker sits at month 5, where the Acceleration phase states that ROI turns positive.</p>
+      <details class="tlc-details"><summary>See the figures</summary><table class="tlc-table"><caption class="sr-only">Running total of qualified leads by month</caption><thead><tr><th>Month</th><th>Low</th><th>High</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>0</td><td>1</td></tr><tr><td>2</td><td>2</td><td>5</td></tr><tr><td>3</td><td>12</td><td>20</td></tr><tr><td>4</td><td>22</td><td>35</td></tr><tr><td>5</td><td>32</td><td>50</td></tr><tr><td>6</td><td>42</td><td>65</td></tr><tr><td>7</td><td>55</td><td>86</td></tr><tr><td>8</td><td>71</td><td>113</td></tr><tr><td>9</td><td>90</td><td>146</td></tr><tr><td>10</td><td>112</td><td>185</td></tr><tr><td>11</td><td>136</td><td>230</td></tr><tr><td>12</td><td>161</td><td>280</td></tr></tbody></table></details>
+    </figure>
+  </div>
+
   <div class="phase-list">
     <!-- Phase 1 -->
     <div class="phase reveal">
@@ -1460,6 +1627,43 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
     item.querySelector('.faq-q').addEventListener('click', function(){
       item.classList.toggle('open');
     });
+  });
+
+
+  /* ---- timeline charts: crosshair + tooltip ---- */
+  /* Tooltips enhance here, they never gate: every value is also direct-labelled
+     or in the table under each figure, and the hit targets are keyboard focusable
+     so focus shows exactly what hover shows. */
+  [].forEach.call(document.querySelectorAll('.tlc'), function(fig){
+    var svg = fig.querySelector('.tlc-svg'),
+        tip = fig.querySelector('.tlc-tip'),
+        cross = fig.querySelector('.tlc-cross');
+    if(!svg || !tip) return;
+    var unit = /running total/i.test(fig.querySelector('h3').textContent) ? 'leads so far' : 'leads / month';
+
+    function show(hit){
+      var m = hit.getAttribute('data-m'),
+          lo = hit.getAttribute('data-lo'),
+          hi = hit.getAttribute('data-hi'),
+          x  = parseFloat(hit.getAttribute('data-x'));
+      tip.textContent = 'Month ' + m + ': ' + lo + ' to ' + hi + ' ' + unit;
+      /* offsetTop is an HTMLElement property and undefined on an SVG node, so
+         the tooltip is placed from the measured boxes instead. */
+      var box = svg.getBoundingClientRect(), fb = fig.getBoundingClientRect(),
+          scale = box.width / 760;
+      tip.style.left = (box.left - fb.left + x * scale) + 'px';
+      tip.style.top  = (box.top - fb.top + 34 * scale) + 'px';
+      tip.style.opacity = 1;
+      if(cross){ cross.setAttribute('x1', x); cross.setAttribute('x2', x); cross.setAttribute('opacity', .45); }
+    }
+    function hide(){ tip.style.opacity = 0; if(cross) cross.setAttribute('opacity', 0); }
+
+    [].forEach.call(svg.querySelectorAll('.tlc-hit'), function(hit){
+      hit.addEventListener('mouseenter', function(){ show(hit); });
+      hit.addEventListener('focus', function(){ show(hit); });
+      hit.addEventListener('blur', hide);
+    });
+    svg.addEventListener('mouseleave', hide);
   });
 
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
