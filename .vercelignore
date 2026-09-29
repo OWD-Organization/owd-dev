@@ -1,0 +1,22 @@
+# Working files that are not part of the site. They stay in the repo and in
+# git history; they just stop being uploaded to the deployment, so they stop
+# being public URLs.
+
+# Internal documents. The domain-spoofing runbook in particular describes how
+# the company handles impersonation of its own domain and was reachable by URL.
+docs/
+*.md
+*.csv
+
+# Design scratch and references
+inspiration/
+wireframe-dark.html
+
+# An 11 MB export that nothing on the site links to
+web-design-page.pdf
+
+# Stray command output committed by accident
+stdout
+
+# Editor config
+.vscode/
