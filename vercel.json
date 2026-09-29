@@ -25,5 +25,17 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/news/jana-kearney-joins-top-seer-marketers-full-time-as-creative-director/",
+      "destination": "/news/jana-kearney-joins-outworkem-digital-full-time-as-creative-director/",
+      "permanent": true
+    },
+    {
+      "source": "/news/jana-kearney-joins-top-seer-marketers-full-time-as-creative-director",
+      "destination": "/news/jana-kearney-joins-outworkem-digital-full-time-as-creative-director/",
+      "permanent": true
+    }
   ]
 }
