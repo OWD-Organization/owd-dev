@@ -234,6 +234,18 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
   .nav-actions .theme-toggle{display:none}
   .nav-actions .btn-solid{display:none}
 }
+.nav-phone{display:inline-flex;align-items:center;gap:6px;font-family:var(--head);font-size:13px;font-weight:600;color:var(--copy);text-decoration:none}
+.nav-phone .material-symbols-outlined{font-size:16px;color:var(--orange-text)}
+.mobile-cta-bar{display:none}
+@media(max-width:820px){
+  .nav-actions .nav-phone{display:none}
+  .mobile-cta-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--bg);border-top:1px solid var(--line);gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
+  .mobile-cta-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;font-family:var(--head);font-size:13px;font-weight:600;letter-spacing:.02em;text-decoration:none;border-radius:10px;padding:12px 14px}
+  .mobile-cta-bar .mcb-call{background:transparent;border:1px solid var(--line);color:var(--copy)}
+  .mobile-cta-bar .mcb-book{background:var(--orange);border:1px solid var(--orange);color:#fff}
+  .mobile-cta-bar .material-symbols-outlined{font-size:18px}
+  body{padding-bottom:76px}
+}
 .page-hero{padding-block:clamp(2.75rem,7vw,4.5rem) clamp(3.25rem,8vw,5rem)}
 .page-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .page-hero h1{font-size:clamp(30px,5vw,52px);margin-bottom:20px}

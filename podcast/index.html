@@ -342,6 +342,18 @@ html.switching *,html.switching *::before,html.switching *::after{transition:bac
   .nav-links{display:none !important}
   .nav-actions .theme-toggle,.nav-actions .btn-solid{display:none}
 }
+.nav-phone{display:inline-flex;align-items:center;gap:6px;font-family:var(--head);font-size:13px;font-weight:600;color:var(--copy);text-decoration:none}
+.nav-phone .material-symbols-outlined{font-size:16px;color:var(--orange-text)}
+.mobile-cta-bar{display:none}
+@media(max-width:820px){
+  .nav-actions .nav-phone{display:none}
+  .mobile-cta-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--bg);border-top:1px solid var(--line);gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
+  .mobile-cta-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;font-family:var(--head);font-size:13px;font-weight:600;letter-spacing:.02em;text-decoration:none;border-radius:10px;padding:12px 14px}
+  .mobile-cta-bar .mcb-call{background:transparent;border:1px solid var(--line);color:var(--copy)}
+  .mobile-cta-bar .mcb-book{background:var(--orange);border:1px solid var(--orange);color:#fff}
+  .mobile-cta-bar .material-symbols-outlined{font-size:18px}
+  body{padding-bottom:76px}
+}
 @media(max-width:600px){
   .wrap{padding-inline:20px}
   .pod-hero{padding-block:48px 40px}
@@ -520,11 +532,15 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
         <span class="material-symbols-outlined t-light">dark_mode</span>
         <span class="material-symbols-outlined t-dark">light_mode</span>
       </button>
-      <a class="btn btn-solid" href="/schedule/">Let's Talk</a>
+      <a class="nav-phone" href="tel:8336951214"><span class="material-symbols-outlined">call</span>833-695-1214</a> <a class="btn btn-solid" href="/schedule/">Let's Talk</a>
       <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
+<div class="mobile-cta-bar">
+  <a class="mcb-call" href="tel:8336951214"><span class="material-symbols-outlined">call</span>Call</a>
+  <a class="mcb-book" href="/schedule/"><span class="material-symbols-outlined">calendar_month</span>Book Now</a>
+</div>
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
