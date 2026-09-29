@@ -270,3 +270,7 @@ html.switching *,html.switching *::before,html.switching *::after{transition:bac
 header .nav{padding:18px 32px}
 @media(max-width:600px){header .nav{padding:15px 20px}}
 a.btn-cta,a.btn,a.f-cta{text-decoration:none}
+
+/* Footer links carried the browser's default underline: none of them set a
+   text-decoration, so a whole nav column rendered underlined by accident. */
+.site-footer a,.footer-bottom a{text-decoration:none}

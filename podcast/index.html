@@ -333,6 +333,10 @@ html.switching *,html.switching *::before,html.switching *::after{transition:bac
 /* CTAs are links now, not buttons: without this the shared button styling
    inherits the default anchor underline. */
 a.btn-cta,a.btn,a.f-cta{text-decoration:none}
+
+/* Footer links carried the browser's default underline: none of them set a
+   text-decoration, so a whole nav column rendered underlined by accident. */
+.site-footer a,.footer-bottom a{text-decoration:none}
 </style>
 <script>
 /* Dark is the default, set on <html> in the markup. Only a saved light
@@ -832,7 +836,7 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
       <div class="footer-contact">
         <div class="f-head">Contact Info</div>
         <p>2425 E Camelback Road<br>Suite 150,<br>Phoenix, AZ 85016</p>
-        <p>Tel: <a href="tel:8336951214" style="color:inherit">833-695-1214</a><br>Email: team@outworkemdigital.com</p>
+        <p>Tel: <a href="tel:8336951214" style="color:inherit;text-decoration:none">833-695-1214</a><br>Email: team@outworkemdigital.com</p>
       </div>
     </div>
     <div class="footer-links">
