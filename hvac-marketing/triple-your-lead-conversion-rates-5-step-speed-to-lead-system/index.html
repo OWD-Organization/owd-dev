@@ -10,6 +10,50 @@
         s.dataset.feedbucket=k;document.head.appendChild(s);
     })('XCcY8wPEzP4Y4pYYJA7i')
 </script>
+<script>
+/* Analytics, ported from the live WordPress header: Google Ads (gtag),
+   Meta Pixel, Microsoft Clarity. All three no-op on any *.vercel.app host, so
+   they stay inert on this preview and start firing on their own the day
+   outworkemdigital.com points here -- same host-gate pattern as the
+   X-Robots-Tag rule in vercel.json, applied client-side since script
+   injection can't be conditioned from a static header.
+   Two Microsoft Clarity project IDs are live on the WordPress site at once
+   (xjsg05olmf, installed via the official WP plugin with ?ref=wordpress, and
+   o4sjkr258p, a second snippet pasted directly with no such marker). Only the
+   plugin-installed one is carried over here; the other looks like leftover
+   code from an earlier install that nobody removed. Worth confirming in the
+   Clarity dashboard which project is actually receiving traffic, and cleaning
+   up the WordPress header once that is settled. */
+(function(){
+  if (/(^|\.)vercel\.app$/.test(location.hostname)) return;
+
+  // Google Ads (gtag.js) -- AW-16636468173
+  var gs = document.createElement('script');
+  gs.async = true;
+  gs.src = 'https://www.googletagmanager.com/gtag/js?id=AW-16636468173';
+  document.head.appendChild(gs);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'AW-16636468173');
+
+  // Meta Pixel -- 908509337671469
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '908509337671469');
+  fbq('track', 'PageView');
+
+  // Microsoft Clarity -- xjsg05olmf (the WordPress-plugin install)
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "xjsg05olmf");
+})();
+</script>
 <title>Triple Your Lead Conversion Rates: 5-Step Speed-to-Lead System | Outwork'em Digital</title>
 <meta name="description" content="78% of homeowners hire whoever answers first, and the industry average response time is 47 hours. A five-step system to close that gap.">
 <link rel="canonical" href="https://outworkemdigital.com/hvac-marketing/triple-your-lead-conversion-rates-5-step-speed-to-lead-system/">
