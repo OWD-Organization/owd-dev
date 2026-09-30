@@ -1,4 +1,4 @@
-/* Shared stylesheet for the 19 pages built on the 'news' template.
+/* Shared stylesheet for the 3 pages built on the 'about' template.
    Every one of them carried these rules inline, so each page view paid for
    them again. Extracted once here; the content hash in the filename lets it
    be cached hard and busts itself on change. Page-specific CSS stays inline
@@ -250,6 +250,7 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
 .page-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .page-hero h1{font-size:clamp(30px,5vw,52px);margin-bottom:20px}
 .page-hero .lead{font-size:var(--fs-body);max-width:100%;margin-bottom:32px}
+.page-hero-img{height:480px;border-radius:var(--radius);overflow:hidden}
 .svc-chip{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);
   font-size:12px;letter-spacing:.10em;text-transform:uppercase;font-weight:700;
   color:var(--orange-text);background:var(--orange-tint);border:1px solid var(--orange);
@@ -472,6 +473,23 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
 .ig-post{aspect-ratio:1;border-radius:6px}
 .ig-post .reel{position:absolute;top:8px;right:8px;width:20px;height:20px;
   border-radius:5px;background:var(--card);border:1px solid var(--line)}
+@media(max-width:1000px){
+  .page-hero-grid{grid-template-columns:1fr;gap:32px}
+  .page-hero-img{height:320px}
+  .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:32px}
+  .stat-item:nth-child(3)::before{display:none}
+  .cs-challenge-grid{grid-template-columns:repeat(2,1fr)}
+  /* 2 columns: re-key to period 4 so the alternation survives. :nth-child(n)
+     matches the base rule's specificity — a plain .cs-ch-card would lose. */
+  .cs-ch-card:nth-child(n){--fill:var(--grad-navy); --edge:var(--edge-bold);
+    --head-c:var(--on-bold); --copy-c:var(--on-bold-muted)}
+  .cs-ch-card:nth-child(4n+2),.cs-ch-card:nth-child(4n+3){
+    --fill:var(--grad-warm); --edge:var(--edge-warm);
+    --head-c:var(--on-warm); --copy-c:var(--on-warm-muted)}
+  .cs-stats{grid-template-columns:repeat(2,1fr)}
+  .cs-diff-grid{grid-template-columns:repeat(2,1fr)}
+  .cs-figures,.cs-figures.--three{grid-template-columns:1fr}
+}
 @media(max-width:820px){
   .cs-sol-grid{grid-template-columns:1fr}
   .cs-diff-grid{grid-template-columns:1fr}
@@ -529,7 +547,7 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
   white-space:nowrap;direction:ltr;display:inline-block;vertical-align:middle;
   font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
 @media (prefers-reduced-motion: no-preference){
-  .js .reveal{opacity:0;transform:translateY(26px);
+  .js .reveal{transform:translateY(26px);
     transition:opacity .75s cubic-bezier(.22,1,.36,1),
                transform .75s cubic-bezier(.22,1,.36,1);
     transition-delay:var(--d,0ms);will-change:opacity,transform}
@@ -575,6 +593,12 @@ html.switching *,html.switching *::before,html.switching *::after{
 .nav-drop a.current .drop-icon-wrap{background:var(--orange);border-color:var(--orange)}
 .nav-drop a.current .drop-icon-wrap .material-symbols-outlined{color:#fff}
 .nav-drop--cases,.nav-drop--about{grid-template-columns:1fr;min-width:340px}
+@media(max-width:1000px){
+  .page-hero-grid,.split-card{grid-template-columns:1fr}
+  .feature-grid,.price-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none}
+  .page-hero-img{height:320px}
+}
 @media(max-width:820px){
   .feature-grid,.price-grid{grid-template-columns:1fr}
   .split-card{padding:28px;gap:28px}

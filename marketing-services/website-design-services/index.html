@@ -451,7 +451,7 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
    CINEMATIC SCROLL
    ============================================================= */
 @media (prefers-reduced-motion: no-preference){
-  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1);transition-delay:var(--d,0ms);will-change:opacity,transform}
+  .js .reveal{transform:translateY(26px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1);transition-delay:var(--d,0ms);will-change:opacity,transform}
   .js .reveal.in{opacity:1;transform:none}
   .js .kicker .rule{transform:scaleX(0);transform-origin:left center;transition:transform 1s cubic-bezier(.22,1,.36,1) .18s}
   .js .reveal.in .kicker .rule{transform:scaleX(1)}
@@ -561,8 +561,14 @@ a.btn-cta,a.btn,a.f-cta{text-decoration:none}
 try{if(localStorage.getItem('owd-theme-v2')==='light')
   document.documentElement.setAttribute('data-theme','light')}catch(e){}
 </script>
+<style>
+.skip-link{position:absolute;left:12px;top:8px;z-index:10001;padding:10px 16px;border-radius:8px;background:#0D2E58;color:#fff;font-family:Poppins,sans-serif;font-size:14px;font-weight:600;text-decoration:none;transform:translateY(-160%)}
+.skip-link:focus{transform:none}
+.material-symbols-outlined[data-icon]::before{content:attr(data-icon);font-feature-settings:'liga';-webkit-font-feature-settings:'liga'}
+</style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- ============ HEADER ============ -->
 <header>
@@ -574,79 +580,79 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
     <nav class="nav-links">
       <a href="/marketing-programs/">Pricing</a>
       <div class="nav-item">
-        <a>Case studies <span class="caret">+</span></a>
+        <a role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">Case studies <span class="caret">+</span></a>
         <div class="nav-drop nav-drop--cases">
           <a href="/case-studies/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">trending_up</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="trending_up"></span></span>
             <span class="drop-text"><span class="drop-name">All Case Studies</span><span class="drop-headline">Every build, with the numbers side by side</span></span>
           </a>
           <a href="/case-studies/comfort-one-air-conditioning-case-study/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">hvac</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="hvac"></span></span>
             <span class="drop-text"><span class="drop-name">HVAC Contractor Case Study</span><span class="drop-headline">Comfort One Air Conditioning &middot; Scottsdale, AZ</span></span>
           </a>
           <a href="/case-studies/janecek-construction-remodeling-case-study/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">handyman</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="handyman"></span></span>
             <span class="drop-text"><span class="drop-name">Remodeling Services Case Study</span><span class="drop-headline">Janecek Construction &middot; Northeast Ohio</span></span>
           </a>
           <a href="/case-studies/pool-boys-case-study/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">pool</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="pool"></span></span>
             <span class="drop-text"><span class="drop-name">Pool Service Case Study</span><span class="drop-headline">The Pool Boys &middot; League City, TX</span></span>
           </a>
           <a href="/case-studies/desert-state-roofing-case-study/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">roofing</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="roofing"></span></span>
             <span class="drop-text"><span class="drop-name">Roofing Services Case Study</span><span class="drop-headline">Desert State Roofing &middot; Cave Creek, AZ</span></span>
           </a>
           <a href="/case-studies/integrity-exterior-solutions-case-study/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">window</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="window"></span></span>
             <span class="drop-text"><span class="drop-name">Windows & Exteriors Case Study</span><span class="drop-headline">Exterior Contractor &middot; Lincoln, NE</span></span>
           </a>
         </div>
       </div>
       <div class="nav-item">
-        <a>Services <span class="caret">+</span></a>
+        <a role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">Services <span class="caret">+</span></a>
         <div class="nav-drop">
           <a href="/marketing-services/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">grid_view</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="grid_view"></span></span>
             <span class="drop-text"><span class="drop-name">All Services</span><span class="drop-headline">The full list, and what comes with every one</span></span>
           </a>
           <a href="/marketing-services/media-content-production/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">videocam</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="videocam"></span></span>
             <span class="drop-text"><span class="drop-name">Media &amp; Content</span><span class="drop-headline">Video content that generates real leads</span></span>
           </a>
           <a href="/marketing-services/web-hosting-services/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">dns</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="dns"></span></span>
             <span class="drop-text"><span class="drop-name">Web Hosting</span><span class="drop-headline">Fast, secure hosting for contractor sites</span></span>
           </a>
           <a href="/marketing-services/client-gifting-direct-mail/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">card_giftcard</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="card_giftcard"></span></span>
             <span class="drop-text"><span class="drop-name">Client Gifting</span><span class="drop-headline">Automated gifts that drive referrals</span></span>
           </a>
           <a href="/marketing-services/website-design-services/" class="current">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">web</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="web"></span></span>
             <span class="drop-text"><span class="drop-name">Website Design</span><span class="drop-headline">Sites built to rank and convert</span></span>
           </a>
           <a href="/marketing-services/organic-seo-services/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">search</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="search"></span></span>
             <span class="drop-text"><span class="drop-name">Organic SEO</span><span class="drop-headline">Rank higher, generate consistent leads</span></span>
           </a>
           <a href="/marketing-services/local-seo-services/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">pin_drop</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="pin_drop"></span></span>
             <span class="drop-text"><span class="drop-name">Local SEO</span><span class="drop-headline">Dominate the Google Map Pack</span></span>
           </a>
           <a href="/marketing-services/ppc-advertising-services/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">ads_click</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="ads_click"></span></span>
             <span class="drop-text"><span class="drop-name">Pay-Per-Click Ads</span><span class="drop-headline">Get your phone ringing today</span></span>
           </a>
           <a href="/marketing-services/local-services-ads-2/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">storefront</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="storefront"></span></span>
             <span class="drop-text"><span class="drop-name">Local Services Ads</span><span class="drop-headline">Google Guaranteed leads at the top</span></span>
           </a>
           <a href="/marketing-services/reputation-management-services/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">star_rate</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="star_rate"></span></span>
             <span class="drop-text"><span class="drop-name">Reputation Mgmt</span><span class="drop-headline">Turn every job into 5-star reviews</span></span>
           </a>
           <a href="/podcast/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">mic</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="mic"></span></span>
             <span class="drop-text"><span class="drop-name">Podcast</span><span class="drop-headline">Share your story, build authority</span></span>
           </a>
         </div>
@@ -654,22 +660,22 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
       <a href="/our-work/">Our work</a>
       <a href="/who-we-serve/">Who we serve</a>
       <div class="nav-item">
-        <a>About us <span class="caret">+</span></a>
+        <a role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">About us <span class="caret">+</span></a>
         <div class="nav-drop nav-drop--about">
           <a href="/about-us/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">info</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="info"></span></span>
             <span class="drop-text"><span class="drop-name">About Outwork'em</span><span class="drop-headline">Who we are and how we work</span></span>
           </a>
           <a href="/about-us/meet-the-team/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">diversity_3</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="diversity_3"></span></span>
             <span class="drop-text"><span class="drop-name">Meet the Team</span><span class="drop-headline">The people behind your marketing</span></span>
           </a>
           <a href="/about-us/news/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">newspaper</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="newspaper"></span></span>
             <span class="drop-text"><span class="drop-name">News</span><span class="drop-headline">Launches, partnerships and awards</span></span>
           </a>
           <a href="/home-service-marketing-academy/">
-            <span class="drop-icon-wrap"><span class="material-symbols-outlined">menu_book</span></span>
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="menu_book"></span></span>
             <span class="drop-text"><span class="drop-name">Blog</span><span class="drop-headline">Playbooks for HVAC and home service marketing</span></span>
           </a>
         </div>
@@ -677,19 +683,19 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
     </nav>
     <div class="nav-actions">
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <span class="material-symbols-outlined t-light">dark_mode</span>
-        <span class="material-symbols-outlined t-dark">light_mode</span>
+        <span class="material-symbols-outlined t-light" aria-hidden="true" data-icon="dark_mode"></span>
+        <span class="material-symbols-outlined t-dark" aria-hidden="true" data-icon="light_mode"></span>
       </button>
-      <a class="nav-phone" href="tel:8336951214"><span class="material-symbols-outlined">call</span>833-695-1214</a> <a class="btn btn-solid" href="/schedule/">Let's Talk</a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <a class="nav-phone" href="tel:8336951214"><span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span>833-695-1214</a> <a class="btn btn-solid" href="/schedule/">Let's Talk</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </header>
 <div class="mobile-cta-bar">
-  <a class="mcb-call" href="tel:8336951214"><span class="material-symbols-outlined">call</span>Call</a>
-  <a class="mcb-book" href="/schedule/"><span class="material-symbols-outlined">calendar_month</span>Book Now</a>
+  <a class="mcb-call" href="tel:8336951214"><span class="material-symbols-outlined" aria-hidden="true" data-icon="call"></span>Call</a>
+  <a class="mcb-book" href="/schedule/"><span class="material-symbols-outlined" aria-hidden="true" data-icon="calendar_month"></span>Book Now</a>
 </div>
 
 <!-- ============ MOBILE NAV ============ -->
@@ -701,75 +707,77 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
         <img loading="eager" class="logo-light" src="/img/outworkem-digital-logo-light-bg.webp" width="650" height="112" alt="Outwork'em Digital">
         <img loading="eager" class="logo-dark"  src="/img/outworkem-digital-logo-dark-bg.webp" width="650" height="112"  alt="Outwork'em Digital">
       </a>
-      <button class="mob-close" id="mobClose" aria-label="Close"><span class="material-symbols-outlined">close</span></button>
+      <button class="mob-close" id="mobClose" aria-label="Close"><span class="material-symbols-outlined" aria-hidden="true" data-icon="close"></span></button>
     </div>
     <div class="mob-links">
       <a class="mob-link" href="/marketing-programs/">Pricing</a>
       <div>
-        <div class="mob-link mob-cs-toggle" id="mobCsToggle">Case Studies <span class="material-symbols-outlined mob-arr">expand_more</span></div>
+        <div class="mob-link mob-cs-toggle" id="mobCsToggle" role="button" tabindex="0" aria-expanded="false" aria-controls="mobCsSub">Case Studies <span class="material-symbols-outlined mob-arr" aria-hidden="true" data-icon="expand_more"></span></div>
         <div class="mob-sub" id="mobCsSub">
-          <a href="/case-studies/"><span class="drop-icon material-symbols-outlined">trending_up</span>All Case Studies</a>
-          <a href="/case-studies/comfort-one-air-conditioning-case-study/"><span class="drop-icon material-symbols-outlined">hvac</span>HVAC Contractor Case Study</a>
-          <a href="/case-studies/janecek-construction-remodeling-case-study/"><span class="drop-icon material-symbols-outlined">handyman</span>Remodeling Services Case Study</a>
-          <a href="/case-studies/pool-boys-case-study/"><span class="drop-icon material-symbols-outlined">pool</span>Pool Service Case Study</a>
-          <a href="/case-studies/desert-state-roofing-case-study/"><span class="drop-icon material-symbols-outlined">roofing</span>Roofing Services Case Study</a>
-          <a href="/case-studies/integrity-exterior-solutions-case-study/"><span class="drop-icon material-symbols-outlined">window</span>Windows & Exteriors Case Study</a>
+          <a href="/case-studies/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="trending_up"></span>All Case Studies</a>
+          <a href="/case-studies/comfort-one-air-conditioning-case-study/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="hvac"></span>HVAC Contractor Case Study</a>
+          <a href="/case-studies/janecek-construction-remodeling-case-study/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="handyman"></span>Remodeling Services Case Study</a>
+          <a href="/case-studies/pool-boys-case-study/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="pool"></span>Pool Service Case Study</a>
+          <a href="/case-studies/desert-state-roofing-case-study/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="roofing"></span>Roofing Services Case Study</a>
+          <a href="/case-studies/integrity-exterior-solutions-case-study/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="window"></span>Windows & Exteriors Case Study</a>
         </div>
       </div>
       <div>
-        <div class="mob-link mob-svc-toggle" id="mobSvcToggle">Services <span class="material-symbols-outlined mob-arr">expand_more</span></div>
+        <div class="mob-link mob-svc-toggle" id="mobSvcToggle" role="button" tabindex="0" aria-expanded="false" aria-controls="mobSub">Services <span class="material-symbols-outlined mob-arr" aria-hidden="true" data-icon="expand_more"></span></div>
         <div class="mob-sub" id="mobSub">
-          <a href="/marketing-services/"><span class="drop-icon material-symbols-outlined">grid_view</span>All Services</a>
-          <a href="/marketing-services/media-content-production/"><span class="drop-icon material-symbols-outlined">videocam</span>Media &amp; Content</a>
-          <a href="/marketing-services/web-hosting-services/"><span class="drop-icon material-symbols-outlined">dns</span>Web Hosting</a>
-          <a href="/marketing-services/client-gifting-direct-mail/"><span class="drop-icon material-symbols-outlined">card_giftcard</span>Client Gifting</a>
-          <a href="/marketing-services/website-design-services/" class="current"><span class="drop-icon material-symbols-outlined">web</span>Website Design</a>
-          <a href="/marketing-services/organic-seo-services/"><span class="drop-icon material-symbols-outlined">search</span>Organic SEO</a>
-          <a href="/marketing-services/local-seo-services/"><span class="drop-icon material-symbols-outlined">pin_drop</span>Local SEO</a>
-          <a href="/marketing-services/ppc-advertising-services/"><span class="drop-icon material-symbols-outlined">ads_click</span>Pay-Per-Click Ads</a>
-          <a href="/marketing-services/local-services-ads-2/"><span class="drop-icon material-symbols-outlined">storefront</span>Local Services Ads</a>
-          <a href="/marketing-services/reputation-management-services/"><span class="drop-icon material-symbols-outlined">star_rate</span>Reputation Mgmt</a>
-          <a href="/podcast/"><span class="drop-icon material-symbols-outlined">mic</span>Podcast</a>
+          <a href="/marketing-services/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="grid_view"></span>All Services</a>
+          <a href="/marketing-services/media-content-production/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="videocam"></span>Media &amp; Content</a>
+          <a href="/marketing-services/web-hosting-services/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="dns"></span>Web Hosting</a>
+          <a href="/marketing-services/client-gifting-direct-mail/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="card_giftcard"></span>Client Gifting</a>
+          <a href="/marketing-services/website-design-services/" class="current"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="web"></span>Website Design</a>
+          <a href="/marketing-services/organic-seo-services/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="search"></span>Organic SEO</a>
+          <a href="/marketing-services/local-seo-services/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="pin_drop"></span>Local SEO</a>
+          <a href="/marketing-services/ppc-advertising-services/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="ads_click"></span>Pay-Per-Click Ads</a>
+          <a href="/marketing-services/local-services-ads-2/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="storefront"></span>Local Services Ads</a>
+          <a href="/marketing-services/reputation-management-services/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="star_rate"></span>Reputation Mgmt</a>
+          <a href="/podcast/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="mic"></span>Podcast</a>
         </div>
       </div>
       <a class="mob-link" href="/our-work/">Our Work</a>
       <a class="mob-link" href="/who-we-serve/">Who We Serve</a>
       <div>
-        <div class="mob-link mob-ab-toggle" id="mobAbToggle">About Us <span class="material-symbols-outlined mob-arr">expand_more</span></div>
+        <div class="mob-link mob-ab-toggle" id="mobAbToggle" role="button" tabindex="0" aria-expanded="false" aria-controls="mobAbSub">About Us <span class="material-symbols-outlined mob-arr" aria-hidden="true" data-icon="expand_more"></span></div>
         <div class="mob-sub" id="mobAbSub">
-          <a href="/about-us/"><span class="drop-icon material-symbols-outlined">info</span>About Outwork'em</a>
-          <a href="/about-us/meet-the-team/"><span class="drop-icon material-symbols-outlined">diversity_3</span>Meet the Team</a>
-          <a href="/about-us/news/"><span class="drop-icon material-symbols-outlined">newspaper</span>News</a>
-          <a href="/home-service-marketing-academy/"><span class="drop-icon material-symbols-outlined">menu_book</span>Blog</a>
+          <a href="/about-us/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="info"></span>About Outwork'em</a>
+          <a href="/about-us/meet-the-team/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="diversity_3"></span>Meet the Team</a>
+          <a href="/about-us/news/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="newspaper"></span>News</a>
+          <a href="/home-service-marketing-academy/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="menu_book"></span>Blog</a>
         </div>
       </div>
     </div>
     <div class="mob-footer">
-      <a class="btn-cta" href="/schedule/">Let's Talk <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span></a>
+      <a class="btn-cta" href="/schedule/">Let's Talk <span class="material-symbols-outlined" style="font-size:18px" aria-hidden="true" data-icon="arrow_forward"></span></a>
       <div class="mob-theme-row">
         <span>Dark Mode</span>
         <button class="theme-toggle" id="themeToggleMob" aria-label="Toggle theme">
-          <span class="material-symbols-outlined t-light">dark_mode</span>
-          <span class="material-symbols-outlined t-dark">light_mode</span>
+          <span class="material-symbols-outlined t-light" aria-hidden="true" data-icon="dark_mode"></span>
+          <span class="material-symbols-outlined t-dark" aria-hidden="true" data-icon="light_mode"></span>
         </button>
       </div>
     </div>
   </div>
 </div>
+<main id="main">
+
 
 <!-- ============ 1 · PAGE HERO ============ -->
 <section class="page-hero wrap">
   <div class="page-hero-grid">
     <div>
       <div class="svc-chip">
-        <span class="material-symbols-outlined">web</span>
+        <span class="material-symbols-outlined" aria-hidden="true" data-icon="web"></span>
         Website Design
       </div>
       <h1>Professional Website Design for Home Service Companies</h1>
       <p class="lead">Your website is your top salesperson, and it works 24/7. We build contractor websites that load fast, rank on Google, and turn visitors into booked jobs.</p>
       <a class="btn-cta" href="/schedule/">
         Get a Free Website Audit
-        <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
+        <span class="material-symbols-outlined" style="font-size:18px" aria-hidden="true" data-icon="arrow_forward"></span>
       </a>
     </div>
     <div class="ph page-hero-img filled" style="background-image:url('/img/ryan-jana167854.webp');background-position:center center"></div>
@@ -892,7 +900,7 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
       <button class="acc-trigger">
         <span class="acc-n">01</span>
         <span class="acc-head">Your site loads too slowly, and Google punishes you for it</span>
-        <span class="material-symbols-outlined acc-icon">expand_more</span>
+        <span class="material-symbols-outlined acc-icon" aria-hidden="true" data-icon="expand_more"></span>
       </button>
       <div class="acc-body">
         <div class="acc-inner">
@@ -905,7 +913,7 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
       <button class="acc-trigger">
         <span class="acc-n">02</span>
         <span class="acc-head">You're invisible in local search, your competitor gets the call</span>
-        <span class="material-symbols-outlined acc-icon">expand_more</span>
+        <span class="material-symbols-outlined acc-icon" aria-hidden="true" data-icon="expand_more"></span>
       </button>
       <div class="acc-body">
         <div class="acc-inner">
@@ -918,7 +926,7 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
       <button class="acc-trigger">
         <span class="acc-n">03</span>
         <span class="acc-head">Visitors can't tell what you do or where to call you</span>
-        <span class="material-symbols-outlined acc-icon">expand_more</span>
+        <span class="material-symbols-outlined acc-icon" aria-hidden="true" data-icon="expand_more"></span>
       </button>
       <div class="acc-body">
         <div class="acc-inner">
@@ -931,7 +939,7 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
       <button class="acc-trigger">
         <span class="acc-n">04</span>
         <span class="acc-head">Your site looks broken on mobile, where 70% of your leads come from</span>
-        <span class="material-symbols-outlined acc-icon">expand_more</span>
+        <span class="material-symbols-outlined acc-icon" aria-hidden="true" data-icon="expand_more"></span>
       </button>
       <div class="acc-body">
         <div class="acc-inner">
@@ -944,7 +952,7 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
       <button class="acc-trigger">
         <span class="acc-n">05</span>
         <span class="acc-head">You're paying for ads that send traffic to a page that doesn't convert</span>
-        <span class="material-symbols-outlined acc-icon">expand_more</span>
+        <span class="material-symbols-outlined acc-icon" aria-hidden="true" data-icon="expand_more"></span>
       </button>
       <div class="acc-body">
         <div class="acc-inner">
@@ -967,7 +975,7 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
   <div class="timeline-track">
 
     <div class="phase active">
-      <div class="phase-dot"><span class="material-symbols-outlined">foundation</span></div>
+      <div class="phase-dot"><span class="material-symbols-outlined" aria-hidden="true" data-icon="foundation"></span></div>
       <div class="phase-tag">Months 1–2</div>
       <h3>Foundation Phase</h3>
       <div class="phase-body">
@@ -983,7 +991,7 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
     </div>
 
     <div class="phase active">
-      <div class="phase-dot"><span class="material-symbols-outlined">rocket_launch</span></div>
+      <div class="phase-dot"><span class="material-symbols-outlined" aria-hidden="true" data-icon="rocket_launch"></span></div>
       <div class="phase-tag">Months 3–4</div>
       <h3>Acceleration Phase</h3>
       <div class="phase-body">
@@ -999,7 +1007,7 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
     </div>
 
     <div class="phase">
-      <div class="phase-dot"><span class="material-symbols-outlined">trending_up</span></div>
+      <div class="phase-dot"><span class="material-symbols-outlined" aria-hidden="true" data-icon="trending_up"></span></div>
       <div class="phase-tag">Months 5–6</div>
       <h3>Breakthrough Phase</h3>
       <div class="phase-body">
@@ -1028,44 +1036,44 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
   <div class="program-grid">
 
     <div class="prog-card">
-      <div class="prog-ic"><span class="material-symbols-outlined">web_asset</span></div>
+      <div class="prog-ic"><span class="material-symbols-outlined" aria-hidden="true" data-icon="web_asset"></span></div>
       <h3>Home Service Website Foundation</h3>
       <ul class="prog-list">
-        <li><span class="material-symbols-outlined">check_circle</span>Custom design tailored to your brand</li>
-        <li><span class="material-symbols-outlined">check_circle</span>WordPress development on proven framework</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Mobile-first responsive build</li>
-        <li><span class="material-symbols-outlined">check_circle</span>On-page SEO &amp; schema markup</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Core Web Vitals optimization</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Lead capture forms &amp; click-to-call</li>
-        <li><span class="material-symbols-outlined">check_circle</span>SSL, hosting setup &amp; security</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Custom design tailored to your brand</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>WordPress development on proven framework</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Mobile-first responsive build</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>On-page SEO &amp; schema markup</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Core Web Vitals optimization</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Lead capture forms &amp; click-to-call</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>SSL, hosting setup &amp; security</li>
       </ul>
     </div>
 
     <div class="prog-card">
-      <div class="prog-ic"><span class="material-symbols-outlined">tune</span></div>
+      <div class="prog-ic"><span class="material-symbols-outlined" aria-hidden="true" data-icon="tune"></span></div>
       <h3>Marketing &amp; Optimization</h3>
       <ul class="prog-list">
-        <li><span class="material-symbols-outlined">check_circle</span>Google Analytics 4 configuration</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Google Search Console setup</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Heat mapping &amp; session recording</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Monthly CRO review &amp; iteration</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Landing page A/B testing</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Service &amp; location page expansion</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Ad campaign landing page builds</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Analytics 4 configuration</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Search Console setup</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Heat mapping &amp; session recording</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Monthly CRO review &amp; iteration</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Landing page A/B testing</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Service &amp; location page expansion</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Ad campaign landing page builds</li>
       </ul>
     </div>
 
     <div class="prog-card">
-      <div class="prog-ic"><span class="material-symbols-outlined">bar_chart</span></div>
+      <div class="prog-ic"><span class="material-symbols-outlined" aria-hidden="true" data-icon="bar_chart"></span></div>
       <h3>Tracking &amp; Reporting</h3>
       <ul class="prog-list">
-        <li><span class="material-symbols-outlined">check_circle</span>Monthly performance reports</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Call tracking integration</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Form submission &amp; lead tracking</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Keyword ranking reports</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Traffic &amp; conversion dashboards</li>
-        <li><span class="material-symbols-outlined">check_circle</span>ROI attribution by channel</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Quarterly strategy review calls</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Monthly performance reports</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Call tracking integration</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Form submission &amp; lead tracking</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Keyword ranking reports</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Traffic &amp; conversion dashboards</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>ROI attribution by channel</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Quarterly strategy review calls</li>
       </ul>
     </div>
 
@@ -1101,7 +1109,7 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
         <p>Every business is different and results will vary, but the trajectory is consistent: a professionally built, strategically optimized website pays for itself. Usually faster than you expect.</p>
         <a class="btn-cta" href="/our-work/">
           See Our Work
-          <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
+          <span class="material-symbols-outlined" style="font-size:18px" aria-hidden="true" data-icon="arrow_forward"></span>
         </a>
       </div>
     </div>
@@ -1166,22 +1174,22 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
       <h3>How We Structure Our Engagements</h3>
       <p>We don't believe in locking clients into long-term contracts they can't get out of. Our website projects are priced transparently. You'll know exactly what you're investing before we start.</p>
       <ul class="fin-list">
-        <li><span class="material-symbols-outlined">check_circle</span>Custom-quoted based on your site scope and goals</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Setup investment covers design, development, and launch</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Optional monthly management for ongoing optimization</li>
-        <li><span class="material-symbols-outlined">check_circle</span>No hidden fees, no surprise invoices</li>
-        <li><span class="material-symbols-outlined">check_circle</span>Detailed proposal provided before any commitment</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Custom-quoted based on your site scope and goals</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Setup investment covers design, development, and launch</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Optional monthly management for ongoing optimization</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>No hidden fees, no surprise invoices</li>
+        <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Detailed proposal provided before any commitment</li>
       </ul>
       <a class="btn-cta" href="/schedule/">
         Book a Discovery Call
-        <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
+        <span class="material-symbols-outlined" style="font-size:18px" aria-hidden="true" data-icon="arrow_forward"></span>
       </a>
     </div>
 
     <div class="fin-card guarantee">
       <h3>Our No-Risk Guarantee</h3>
       <div class="guarantee-badge">
-        <span class="material-symbols-outlined">verified_user</span>
+        <span class="material-symbols-outlined" aria-hidden="true" data-icon="verified_user"></span>
         <p>We stand behind every website we build, 100%.</p>
       </div>
       <p>We're not satisfied until you are. If you're not happy with the design direction after the first round of mockups, we'll go back to the drawing board, at no additional cost.</p>
@@ -1199,12 +1207,13 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
     <p>Book a free discovery call and we'll audit your current site, identify what's costing you leads, and show you exactly what we'd do differently.</p>
     <a class="btn-cta" href="/schedule/">
       Book a Free Website Audit
-      <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
+      <span class="material-symbols-outlined" style="font-size:18px" aria-hidden="true" data-icon="arrow_forward"></span>
     </a>
   </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
+</main>
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
@@ -1274,20 +1283,32 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
     mobClose=document.getElementById('mobClose'),mobOverlay=document.getElementById('mobOverlay'),
     mobSvcToggle=document.getElementById('mobSvcToggle'),mobSub=document.getElementById('mobSub'),
     themeToggleMob=document.getElementById('themeToggleMob');
-  function openMob(){if(mobileNav)mobileNav.classList.add('open');if(hamburger)hamburger.classList.add('open');document.body.style.overflow='hidden';}
-  function closeMob(){if(mobileNav)mobileNav.classList.remove('open');if(hamburger)hamburger.classList.remove('open');document.body.style.overflow='';}
+  function openMob(){if(mobileNav)mobileNav.classList.add('open');if(hamburger){hamburger.classList.add('open');hamburger.setAttribute('aria-expanded','true');}document.body.style.overflow='hidden';}
+  function closeMob(){if(mobileNav)mobileNav.classList.remove('open');if(hamburger){hamburger.classList.remove('open');hamburger.setAttribute('aria-expanded','false');}document.body.style.overflow='';}
   if(hamburger) hamburger.addEventListener('click',openMob);
   if(mobClose) mobClose.addEventListener('click',closeMob);
   if(mobOverlay) mobOverlay.addEventListener('click',closeMob);
-  if(mobSvcToggle) mobSvcToggle.addEventListener('click',function(){mobSvcToggle.classList.toggle('open');if(mobSub)mobSub.classList.toggle('open');});
+  if(mobSvcToggle) mobSvcToggle.addEventListener('click',function(){
+    var open = !mobSvcToggle.classList.contains('open');
+    mobSvcToggle.classList.toggle('open', open);
+    mobSvcToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if(mobSub) mobSub.classList.toggle('open', open);
+  });
   var mobCsToggle=document.getElementById('mobCsToggle');
   var mobCsSub=document.getElementById('mobCsSub');
-  if(mobCsToggle) mobCsToggle.addEventListener('click',function(){mobCsToggle.classList.toggle('open');if(mobCsSub)mobCsSub.classList.toggle('open');});
+  if(mobCsToggle) mobCsToggle.addEventListener('click',function(){
+    var open = !mobCsToggle.classList.contains('open');
+    mobCsToggle.classList.toggle('open', open);
+    mobCsToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if(mobCsSub) mobCsSub.classList.toggle('open', open);
+  });
   var mobAbToggle=document.getElementById('mobAbToggle');
   var mobAbSub=document.getElementById('mobAbSub');
   if(mobAbToggle) mobAbToggle.addEventListener('click',function(){
-    mobAbToggle.classList.toggle('open');
-    if(mobAbSub) mobAbSub.classList.toggle('open');
+    var open = !mobAbToggle.classList.contains('open');
+    mobAbToggle.classList.toggle('open', open);
+    mobAbToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if(mobAbSub) mobAbSub.classList.toggle('open', open);
   });
   if(themeToggleMob) themeToggleMob.addEventListener('click',function(){
     var isDark=html.getAttribute('data-theme')==='dark';
@@ -1297,15 +1318,28 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
   });
 
   /* nav dropdown */
+  function setDrop(item, open){
+    item.classList.toggle('open', open);
+    var t = item.querySelector(':scope > a') || item.querySelector('a');
+    if(t) t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
   var navItems=[].slice.call(document.querySelectorAll('.nav-item'));
   navItems.forEach(function(item){
-    item.querySelector(':scope > a').addEventListener('click',function(e){
-      e.stopPropagation();var isOpen=item.classList.contains('open');
-      navItems.forEach(function(i){i.classList.remove('open');});
-      if(!isOpen) item.classList.add('open');
+    var trigger = item.querySelector(':scope > a') || item.querySelector('a');
+    if(!trigger) return;
+    trigger.setAttribute('aria-expanded','false');
+    trigger.setAttribute('aria-haspopup','true');
+    trigger.addEventListener('keydown', function(e){
+      if(e.key==='Enter' || e.key===' '){ e.preventDefault(); trigger.click(); }
+    });
+    trigger.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isOpen = item.classList.contains('open');
+      navItems.forEach(function(i){ setDrop(i, false); });
+      if(!isOpen) setDrop(item, true);
     });
   });
-  document.addEventListener('click',function(){navItems.forEach(function(i){i.classList.remove('open');});});
+  document.addEventListener('click', function(){ navItems.forEach(function(i){ setDrop(i, false); }); });
 
   /* accordion */
   var accItems=[].slice.call(document.querySelectorAll('.acc-item'));
@@ -1329,10 +1363,12 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
     var sibs=[].slice.call(el.parentElement.children).filter(function(c){return c.classList.contains('reveal');});
     var i=sibs.indexOf(el);if(i>0) el.style.setProperty('--d',(i*80)+'ms');
   });
+  [].slice.call(document.querySelectorAll('.reveal')).forEach(function(el){ if(items.indexOf(el)<0) items.push(el); });
+  items.forEach(function(el){ var r=el.getBoundingClientRect(); if(r.top<window.innerHeight&&r.bottom>0) el.classList.add('in'); });
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
   },{threshold:0.10,rootMargin:'0px 0px -6% 0px'});
-  items.forEach(function(el){io.observe(el);});
+  items.forEach(function(el){ if(!el.classList.contains('in')) io.observe(el); });
 })();
 </script>
 
