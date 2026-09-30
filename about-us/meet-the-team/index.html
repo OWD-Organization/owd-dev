@@ -171,7 +171,18 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
 .skip-link{position:absolute;left:12px;top:8px;z-index:10001;padding:10px 16px;border-radius:8px;background:#0D2E58;color:#fff;font-family:Poppins,sans-serif;font-size:14px;font-weight:600;text-decoration:none;transform:translateY(-160%)}
 .skip-link:focus{transform:none}
 .material-symbols-outlined[data-icon]::before{content:attr(data-icon);font-feature-settings:'liga';-webkit-font-feature-settings:'liga'}
+.hamburger,.theme-toggle,.mob-close{width:44px;height:44px}
+.logo,.mob-head>a{min-height:44px}
+.mob-head>a{display:flex;align-items:center}
+.mob-link,.mob-sub a{min-height:44px;box-sizing:border-box}
+a.f-social{width:44px;height:44px;text-decoration:none}
+.f-col a{display:flex;align-items:center;min-height:44px}
+.footer-bottom .legal a,.f-phone a,.footer-contact a{display:inline-flex;align-items:center;min-height:44px}
+.svc-more{display:inline-flex;align-items:center;min-height:24px}
 </style>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicon-512.png" sizes="512x512">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -455,9 +466,9 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
         <div class="f-phone"><a href="tel:8336951214" style="color:inherit;text-decoration:none">833-695-1214</a></div>
         <a class="f-cta" href="/schedule/">Book Discovery Call</a>
         <div class="f-socials">
-          <span class="f-social">IG</span>
-          <span class="f-social">f</span>
-          <span class="f-social">▶</span>
+          <a class="f-social" href="https://www.instagram.com/outworkem.digital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+          <a class="f-social" href="https://www.facebook.com/outworkem.digital" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+          <a class="f-social" href="https://www.youtube.com/@outworkem.digital" target="_blank" rel="noopener noreferrer" aria-label="YouTube">&#9654;</a>
         </div>
       </div>
       <div class="footer-contact">
