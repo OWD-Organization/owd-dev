@@ -69,7 +69,7 @@ still have to report defects you find, not only report success.
 - Analytics tags (Google Ads, Meta Pixel, Microsoft Clarity) are already
   ported from WordPress, **with the same `*.vercel.app` host guard** applied
   in JS (a header cannot do this, because the script has to be injected
-  conditionally). See the `<script>` block right after Feedbucket on any page.
+  conditionally). See the analytics `<script>` block in the head of any page.
 
 ## 4. Real status of the Dev Tracker (43 rows: ID 1-38 + L1-L5)
 
@@ -87,7 +87,7 @@ live WordPress site (via RankMath, and so on), not on this new build.
 | 5 | Partial. The tracker did not ask for it this way. | Pixels ARE ported (Ads, Meta, Clarity) with a host guard, but **not inside a GTM container** as the fix asks. They load directly. The GTM container is still missing if they insist on that architecture, and the GHL iframe submit on `/schedule/` still needs to be verified. |
 | 6 | Open | Redirects for old indexed URLs. `docs/url-map.md` DOES exist (it is not uploaded on deploy because of `.vercelignore`, but it is in the repo) and lists the exact 9 production URLs that are indexed and have no page in this build: `/verified-support/`, `/careers/`, `/workshops/`, `/outwork-em-podcast/`, `/trial/`, `/guides/`, `/news/reddit-chatgpt-citation-drop-ai-search/`, `/news/outworkem-digital-co-founder-thomas-eberts-achieves-clickfunnels-2-comma-club-award/`, `/news/thomas-eberts-featured-in-forbes-alongside-jordan-belfort/`. The tracker fix asks to rebuild the Forbes and Reddit/ChatGPT posts as real pages (they are trust and AI search assets) and to decide redirect vs. new page for the rest. The original Sheet's "301 Redirect Map" tab is still missing, so the destination for each URL is unknown. It did not come in this CSV export. Ask for it if needed. |
 | 7 | Done, deployed | 99 images downloaded from WordPress into `/img`, converted to WebP, references repointed. (The tracker said 138. The real count of unique files was 99 across 156 references.) |
-| 8 | Open, waiting on the user | Feedbucket is still on all 58 pages. The tracker says remove it **before production**. The user is actively using it to get feedback from Ryan and Jana, so removing it today would cut that channel. **Do not remove it without confirming with the user first.** It probably comes off only on the real launch day. |
+| 8 | Done | Feedbucket script removed from all pages at the user's request. |
 | 9 | **CSV says Done. That is false.** | `robots.txt`, `sitemap.xml`, and `404.html` do not exist in the repo. Still 100% open. |
 | 10 | Done, deployed | `.vercelignore` keeps these out of the deploy: `docs/`, `*.md`, `*.csv`, `inspiration/`, `wireframe-dark.html`, `web-design-page.pdf`, `stdout`, `.vscode/` |
 | 11-13 | Open | Not reviewed yet in this session |
