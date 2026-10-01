@@ -36,6 +36,166 @@
       "source": "/news/jana-kearney-joins-top-seer-marketers-full-time-as-creative-director",
       "destination": "/news/jana-kearney-joins-outworkem-digital-full-time-as-creative-director/",
       "permanent": true
+    },
+    {
+      "source": "/verified-support/",
+      "destination": "/marketing-programs/",
+      "permanent": true
+    },
+    {
+      "source": "/verified-support",
+      "destination": "/marketing-programs/",
+      "permanent": true
+    },
+    {
+      "source": "/careers/",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
+      "source": "/careers",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
+      "source": "/workshops/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/workshops",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/outwork-em-podcast/",
+      "destination": "/podcast/",
+      "permanent": true
+    },
+    {
+      "source": "/outwork-em-podcast",
+      "destination": "/podcast/",
+      "permanent": true
+    },
+    {
+      "source": "/trial/",
+      "destination": "/marketing-programs/",
+      "permanent": true
+    },
+    {
+      "source": "/trial",
+      "destination": "/marketing-programs/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/guides",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/news/outworkem-digital-co-founder-thomas-eberts-achieves-clickfunnels-2-comma-club-award/",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/news/outworkem-digital-co-founder-thomas-eberts-achieves-clickfunnels-2-comma-club-award",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/pool-boys-case-study/",
+      "destination": "/case-studies/pool-boys-case-study/",
+      "permanent": true
+    },
+    {
+      "source": "/pool-boys-case-study",
+      "destination": "/case-studies/pool-boys-case-study/",
+      "permanent": true
+    },
+    {
+      "source": "/desert-state-roofing-case-study/",
+      "destination": "/case-studies/desert-state-roofing-case-study/",
+      "permanent": true
+    },
+    {
+      "source": "/desert-state-roofing-case-study",
+      "destination": "/case-studies/desert-state-roofing-case-study/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing-programs/",
+      "destination": "/marketing-programs/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing-programs",
+      "destination": "/marketing-programs/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/hvac-website-design-services/",
+      "destination": "/marketing-services/website-design-services/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/hvac-website-design-services",
+      "destination": "/marketing-services/website-design-services/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/hvac-seo-services/",
+      "destination": "/marketing-services/organic-seo-services/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/hvac-seo-services",
+      "destination": "/marketing-services/organic-seo-services/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/hvac-local-seo-services/",
+      "destination": "/marketing-services/local-seo-services/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/hvac-local-seo-services",
+      "destination": "/marketing-services/local-seo-services/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/hvac-ppc-advertising-services/",
+      "destination": "/marketing-services/ppc-advertising-services/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/hvac-ppc-advertising-services",
+      "destination": "/marketing-services/ppc-advertising-services/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/hvac-local-services-ads/",
+      "destination": "/marketing-services/local-services-ads-2/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/hvac-local-services-ads",
+      "destination": "/marketing-services/local-services-ads-2/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/hvac-reputation-management-services/",
+      "destination": "/marketing-services/reputation-management-services/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/hvac-reputation-management-services",
+      "destination": "/marketing-services/reputation-management-services/",
+      "permanent": true
     }
   ]
 }
