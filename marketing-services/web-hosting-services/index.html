@@ -48,13 +48,13 @@
 })();
 </script>
 <title>Web Hosting for Contractors | Outwork'em Digital</title>
-<meta name="description" content="Fast, secure WordPress hosting built for home service contractor websites. Free migration, SSL, daily backups, and U.S.-based support. Plans starting at $29/mo.">
+<meta name="description" content="Fast, secure WordPress hosting built for home service contractor websites. Free migration, SSL, daily backups, and U.S.-based support. Plans from $99/mo, month-to-month with 30 days&#39; notice.">
 <link rel="canonical" href="https://outworkemdigital.com/marketing-services/web-hosting-services/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Outwork&#39;em Digital">
 <meta property="og:url" content="https://outworkemdigital.com/marketing-services/web-hosting-services/">
 <meta property="og:title" content="Web Hosting for Contractors | Outwork'em Digital">
-<meta property="og:description" content="Fast, secure WordPress hosting built for home service contractor websites. Free migration, SSL, daily backups, and U.S.-based support. Plans starting at $29/mo.">
+<meta property="og:description" content="Fast, secure WordPress hosting built for home service contractor websites. Free migration, SSL, daily backups, and U.S.-based support. Plans from $99/mo, month-to-month with 30 days&#39; notice.">
 <meta property="og:image" content="https://outworkemdigital.com/img/og-default.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -434,6 +434,23 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
   color:var(--tick-c);font-weight:700;font-family:var(--head)}
 .price-card .btn-cta{justify-content:center;
   background:var(--btn-bg);border-color:var(--btn-bd);color:var(--btn-c)}
+.price-features li.price-x{color:var(--copy-c);font-style:italic}
+.price-features li.price-x::before{content:"\2715";color:var(--copy-c)}
+.price-amount span.pa-num{font:inherit;color:inherit;margin-left:0}
+.price-alt{font-family:var(--head);font-size:12px;letter-spacing:.02em;color:var(--copy-c);margin-bottom:12px}
+.price-terms{text-align:center;font-family:var(--head);font-size:13px;color:var(--muted);margin-top:28px}
+/* Monthly / Yearly switch. Rendered hidden; the script reveals it, so with
+   JS off the page simply shows the monthly prices and monthly links. */
+.billing-toggle{display:flex;justify-content:center;margin:0 auto 32px}
+.billing-toggle[hidden]{display:none}
+.billing-toggle .bt-track{display:inline-flex;gap:4px;padding:4px;border:1px solid var(--edge-warm);
+  border-radius:999px;background:var(--grad-warm)}
+.billing-toggle button{font-family:var(--head);font-size:13px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;border:0;border-radius:999px;padding:10px 22px;min-height:44px;cursor:pointer;
+  background:transparent;color:var(--on-warm)}
+.billing-toggle button[aria-pressed="true"]{background:var(--navy-600);color:var(--on-bold)}
+.billing-toggle button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media (prefers-reduced-motion:reduce){
   .price-card{transition:none} .price-card:hover{transform:none}
 }
@@ -899,67 +916,74 @@ a.f-social{width:44px;height:44px;text-decoration:none}
   <div class="section-head center">
     <div class="kicker" style="justify-content:center"><span class="label">Hosting Plans</span></div>
     <h2>Simple Plans. No Surprises. No Hidden Fees.</h2>
-    <p class="lead" style="margin:0 auto">Pick the plan that fits your business. All plans include free migration, SSL, and U.S.-based support from our team.</p>
+    <p class="lead" style="margin:0 auto">Pick the plan that fits your business. All plans include free migration, SSL, and U.S.-based support from our team. Month-to-month, cancel with 30 days&#8217; notice.</p>
   </div>
+
+  <div class="billing-toggle" id="billingToggle" hidden>
+    <div class="bt-track" role="group" aria-label="Billing period">
+      <button type="button" data-period="monthly" aria-pressed="true">Monthly</button>
+      <button type="button" data-period="yearly" aria-pressed="false">Yearly</button>
+    </div>
+  </div>
+  <p class="sr-only" id="billingStatus" aria-live="polite"></p>
 
   <div class="price-grid">
 
-    <!-- STARTER -->
-    <div class="price-card">
-      <div class="price-name">Starter</div>
-      <div class="price-amount">$29<span>/mo</span></div>
-      <p class="price-blurb">Perfect for new contractor websites getting started.</p>
+    <!-- ESSENTIAL -->
+    <div class="price-card" data-plan="essential">
+      <div class="price-name">Essential Hosting</div>
+      <div class="price-amount"><span class="pa-num" data-monthly="$99" data-yearly="$990">$99</span><span class="pa-per" data-monthly="/mo" data-yearly="/yr">/mo</span></div>
+      <div class="price-alt" data-monthly="or $990/yr billed yearly" data-yearly="or $99/mo billed monthly">or $990/yr billed yearly</div>
+      <p class="price-blurb">Managed, secure hosting with updates and backups handled for you.</p>
       <ul class="price-features">
-        <li>1 Website</li>
-        <li>10 GB SSD Storage</li>
-        <li>Free SSL Certificate</li>
-        <li>Daily Backups</li>
-        <li>99.9% Uptime Guarantee</li>
-        <li>Email Support</li>
+        <li>Managed hosting on premium high-speed servers</li>
+        <li>SSL certificate</li>
+        <li>Security firewall and malware protection</li>
+        <li>Daily automatic backups</li>
+        <li>Uptime monitoring</li>
+        <li>WordPress, theme, and plugin updates</li>
+        <li>Malware cleanup and site recovery</li>
+        <li class="price-x">No content or design edits (billed hourly)</li>
       </ul>
-      <a class="btn-cta" href="/schedule/">Get Started</a>
+      <a class="btn-cta" href="https://buy.stripe.com/eVq14ndym7UyboP3oCgIo04" data-monthly="https://buy.stripe.com/eVq14ndym7UyboP3oCgIo04" data-yearly="https://buy.stripe.com/5kQbJ10LA5MqfF5f7kgIo05" aria-label="Get started with Essential Hosting, billed monthly">Get Started</a>
     </div>
 
-    <!-- GROWTH (featured) -->
-    <div class="price-card featured">
-      <span class="price-ribbon">Most Popular</span>
-      <div class="price-name">Growth</div>
-      <div class="price-amount">$59<span>/mo</span></div>
-      <p class="price-blurb">Built for active contractor sites with growing traffic.</p>
+    <!-- CARE -->
+    <div class="price-card featured" data-plan="care">
+      <span class="price-ribbon">Recommended</span>
+      <div class="price-name">Website Care</div>
+      <div class="price-amount"><span class="pa-num" data-monthly="$179" data-yearly="$1,790">$179</span><span class="pa-per" data-monthly="/mo" data-yearly="/yr">/mo</span></div>
+      <div class="price-alt" data-monthly="or $1,790/yr billed yearly" data-yearly="or $179/mo billed monthly">or $1,790/yr billed yearly</div>
+      <p class="price-blurb">Everything in Essential, plus monthly edits, checks and reporting.</p>
       <ul class="price-features">
-        <li>3 Websites</li>
-        <li>30 GB SSD Storage</li>
-        <li>Free SSL Certificate</li>
-        <li>Daily Backups</li>
-        <li>Priority Support</li>
-        <li>Malware Scanning &amp; Removal</li>
-        <li>Free Site Migration</li>
-        <li>Staging Environment</li>
+        <li>Everything in Essential Hosting</li>
+        <li>Up to 60 min/mo of content or design edits</li>
+        <li>Monthly speed and security check</li>
+        <li>Monthly report on updates, backups, and uptime</li>
+        <li>Next-business-day response</li>
       </ul>
-      <a class="btn-cta" href="/schedule/">Get Started</a>
+      <a class="btn-cta" href="https://buy.stripe.com/28E28r79Y8YCboPf7kgIo06" data-monthly="https://buy.stripe.com/28E28r79Y8YCboPf7kgIo06" data-yearly="https://buy.stripe.com/7sY4gzeCq8YCakLf7kgIo07" aria-label="Get started with Website Care, billed monthly">Get Started</a>
     </div>
 
-    <!-- PRO -->
-    <div class="price-card">
-      <div class="price-name">Pro</div>
-      <div class="price-amount">$99<span>/mo</span></div>
-      <p class="price-blurb">For established contractors running high-traffic, lead-generating sites.</p>
+    <!-- PRIORITY -->
+    <div class="price-card" data-plan="priority">
+      <div class="price-name">Priority Care</div>
+      <div class="price-amount"><span class="pa-num" data-monthly="$299" data-yearly="$2,990">$299</span><span class="pa-per" data-monthly="/mo" data-yearly="/yr">/mo</span></div>
+      <div class="price-alt" data-monthly="or $2,990/yr billed yearly" data-yearly="or $299/mo billed monthly">or $2,990/yr billed yearly</div>
+      <p class="price-blurb">Everything in Essential, plus more edit time and same-day urgent response.</p>
       <ul class="price-features">
-        <li>Unlimited Websites</li>
-        <li>100 GB SSD Storage</li>
-        <li>Free SSL Certificate</li>
-        <li>Daily Backups</li>
-        <li>24/7 Priority Support</li>
-        <li>Advanced Malware Protection</li>
-        <li>Free Site Migration</li>
-        <li>Staging Environment</li>
-        <li>Performance Optimization</li>
-        <li>Dedicated Account Manager</li>
+        <li>Everything in Essential Hosting</li>
+        <li>Up to 2 hours/mo of edits, like new pages or seasonal promos</li>
+        <li>Monthly speed and security check</li>
+        <li>Monthly report</li>
+        <li>Quarterly SEO health check with broken-link fixes</li>
+        <li>Same-day response for urgent issues</li>
       </ul>
-      <a class="btn-cta" href="/schedule/">Get Started</a>
+      <a class="btn-cta" href="https://buy.stripe.com/5kQ5kD79Y6QuakLf7kgIo08" data-monthly="https://buy.stripe.com/5kQ5kD79Y6QuakLf7kgIo08" data-yearly="https://buy.stripe.com/14A00jdymcaO3Wnf7kgIo09" aria-label="Get started with Priority Care, billed monthly">Get Started</a>
     </div>
 
   </div>
+  <p class="price-terms">All hosting plans are month-to-month. Cancel any plan with 30 days&#8217; notice.</p>
 </section>
 
 <!-- ============ MIGRATION (split) ============ -->
@@ -1095,6 +1119,27 @@ a.f-social{width:44px;height:44px;text-decoration:none}
     });
   },{threshold:0.12, rootMargin:'0px 0px -6% 0px'});
   items.forEach(function(el){ if(!el.classList.contains('in')) io.observe(el); });
+
+  /* hosting billing toggle: monthly is the markup default */
+  var bt=document.getElementById('billingToggle');
+  if(bt){
+    var btStatus=document.getElementById('billingStatus');
+    var btBtns=[].slice.call(bt.querySelectorAll('button[data-period]'));
+    function setPeriod(period){
+      btBtns.forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-period')===period ? 'true':'false'); });
+      [].slice.call(document.querySelectorAll('.price-card [data-monthly]')).forEach(function(el){
+        var v=el.getAttribute('data-'+period);
+        if(el.tagName==='A'){
+          el.setAttribute('href', v);
+          var nm=el.closest('.price-card').querySelector('.price-name');
+          el.setAttribute('aria-label','Get started with '+(nm?nm.textContent:'this plan')+', billed '+period);
+        } else { el.textContent=v; }
+      });
+      if(btStatus) btStatus.textContent = period==='yearly' ? 'Showing yearly prices' : 'Showing monthly prices';
+    }
+    btBtns.forEach(function(b){ b.addEventListener('click', function(){ setPeriod(b.getAttribute('data-period')); }); });
+    bt.hidden=false;
+  }
 
   /* mobile nav */
   var hamburger=document.getElementById('hamburger');

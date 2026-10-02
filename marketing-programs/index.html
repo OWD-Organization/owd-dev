@@ -48,13 +48,13 @@
 })();
 </script>
 <title>Home Service Marketing Pricing | Outwork'em Digital</title>
-<meta name="description" content="Transparent pricing for home service digital marketing. Spark, Expand and Conquer programs start at $2,500/month. Built for HVAC and home service contractors.">
+<meta name="description" content="Transparent pricing for home service digital marketing. Local SEO from $350/month. Spark, Expand and Conquer growth programs from $2,500/month. Built for HVAC and home service contractors.">
 <link rel="canonical" href="https://outworkemdigital.com/marketing-programs/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Outwork&#39;em Digital">
 <meta property="og:url" content="https://outworkemdigital.com/marketing-programs/">
 <meta property="og:title" content="Home Service Marketing Pricing | Outwork'em Digital">
-<meta property="og:description" content="Transparent pricing for home service digital marketing. Spark, Expand and Conquer programs start at $2,500/month. Built for HVAC and home service contractors.">
+<meta property="og:description" content="Transparent pricing for home service digital marketing. Local SEO from $350/month. Spark, Expand and Conquer growth programs from $2,500/month. Built for HVAC and home service contractors.">
 <meta property="og:image" content="https://outworkemdigital.com/img/og-default.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -321,6 +321,11 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
 /* PROGRAM CARDS */
 .programs{padding-block:clamp(3.25rem,8vw,5rem)}
 .program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+/* Local SEO entry card makes four: four across on wide screens, two-by-two
+   between 1000px and 1200px, one column below 1000px (rule further down). */
+.program-grid.has-entry{grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:1200px){.program-grid.has-entry{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1000px){.program-grid.has-entry{grid-template-columns:1fr}}
 /* Warm on the outside, navy in the middle. Every coloured piece inside the card
    (name, price, features, icons, rule, button, badge) reads its value from the
    variant custom properties below, so the two fills stay one rule each. */
@@ -354,6 +359,17 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
 .prog-price .per{font-family:var(--head);font-size:14px;color:var(--copy-c)}
 .prog-sub{font-family:var(--head);font-size:11px;color:var(--copy-c);letter-spacing:.06em;
   text-transform:uppercase;margin-bottom:24px}
+.prog-sub:has(+ .prog-terms){margin-bottom:12px}
+.prog-terms{font-family:var(--head);font-size:12px;font-weight:600;line-height:1.45;color:var(--label-c);margin-bottom:8px}
+.prog-prepay{font-family:var(--head);font-size:12px;line-height:1.45;color:var(--copy-c);margin-bottom:24px;
+  padding:8px 10px;border:1px dashed var(--rule-c);border-radius:8px}
+.prog-prepay strong{color:var(--amount-c);font-weight:700}
+.prog-note{font-family:var(--head);font-size:12px;line-height:1.45;color:var(--copy-c);margin:-6px 0 20px}
+.program-grid.has-entry .prog-body{padding:26px 22px 0}
+.program-grid.has-entry .prog-footer{padding:20px 22px 24px}
+.program-grid.has-entry .prog-price{flex-wrap:wrap}
+.program-grid.has-entry .prog-price .amount{font-size:clamp(34px,3vw,42px)}
+@media(max-width:1200px){.program-grid.has-entry .prog-price .amount{font-size:44px}}
 .prog-features{list-style:none;border-top:1px solid var(--rule-c);padding-block:20px;display:flex;flex-direction:column;gap:10px}
 .prog-features li{display:flex;align-items:center;gap:10px;font-family:var(--head);
   font-size:13px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--amount-c)}
@@ -1017,14 +1033,36 @@ a.f-social{width:44px;height:44px;text-decoration:none}
     <h2>Growth Programs for Every Size</h2>
     <p class="lead">For guaranteed results and a solid return on investment, we sell our services as marketing programs exclusive to home service contractors.</p>
   </div>
-  <div class="program-grid">
+  <div class="program-grid has-entry">
+
+    <!-- LOCAL SEO (entry option) -->
+    <div class="prog-card reveal">
+      <div class="prog-body">
+        <div class="prog-name">Local SEO</div>
+        <div class="prog-price"><span class="amount">$350</span><span class="per">/month</span></div>
+        <div class="prog-sub">Google Business Profile + light website care</div>
+        <p class="prog-terms">Month-to-month &middot; 30 days&#8217; notice to cancel</p>
+        <p class="prog-prepay">Pay the year up front and save 10%: <strong>$3,780/yr</strong> ($315/mo)</p>
+        <ul class="prog-features">
+          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Business Profile Management</li>
+          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Light Website Review</li>
+          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Light Website Updates</li>
+        </ul>
+        <p class="prog-note">Website rebuilds and custom development are quoted separately.</p>
+      </div>
+      <div class="prog-footer">
+        <a href="/marketing-services/local-seo-services/" class="btn-cta">See All Features <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true" data-icon="arrow_forward"></span></a>
+      </div>
+    </div>
 
     <!-- SPARK -->
-    <div class="prog-card reveal">
+    <div class="prog-card reveal" style="--d:90ms">
       <div class="prog-body">
         <div class="prog-name">Spark Growth</div>
         <div class="prog-price"><span class="amount">$2,500</span><span class="per">/month</span></div>
         <div class="prog-sub">$0.5M – $1.5M annual revenue</div>
+        <p class="prog-terms">12-month commitment backs the results guarantee &middot; 30 days&#8217; notice to cancel</p>
+        <p class="prog-prepay">Pay the year up front and save 10%: <strong>$27,000/yr</strong> ($2,250/mo)</p>
         <ul class="prog-features">
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Custom Website Design</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Search Engine Optimization</li>
@@ -1041,12 +1079,14 @@ a.f-social{width:44px;height:44px;text-decoration:none}
     </div>
 
     <!-- EXPAND (featured) -->
-    <div class="prog-card featured reveal" style="--d:90ms">
+    <div class="prog-card featured reveal" style="--d:180ms">
       <div class="prog-badge">Most Popular</div>
       <div class="prog-body">
         <div class="prog-name">Expand Growth</div>
         <div class="prog-price"><span class="amount">$3,500</span><span class="per">/month</span></div>
         <div class="prog-sub">$1.5M – $5M annual revenue</div>
+        <p class="prog-terms">12-month commitment backs the results guarantee &middot; 30 days&#8217; notice to cancel</p>
+        <p class="prog-prepay">Pay the year up front and save 10%: <strong>$37,800/yr</strong> ($3,150/mo)</p>
         <ul class="prog-features">
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Custom Website Design</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Search Engine Optimization</li>
@@ -1063,11 +1103,13 @@ a.f-social{width:44px;height:44px;text-decoration:none}
     </div>
 
     <!-- CONQUER -->
-    <div class="prog-card reveal" style="--d:180ms">
+    <div class="prog-card reveal" style="--d:270ms">
       <div class="prog-body">
         <div class="prog-name">Conquer Growth</div>
-        <div class="prog-price"><span class="amount">$4,500+</span></div>
+        <div class="prog-price"><span class="amount">$4,500+</span><span class="per">/month</span></div>
         <div class="prog-sub">$5M – $10M annual revenue</div>
+        <p class="prog-terms">12-month commitment backs the results guarantee &middot; 30 days&#8217; notice to cancel</p>
+        <p class="prog-prepay">Pay the year up front and save 10%: <strong>$48,600+/yr</strong> ($4,050+/mo)</p>
         <ul class="prog-features">
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Custom Website Design</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Search Engine Optimization</li>
@@ -1386,7 +1428,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
     <div class="kicker"><span class="label">What's Included</span><span class="rule"></span></div>
     <h2>Our Comprehensive Growth Programs</h2>
   </div>
-  <p class="comp-intro reveal">We don't offer standalone services. A website alone is like an HVAC system without power, it might look great, but it won't deliver results. Every service we provide is part of a comprehensive growth program designed specifically for contractors.</p>
+  <p class="comp-intro reveal">A website alone is like an HVAC system without power, it might look great, but it won't deliver results. That's why our growth programs bring every service together into one comprehensive program designed specifically for contractors. Just getting started? Local SEO from $350/month covers Google Business Profile management plus a light website review and light updates.</p>
 
   <!-- Website Foundation -->
   <div class="comp-table-wrap reveal">
@@ -1492,7 +1534,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <ul class="fit-list">
         <li><span class="material-symbols-outlined bad-icon" aria-hidden="true" data-icon="cancel"></span>Companies wanting quick, temporary fixes</li>
         <li><span class="material-symbols-outlined bad-icon" aria-hidden="true" data-icon="cancel"></span>Businesses without a growth mindset</li>
-        <li><span class="material-symbols-outlined bad-icon" aria-hidden="true" data-icon="cancel"></span>Those who can't invest $2,500+ monthly</li>
+        <li><span class="material-symbols-outlined bad-icon" aria-hidden="true" data-icon="cancel"></span>Those not ready for $2,500+ monthly (start with <a href="/marketing-services/local-seo-services/" style="color:inherit">Local SEO from $350/month</a>)</li>
         <li><span class="material-symbols-outlined bad-icon" aria-hidden="true" data-icon="cancel"></span>Companies satisfied with the status quo</li>
         <li><span class="material-symbols-outlined bad-icon" aria-hidden="true" data-icon="cancel"></span>Short-term focused operations</li>
       </ul>
@@ -1510,9 +1552,11 @@ a.f-social{width:44px;height:44px;text-decoration:none}
     <table class="req-table">
       <thead><tr><th>Criteria</th><th>Requirement</th></tr></thead>
       <tbody>
-        <tr><td>Minimum Annual Marketing Budget</td><td>$35,000</td></tr>
-        <tr><td>Monthly Marketing Investment</td><td>Starts at $2,500</td></tr>
-        <tr><td>Minimum Commitment for Guaranteed Results</td><td>12 months</td></tr>
+        <tr><td>Local SEO</td><td>From $350/month, month-to-month</td></tr>
+        <tr><td>Growth Programs</td><td>From $2,500/month</td></tr>
+        <tr><td>Minimum Commitment for Guaranteed Results (Growth Programs)</td><td>12 months</td></tr>
+        <tr><td>Cancellation</td><td>30 days&#8217; written notice on every plan</td></tr>
+        <tr><td>Annual Prepay (Local SEO and Growth Programs)</td><td>10% off, paid up front</td></tr>
       </tbody>
     </table>
   </div>
@@ -1538,6 +1582,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
           <li><strong>Expand Growth ($3,500/mo):</strong> Designed for companies ($1.5M–$5M revenue) ready to accelerate. Combines organic and paid strategies for faster results.</li>
           <li><strong>Conquer Growth ($4,500+/mo):</strong> Built for companies ($5M–$10M revenue) targeting market domination with multi-area expansion.</li>
         </ul>
+        <p>Each growth program has a 12-month commitment that backs our results guarantee, with 30 days&#8217; notice to cancel. Pay the year up front and save 10%. Not ready for a full program? Local SEO starts at $350/month, month-to-month with 30 days&#8217; notice.</p>
       </div>
     </div>
     <div class="faq-item">
@@ -1546,7 +1591,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
         <span class="material-symbols-outlined" aria-hidden="true" data-icon="expand_more"></span>
       </div>
       <div class="faq-a">
-        <p>We recommend a minimum monthly investment of $2,500 to see consistent, measurable results. The right budget depends on your market size, competition level, and growth goals. During your free discovery call, we'll provide a custom recommendation based on your specific situation.</p>
+        <p>Local SEO starts at $350/month for Google Business Profile management plus a light website review and light updates. For consistent, measurable growth across every channel, we recommend a full growth program starting at $2,500/month. The right budget depends on your market size, competition level, and growth goals. During your free discovery call, we'll provide a custom recommendation based on your specific situation.</p>
       </div>
     </div>
     <div class="faq-item">
