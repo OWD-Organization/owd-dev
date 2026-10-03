@@ -48,13 +48,13 @@
 })();
 </script>
 <title>Web Hosting for Contractors | Outwork'em Digital</title>
-<meta name="description" content="Fast, secure WordPress hosting built for home service contractor websites. Free migration, SSL, daily backups, and U.S.-based support. Plans from $99/mo, month-to-month with 30 days&#39; notice.">
+<meta name="description" content="Fast, secure WordPress hosting built for home service contractor websites. Free migration, SSL, daily backups, and U.S.-based support. Plans from $99/mo. Monthly plans cancel any time with 30 days&#39; notice.">
 <link rel="canonical" href="https://outworkemdigital.com/marketing-services/web-hosting-services/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Outwork&#39;em Digital">
 <meta property="og:url" content="https://outworkemdigital.com/marketing-services/web-hosting-services/">
 <meta property="og:title" content="Web Hosting for Contractors | Outwork'em Digital">
-<meta property="og:description" content="Fast, secure WordPress hosting built for home service contractor websites. Free migration, SSL, daily backups, and U.S.-based support. Plans from $99/mo, month-to-month with 30 days&#39; notice.">
+<meta property="og:description" content="Fast, secure WordPress hosting built for home service contractor websites. Free migration, SSL, daily backups, and U.S.-based support. Plans from $99/mo. Monthly plans cancel any time with 30 days&#39; notice.">
 <meta property="og:image" content="https://outworkemdigital.com/img/og-default.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -441,7 +441,8 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
 .price-terms{text-align:center;font-family:var(--head);font-size:13px;color:var(--muted);margin-top:28px}
 /* Monthly / Yearly switch. Rendered hidden; the script reveals it, so with
    JS off the page simply shows the monthly prices and monthly links. */
-.billing-toggle{display:flex;justify-content:center;margin:0 auto 32px}
+.billing-toggle{display:flex;justify-content:center;margin:0 auto 14px}
+.billing-note{max-width:620px;margin:0 auto 32px;text-align:center;font-family:var(--head);font-size:13px;line-height:1.5;color:var(--muted)}
 .billing-toggle[hidden]{display:none}
 .billing-toggle .bt-track{display:inline-flex;gap:4px;padding:4px;border:1px solid var(--edge-warm);
   border-radius:999px;background:var(--grad-warm)}
@@ -916,7 +917,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
   <div class="section-head center">
     <div class="kicker" style="justify-content:center"><span class="label">Hosting Plans</span></div>
     <h2>Simple Plans. No Surprises. No Hidden Fees.</h2>
-    <p class="lead" style="margin:0 auto">Pick the plan that fits your business. All plans include free migration, SSL, and U.S.-based support from our team. Month-to-month, cancel with 30 days&#8217; notice.</p>
+    <p class="lead" style="margin:0 auto">Pick the plan that fits your business. All plans include free migration, SSL, and U.S.-based support from our team.</p>
   </div>
 
   <div class="billing-toggle" id="billingToggle" hidden>
@@ -925,6 +926,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <button type="button" data-period="yearly" aria-pressed="false">Yearly</button>
     </div>
   </div>
+  <p class="billing-note" id="billingNote" data-monthly="Monthly hosting: cancel any time with 30 days&#8217; notice." data-yearly="Yearly hosting can&#8217;t be cancelled during the year. To stop it renewing, give 30 days&#8217; written notice before your yearly subscription is set to end.">Monthly hosting: cancel any time with 30 days&#8217; notice.</p>
   <p class="sr-only" id="billingStatus" aria-live="polite"></p>
 
   <div class="price-grid">
@@ -983,7 +985,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
     </div>
 
   </div>
-  <p class="price-terms">All hosting plans are month-to-month. Cancel any plan with 30 days&#8217; notice.</p>
+  <p class="price-terms"><strong>Monthly hosting:</strong> cancel any time with 30 days&#8217; notice.<br><strong>Yearly hosting:</strong> can&#8217;t be cancelled during the year. To stop it renewing, give 30 days&#8217; written notice before your yearly subscription is set to end.</p>
 </section>
 
 <!-- ============ MIGRATION (split) ============ -->
@@ -1135,6 +1137,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
           el.setAttribute('aria-label','Get started with '+(nm?nm.textContent:'this plan')+', billed '+period);
         } else { el.textContent=v; }
       });
+      var bn=document.getElementById('billingNote'); if(bn) bn.textContent=bn.getAttribute('data-'+period);
       if(btStatus) btStatus.textContent = period==='yearly' ? 'Showing yearly prices' : 'Showing monthly prices';
     }
     btBtns.forEach(function(b){ b.addEventListener('click', function(){ setPeriod(b.getAttribute('data-period')); }); });
