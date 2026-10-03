@@ -323,7 +323,7 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
 .program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
 /* Local SEO entry card makes four: four across on wide screens, two-by-two
    between 1000px and 1200px, one column below 1000px (rule further down). */
-.program-grid.has-entry{grid-template-columns:repeat(4,1fr);gap:20px}
+.program-grid.has-entry{grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch}
 @media(max-width:1200px){.program-grid.has-entry{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:1000px){.program-grid.has-entry{grid-template-columns:1fr}}
 /* Warm on the outside, navy in the middle. Every coloured piece inside the card
@@ -359,8 +359,14 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
 .prog-price .per{font-family:var(--head);font-size:14px;color:var(--copy-c)}
 .prog-sub{font-family:var(--head);font-size:11px;color:var(--copy-c);letter-spacing:.06em;
   text-transform:uppercase;margin-bottom:24px}
-.prog-sub:has(+ .prog-terms){margin-bottom:12px}
-.prog-terms{font-family:var(--head);font-size:12px;font-weight:600;line-height:1.45;color:var(--label-c);margin-bottom:8px}
+.prog-sub:has(+ .prog-prepay){margin-bottom:14px}
+/* The ad-channel line is the one feature that differs between tiers. */
+.prog-features li.prog-channel{font-weight:800;background:var(--rule-c);border-radius:6px;padding:7px 8px;margin-inline:-8px}
+.prog-pay-yearly{color:var(--amount-c);font-weight:700;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+.prog-spots.is-empty{visibility:hidden}
+.prog-book{font-family:var(--head);font-size:12px;text-align:center;color:var(--copy-c)}
+.prog-book a{color:var(--amount-c);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.prog-terms-all{text-align:center;font-family:var(--head);font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted, inherit);margin-top:28px}
 .prog-prepay{font-family:var(--head);font-size:12px;line-height:1.45;color:var(--copy-c);margin-bottom:24px;
   padding:8px 10px;border:1px dashed var(--rule-c);border-radius:8px}
 .prog-prepay strong{color:var(--amount-c);font-weight:700}
@@ -1031,18 +1037,17 @@ a.f-social{width:44px;height:44px;text-decoration:none}
   <div class="section-head reveal">
     <div class="kicker"><span class="label">Growth Programs</span><span class="rule"></span></div>
     <h2>Growth Programs for Every Size</h2>
-    <p class="lead">For guaranteed results and a solid return on investment, we sell our services as marketing programs exclusive to home service contractors.</p>
+    <p class="lead">We sell our services as marketing programs built exclusively for home service contractors.</p>
   </div>
   <div class="program-grid has-entry">
 
-    <!-- LOCAL SEO (entry option) -->
-    <div class="prog-card reveal">
+    <!-- LOCAL-SEO -->
+    <div class="prog-card reveal" data-plan="local-seo">
       <div class="prog-body">
-        <div class="prog-name">Local SEO</div>
+        <div class="prog-name">Local SEO + Google Business Profile</div>
         <div class="prog-price"><span class="amount">$350</span><span class="per">/month</span></div>
         <div class="prog-sub">Google Business Profile + light website care</div>
-        <p class="prog-terms">Month-to-month &middot; 30 days&#8217; notice to cancel</p>
-        <p class="prog-prepay">Pay the year up front and save 10%: <strong>$3,780/yr</strong> ($315/mo)</p>
+        <p class="prog-prepay">Pay the year up front and save 10%: <strong>$3,780/yr</strong> ($315/mo)<span class="prog-pay-yearly-wrap" hidden> &middot; <a class="prog-pay-yearly" href="/schedule/" data-checkout="local-seo" data-period="yearly">Pay yearly</a></span></p>
         <ul class="prog-features">
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Business Profile Management</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Light Website Review</li>
@@ -1051,81 +1056,107 @@ a.f-social{width:44px;height:44px;text-decoration:none}
         <p class="prog-note">Website rebuilds and custom development are quoted separately.</p>
       </div>
       <div class="prog-footer">
-        <a href="/marketing-services/local-seo-services/" class="btn-cta">See All Features <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true" data-icon="arrow_forward"></span></a>
+        <a href="/schedule/" class="btn-cta" data-checkout="local-seo" data-period="monthly">Let&#8217;s Get Started <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true" data-icon="arrow_forward"></span></a>
+        <div class="prog-spots is-empty" aria-hidden="true">&nbsp;</div>
+        <p class="prog-book">Questions? <a href="/schedule/">Book a call</a></p>
       </div>
     </div>
 
     <!-- SPARK -->
-    <div class="prog-card reveal" style="--d:90ms">
+    <div class="prog-card reveal" style="--d:90ms" data-plan="spark">
       <div class="prog-body">
         <div class="prog-name">Spark Growth</div>
         <div class="prog-price"><span class="amount">$2,500</span><span class="per">/month</span></div>
         <div class="prog-sub">$0.5M – $1.5M annual revenue</div>
-        <p class="prog-terms">12-month commitment backs the results guarantee &middot; 30 days&#8217; notice to cancel</p>
-        <p class="prog-prepay">Pay the year up front and save 10%: <strong>$27,000/yr</strong> ($2,250/mo)</p>
+        <p class="prog-prepay">Pay the year up front and save 10%: <strong>$27,000/yr</strong> ($2,250/mo)<span class="prog-pay-yearly-wrap" hidden> &middot; <a class="prog-pay-yearly" href="/schedule/" data-checkout="spark" data-period="yearly">Pay yearly</a></span></p>
         <ul class="prog-features">
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Custom Website Design</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Search Engine Optimization</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Reputation Management</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Local Services Ads</li>
-          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Search Ads</li>
-          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Social Media Ads</li>
+          <li class="prog-channel"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>1 Ad Channel of Your Choice (Google, Meta, or ChatGPT)</li>
         </ul>
       </div>
       <div class="prog-footer">
-        <a href="https://go.outworkemdigital.com/spark-growth-checkout" class="btn-cta">See All Features <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true" data-icon="arrow_forward"></span></a>
+        <a href="/schedule/" class="btn-cta" data-checkout="spark" data-period="monthly">Let&#8217;s Get Started <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true" data-icon="arrow_forward"></span></a>
         <div class="prog-spots">2 Spots Available</div>
+        <p class="prog-book">Questions? <a href="/schedule/">Book a call</a></p>
       </div>
     </div>
 
-    <!-- EXPAND (featured) -->
-    <div class="prog-card featured reveal" style="--d:180ms">
+    <!-- EXPAND -->
+    <div class="prog-card featured reveal" style="--d:180ms" data-plan="expand">
       <div class="prog-badge">Most Popular</div>
       <div class="prog-body">
         <div class="prog-name">Expand Growth</div>
         <div class="prog-price"><span class="amount">$3,500</span><span class="per">/month</span></div>
         <div class="prog-sub">$1.5M – $5M annual revenue</div>
-        <p class="prog-terms">12-month commitment backs the results guarantee &middot; 30 days&#8217; notice to cancel</p>
-        <p class="prog-prepay">Pay the year up front and save 10%: <strong>$37,800/yr</strong> ($3,150/mo)</p>
+        <p class="prog-prepay">Pay the year up front and save 10%: <strong>$37,800/yr</strong> ($3,150/mo)<span class="prog-pay-yearly-wrap" hidden> &middot; <a class="prog-pay-yearly" href="/schedule/" data-checkout="expand" data-period="yearly">Pay yearly</a></span></p>
         <ul class="prog-features">
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Custom Website Design</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Search Engine Optimization</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Reputation Management</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Local Services Ads</li>
-          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Search Ads</li>
-          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Social Media Ads</li>
+          <li class="prog-channel"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>2 Ad Channels of Your Choice (Google, Meta, or ChatGPT)</li>
         </ul>
       </div>
       <div class="prog-footer">
-        <a href="https://go.outworkemdigital.com/expand-growth-checkout" class="btn-cta">See All Features <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true" data-icon="arrow_forward"></span></a>
+        <a href="/schedule/" class="btn-cta" data-checkout="expand" data-period="monthly">Let&#8217;s Get Started <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true" data-icon="arrow_forward"></span></a>
         <div class="prog-spots">2 Spots Available</div>
+        <p class="prog-book">Questions? <a href="/schedule/">Book a call</a></p>
       </div>
     </div>
 
     <!-- CONQUER -->
-    <div class="prog-card reveal" style="--d:270ms">
+    <div class="prog-card reveal" style="--d:270ms" data-plan="conquer">
       <div class="prog-body">
         <div class="prog-name">Conquer Growth</div>
         <div class="prog-price"><span class="amount">$4,500+</span><span class="per">/month</span></div>
         <div class="prog-sub">$5M – $10M annual revenue</div>
-        <p class="prog-terms">12-month commitment backs the results guarantee &middot; 30 days&#8217; notice to cancel</p>
-        <p class="prog-prepay">Pay the year up front and save 10%: <strong>$48,600+/yr</strong> ($4,050+/mo)</p>
+        <p class="prog-prepay">Pay the year up front and save 10%: <strong>$48,600+/yr</strong> ($4,050+/mo)<span class="prog-pay-yearly-wrap" hidden> &middot; <a class="prog-pay-yearly" href="/schedule/" data-checkout="conquer" data-period="yearly">Pay yearly</a></span></p>
         <ul class="prog-features">
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Custom Website Design</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Search Engine Optimization</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Reputation Management</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Local Services Ads</li>
-          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Search Ads</li>
-          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Social Media Ads</li>
+          <li class="prog-channel"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>All 3 Ad Channels (Google, Meta, and ChatGPT)</li>
         </ul>
       </div>
       <div class="prog-footer">
-        <a href="https://go.outworkemdigital.com/conquer-growth-checkout" class="btn-cta">See All Features <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true" data-icon="arrow_forward"></span></a>
-        <div class="prog-spots full">0 Spots Available</div>
+        <a href="/schedule/" class="btn-cta" data-checkout="conquer" data-period="monthly">Let&#8217;s Get Started <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true" data-icon="arrow_forward"></span></a>
+        <div class="prog-spots">1 Spot Available</div>
+        <p class="prog-book">Questions? <a href="/schedule/">Book a call</a></p>
       </div>
     </div>
 
   </div>
+  <p class="prog-terms-all">Month-to-month &middot; 30 days&#8217; notice to cancel</p>
+
+  <!-- ===== TODO-STRIPE: program checkout links (all 8 live here) =====
+       Paste each Stripe Payment Link (https://buy.stripe.com/...) in place of its
+       TODO-STRIPE value. Until a value is a real https://buy.stripe.com/ URL,
+       "Let's Get Started" falls back to the booking page (/schedule/) and the
+       "Pay yearly" link stays hidden. Without JavaScript the buttons go to /schedule/. -->
+  <script type="application/json" id="programCheckoutLinks">
+  {
+    "local-seo": { "monthly": "TODO-STRIPE-LOCAL-SEO-MONTHLY", "yearly": "TODO-STRIPE-LOCAL-SEO-YEARLY" },
+    "spark":     { "monthly": "TODO-STRIPE-SPARK-MONTHLY",     "yearly": "TODO-STRIPE-SPARK-YEARLY" },
+    "expand":    { "monthly": "TODO-STRIPE-EXPAND-MONTHLY",    "yearly": "TODO-STRIPE-EXPAND-YEARLY" },
+    "conquer":   { "monthly": "TODO-STRIPE-CONQUER-MONTHLY",   "yearly": "TODO-STRIPE-CONQUER-YEARLY" }
+  }
+  </script>
+  <script>
+  (function(){
+    var cfg; try { cfg = JSON.parse(document.getElementById('programCheckoutLinks').textContent); } catch(e) { return; }
+    function ok(u){ return typeof u === 'string' && /^https:\/\/buy\.stripe\.com\/[A-Za-z0-9]+$/.test(u); }
+    [].slice.call(document.querySelectorAll('.program-grid [data-checkout]')).forEach(function(a){
+      var plan = cfg[a.getAttribute('data-checkout')] || {}, url = plan[a.getAttribute('data-period')];
+      if (!ok(url)) return;                       /* keep the /schedule/ fallback */
+      a.setAttribute('href', url);
+      var wrap = a.closest('.prog-pay-yearly-wrap'); if (wrap) wrap.hidden = false;
+    });
+  })();
+  </script>
 </section>
 
 <!-- ============ STATS ============ -->
@@ -1554,7 +1585,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <tbody>
         <tr><td>Local SEO</td><td>From $350/month, month-to-month</td></tr>
         <tr><td>Growth Programs</td><td>From $2,500/month</td></tr>
-        <tr><td>Minimum Commitment for Guaranteed Results (Growth Programs)</td><td>12 months</td></tr>
+        <tr><td>Term</td><td>Month-to-month on every plan</td></tr>
         <tr><td>Cancellation</td><td>30 days&#8217; written notice on every plan</td></tr>
         <tr><td>Annual Prepay (Local SEO and Growth Programs)</td><td>10% off, paid up front</td></tr>
       </tbody>
@@ -1582,7 +1613,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
           <li><strong>Expand Growth ($3,500/mo):</strong> Designed for companies ($1.5M–$5M revenue) ready to accelerate. Combines organic and paid strategies for faster results.</li>
           <li><strong>Conquer Growth ($4,500+/mo):</strong> Built for companies ($5M–$10M revenue) targeting market domination with multi-area expansion.</li>
         </ul>
-        <p>Each growth program has a 12-month commitment that backs our results guarantee, with 30 days&#8217; notice to cancel. Pay the year up front and save 10%. Not ready for a full program? Local SEO starts at $350/month, month-to-month with 30 days&#8217; notice.</p>
+        <p>Every plan is month-to-month with 30 days&#8217; notice to cancel, and you can pay the year up front to save 10%. Not ready for a full program? Local SEO + Google Business Profile starts at $350/month.</p>
       </div>
     </div>
     <div class="faq-item">
