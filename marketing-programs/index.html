@@ -1148,7 +1148,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
   <script>
   (function(){
     var cfg; try { cfg = JSON.parse(document.getElementById('programCheckoutLinks').textContent); } catch(e) { return; }
-    function ok(u){ return typeof u === 'string' && /^https:\/\/buy\.stripe\.com\/[A-Za-z0-9]+$/.test(u); }
+    function ok(u){ return typeof u === 'string' && /^https:\/\/buy\.stripe\.com\/[A-Za-z0-9_]+$/.test(u); }
     [].slice.call(document.querySelectorAll('.program-grid [data-checkout]')).forEach(function(a){
       var plan = cfg[a.getAttribute('data-checkout')] || {}, url = plan[a.getAttribute('data-period')];
       if (!ok(url)) return;                       /* keep the /schedule/ fallback */
