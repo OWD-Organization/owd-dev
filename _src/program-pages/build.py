@@ -120,19 +120,31 @@ INC_LSA = dict(icon='storefront', title='Google Local Services Ads', paras=[
   'We take care of the Google Guarantee verification (background checks, plus license and insurance verification by Google), set up and optimize your profile, choose which services to advertise, watch lead quality and costs, and handle invalid lead disputes to protect your budget.'],
   more=('/marketing-services/local-services-ads-2/', 'More about Local Services Ads'))
 
+# Ad channel descriptions. Google comes from ppc-advertising-services "What's Included";
+# Meta and ChatGPT were written for these pages (approved by Orion, Oct 4 2026): general
+# descriptions of the service only, no stats, cadences, minimums or guarantees.
+AD_GOOGLE = 'pay-per-click campaigns built for home service searches, so your ads show up when homeowners search Google for the work you do. That includes market and competitor research, custom landing pages, call tracking, and reporting that connects your ads to booked jobs.'
+AD_META = 'Facebook and Instagram ads targeted to homeowners in your service area. We create the ad creative and manage the campaigns, so your business stays in front of local homeowners on the apps they use every day.'
+AD_CHATGPT = 'ads placed in ChatGPT conversations, so your business shows up when homeowners ask AI to help them find a contractor. We set up and manage the campaigns around the services you offer and the area you serve.'
+# terms-and-conditions 3.1 "Third-Party Platform Costs"
+AD_SPEND = 'Ad spend is separate from your program fee: you pay the ad platforms directly or reimburse us.'
+
 def inc_channels(n):
+    """Spark/Expand: one wide card describing the 3 channels to choose from.
+    Conquer: one card per channel, since all 3 are included (matches its pricing card)."""
+    more = ('/marketing-services/ppc-advertising-services/', 'More about pay-per-click ads')
+    if n == 3:
+        return [
+          dict(icon='ads_click', title='Google ads', channel=True, more=more, paras=['Pay-per-click ' + AD_GOOGLE.split(' ', 1)[1]]),
+          dict(icon='share', title='Meta ads (Facebook and Instagram)', channel=True, paras=[AD_META]),
+          dict(icon='smart_toy', title='ChatGPT ads', channel=True, wide=True, paras=['Ads ' + AD_CHATGPT.split(' ', 1)[1]]),
+        ]
     first = {1: 'Spark includes one paid ad channel, and you pick it: Google, Meta or ChatGPT.',
-             2: 'Expand includes two paid ad channels, and you pick them from Google, Meta and ChatGPT.',
-             3: 'Conquer runs ads on all three channels: Google, Meta and ChatGPT.'}[n]
-    title = {1: '1 ad channel of your choice', 2: '2 ad channels of your choice', 3: 'All 3 ad channels'}[n]
-    paras = [first,
-      # ppc-advertising-services "What's Included"
-      'On Google, that means pay-per-click campaigns built for home service searches: market and competitor research, custom landing pages, call tracking, and reporting that connects your ads to booked jobs.',
-      # terms-and-conditions 3.1 "Third-Party Platform Costs"
-      'Ad spend is separate from your program fee: you pay the ad platforms directly or reimburse us.']
-    if n < 3: paras[-1] += ' Not sure which to choose? Book a call and we&#8217;ll talk it through.'
-    return dict(icon='ads_click', title=title, paras=paras, channel=True,
-                more=('/marketing-services/ppc-advertising-services/', 'More about pay-per-click ads'))
+             2: 'Expand includes two paid ad channels, and you pick them from Google, Meta and ChatGPT.'}[n]
+    title = {1: '1 ad channel of your choice', 2: '2 ad channels of your choice'}[n]
+    paras = [first] + [f'<strong>{k}:</strong> {v}' for k, v in (('Google', AD_GOOGLE), ('Meta', AD_META), ('ChatGPT', AD_CHATGPT))] + \
+            [AD_SPEND + ' Not sure which to choose? Book a call and we&#8217;ll talk it through.']
+    return [dict(icon='ads_click', title=title, paras=paras, channel=True, wide=True, more=more)]
 
 INC_GBP = dict(icon='pin_drop', title='Google Business Profile management', paras=[
   # local-seo-services "Why Local SEO"
@@ -152,7 +164,7 @@ INC_UPDATES = dict(icon='edit_note', title='Light website updates', paras=[
 
 def included(key):
     if key == 'local-seo': return [INC_GBP, INC_REVIEW, INC_UPDATES]
-    return [INC_WEBSITE, INC_SEO, INC_REP, INC_LSA, inc_channels(PROGRAMS[key]['channels'])]
+    return [INC_WEBSITE, INC_SEO, INC_REP, INC_LSA] + inc_channels(PROGRAMS[key]['channels'])
 
 def annual_answer(p):
     return (f'Pay the year up front and you save 10%: {p["yr_total"]} for the year, which works out to {p["yr_month"]} a month. '
@@ -285,24 +297,196 @@ def schema(key, url, faq):
     ]
     return json.dumps({'@context': 'https://schema.org', '@graph': graph}, indent=1, ensure_ascii=False).replace('</', '<\\/')
 
+
+# ------------------------------------------------------------------ Local SEO: extra sections
+# Copy pulled from /marketing-services/local-seo-services/ (Oct 4 2026), restyled with the
+# program-page components. Results stats, lead counts, cost-per-lead figures, timelines and
+# guarantees on that page are deliberately left out.
+LSEO_WHY_WITHOUT = ['Missing out on &#8220;near me&#8221; searches and emergency calls',
+  'Competitors dominating the Google Map Pack in your area',
+  'Losing leads to big companies with massive marketing budgets',
+  'Website not showing up for nearby service searches',
+  'Phone not ringing despite great service and reputation']
+LSEO_WHY_WITH = ['Show up in the Google Map Pack when homeowners search',
+  'Lock down your service area and block out competitors',
+  'Generate consistent quality leads without massive ad spend',
+  'Build a strong local reputation that brings referrals',
+  'Turn your website into a 24/7 lead generation machine']
+LSEO_WAYS = [  # "5 Ways Local SEO Drives Revenue" (stat / ranking-promise bullets removed)
+  ('visibility', 'Increased Local Visibility', ['Dominate &#8220;near me&#8221; searches in your service area', 'Show up when homeowners need emergency service']),
+  ('verified', 'Higher Quality Leads', ['Pre-qualified leads already in your service area', 'Homeowners actively searching for your services']),
+  ('savings', 'Better ROI', ['Build long-term organic presence', 'Reduce dependency on expensive paid advertising']),
+  ('travel_explore', 'Extended Market Reach', ['Rank for multiple service areas and neighborhoods', 'Capture searches across all your service offerings', 'Generate leads even in slower seasons']),
+  ('workspace_premium', 'Stronger Brand Authority', ['Build trust through verified reviews and local presence', 'Showcase your expertise and track record', 'Position yourself as the go-to contractor locally']),
+]
+LSEO_GROWTH = [  # "Our Comprehensive Growth Programs" (Content Marketing row left out: it carries a volume figure)
+  ('web', 'Home Service Website Foundation', [
+    ('Homepage Design', 'Elevator pitch that builds trust and converts visitors into leads'),
+    ('Service Pages', 'Ranks for profitable keywords and drives qualified visitors'),
+    ('Service Area Pages', 'Rank for hyper-local searches and improve map 3-pack rankings'),
+    ('About &amp; Team Pages', 'Build trust and authority, enhance conversion rate')]),
+  ('tune', 'Marketing &amp; Optimization', [
+    ('SEO 2.0', 'Generate organic leads consistently month over month'),
+    ('Local SEO', 'Dominate &#8220;near me&#8221; searches &amp; Google local map pack'),
+    ('Reputation Mgmt', 'Grow, answer, and display reviews on autopilot'),
+    ('Listing Management', 'Improve local trust &amp; ranking signals across platforms'),
+    ('Speed-to-Lead', 'Maximize conversion rates by being first to respond')]),
+  ('monitoring', 'Tracking &amp; Reporting', [
+    ('ROI Dashboard', 'Track your exact return on investment monthly'),
+    ('Call Tracking', 'Monitor lead flow and attribution by channel'),
+    ('Performance Reviews', 'Monthly strategy calls with your dedicated team'),
+    ('Quarterly Review', 'Review of results and preview of next-quarter steps')]),
+]
+LSEO_APPROACH = [
+  'While others chase volume, we prioritize quality partnerships that align with our values and vision. Just as you carefully select the brands and equipment you install for homeowners, we selectively choose the home service companies we partner with.',
+  'This isn&#8217;t about being exclusive. It&#8217;s about ensuring maximum results through genuine collaboration. We maintain market exclusivity by accepting only one home service company per industry per service area. When we commit to your market, we commit fully.',
+  'Our most successful client relationships share specific characteristics: open, honest communication; aligned business philosophy; shared personal values; a long-term growth mindset; and positive, energetic collaboration.']
+LSEO_FIT = ['Committed to excellent customer service', 'Focused on sustainable, long-term growth',
+  'Aware that Rome was not built in a day', 'Ready to play the long game', 'Looking to reduce paid advertising dependency']
+LSEO_NOFIT = ['Looking for quick, temporary fixes', 'Without a growth mindset', 'Satisfied with the status quo',
+  'Short-term focused in your operations']
+LSEO_FAQ_MORE = [  # old page FAQs 01, 02, 04; 03 (lead counts / cost per lead) left out
+  ('How long until I see results from Local SEO?',
+   'Unlike paid advertising that delivers instant results, Local SEO is a long-term strategy. It builds lasting authority that delivers leads long-term.'),
+  ('Why can&#8217;t I just do Local SEO without a new website?',
+   'Your Google Business Profile can only take you so far. When homeowners click through from Maps to your website and find a slow, confusing, or outdated page, they leave, and your Local SEO investment is wasted. More importantly, service area pages, proper schema markup, NAP consistency, and page speed are all direct Local SEO ranking signals. A poorly built site actively undermines your Map Pack rankings. The best Local SEO results come when your website and local presence are built as one integrated system.'),
+  ('Do you guarantee rankings or results?',
+   'No ethical agency can guarantee specific rankings: Google&#8217;s algorithm is outside anyone&#8217;s control, and anyone promising a specific Map Pack position is not being straight with you.'),
+]
+
+def _list(items, icon, cls='pp-list'):
+    return f'<ul class="{cls}">' + ''.join(f'<li>{ic(icon)}<span>{x}</span></li>' for x in items) + '</ul>'
+
+def _acc(items, start, prefix='faq'):
+    out = ''
+    for n, (q, a) in enumerate(items, start):
+        out += f"""    <div class="acc-item">
+      <button class="acc-trigger" aria-expanded="false" aria-controls="{prefix}-{n}" id="{prefix}-q{n}">
+        <span class="acc-n">{n:02d}</span>
+        <span class="acc-head">{q}</span>
+        {ic('expand_more', ' acc-icon')}
+      </button>
+      <div class="acc-body" id="{prefix}-{n}" role="region" aria-labelledby="{prefix}-q{n}"><div class="acc-inner"><p>{a}</p></div></div>
+    </div>
+"""
+    return out
+
+def lseo_extra(faq_start):
+    ways = ''.join(f"""    <article class="pp-inc{' pp-wide' if i == len(LSEO_WAYS) - 1 else ''}">
+      <div class="pp-inc-ic">{ic(icon)}</div>
+      <h3>{t}</h3>
+      {_list(items, 'check_circle')}
+    </article>
+""" for i, (icon, t, items) in enumerate(LSEO_WAYS))
+    growth = ''.join(f"""    <article class="pp-inc">
+      <div class="pp-inc-ic">{ic(icon)}</div>
+      <h3>{t}</h3>
+      <ul class="pp-deflist">{''.join(f'<li><strong>{a}</strong><span>{b}</span></li>' for a, b in rows)}</ul>
+    </article>
+""" for icon, t, rows in LSEO_GROWTH)
+    prog_links = ''.join(f'<a class="pp-inc-more" href="/marketing-programs/{k}/">View {PROGRAMS[k]["short"]} {ic("arrow_forward")}</a>' for k in ('spark', 'expand', 'conquer'))
+    return f"""
+<!-- 8 · WHY LOCAL SEO (from /marketing-services/local-seo-services/) -->
+<section class="pp-section wrap" aria-labelledby="why-h">
+  <div class="section-head center">
+    <div class="kicker" style="justify-content:center"><span class="label">Why Local SEO</span></div>
+    <h2 id="why-h">Why Local SEO Matters for Your Home Service Business</h2>
+    <p class="lead">The contractor who shows up in the Map Pack gets the call. The one who doesn&#8217;t, doesn&#8217;t.</p>
+  </div>
+  <div class="pp-inc-grid">
+    <article class="pp-inc">
+      <div class="pp-inc-ic">{ic('search_off')}</div>
+      <h3>Without Local SEO</h3>
+      {_list(LSEO_WHY_WITHOUT, 'cancel', 'pp-list pp-list-no')}
+    </article>
+    <article class="pp-inc pp-channel">
+      <div class="pp-inc-ic">{ic('task_alt')}</div>
+      <h3>With Professional Local SEO</h3>
+      {_list(LSEO_WHY_WITH, 'check_circle')}
+    </article>
+  </div>
+</section>
+
+<!-- 9 · HOW LOCAL SEO DRIVES REVENUE -->
+<section class="pp-section wrap band" aria-labelledby="ways-h">
+  <div class="section-head center">
+    <div class="kicker" style="justify-content:center"><span class="label">5 Ways Local SEO Drives Revenue</span></div>
+    <h2 id="ways-h">How Local SEO Turns Your Service Area Into a Lead Pipeline</h2>
+    <p class="lead">When homeowners in your area need home services, you&#8217;ll be the first name they see, exactly when and where they&#8217;re searching.</p>
+  </div>
+  <div class="pp-inc-grid">
+{ways}  </div>
+</section>
+
+<!-- 10 · GROWTH PROGRAMS -->
+<section class="pp-section wrap" aria-labelledby="growth-h">
+  <div class="section-head center">
+    <div class="kicker" style="justify-content:center"><span class="label">Growth Programs</span></div>
+    <h2 id="growth-h">Want More Than Local SEO on Its Own?</h2>
+    <p class="lead">Effective digital marketing works best with all components working together as one integrated system, and that&#8217;s what our growth programs deliver.</p>
+  </div>
+  <div class="pp-inc-grid pp-grid-3">
+{growth}  </div>
+  <div class="pp-prog-links">{prog_links}</div>
+</section>
+
+<!-- 11 · OUR APPROACH -->
+<section class="pp-section wrap band" aria-labelledby="approach-h">
+  <div class="pp-billing">
+    <div class="section-head" style="margin-bottom:0">
+      <div class="kicker"><span class="label">Working with Outwork&#8217;em Digital</span><span class="rule"></span></div>
+      <h2 id="approach-h">We Take a Different Approach Than Most Agencies</h2>
+      {''.join(f'<p class="pp-prose">{x}</p>' for x in LSEO_APPROACH)}
+    </div>
+    <div class="pp-fit">
+      <article class="pp-inc pp-channel">
+        <div class="pp-inc-ic">{ic('handshake')}</div>
+        <h3>We Are a Good Fit If You Are:</h3>
+        {_list(LSEO_FIT, 'check_circle')}
+      </article>
+      <article class="pp-inc">
+        <div class="pp-inc-ic">{ic('block')}</div>
+        <h3>We Are Not a Good Fit If You Are:</h3>
+        {_list(LSEO_NOFIT, 'cancel', 'pp-list pp-list-no')}
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · MORE FAQ -->
+<section class="faq-section wrap" aria-labelledby="faq2-h">
+  <div class="section-head center">
+    <div class="kicker" style="justify-content:center"><span class="label">More Questions</span></div>
+    <h2 id="faq2-h">More Straight Answers About Local SEO</h2>
+  </div>
+  <div class="accordion">
+{_acc(LSEO_FAQ_MORE, faq_start)}  </div>
+</section>
+"""
+
 # ------------------------------------------------------------------ layout
 def page(key):
     p, pg = PROGRAMS[key], PAGES[key]
     url = f'{ORIGIN}/marketing-programs/{key}/'
     growth = key != 'local-seo'
     faq = faqs(key)
+    faq_all = list(faq)
+    if key == 'local-seo':
+        seen = {strip(q).lower() for q, _ in faq}
+        faq_all += [x for x in LSEO_FAQ_MORE if strip(x[0]).lower() not in seen]
+    extra = lseo_extra(len(faq) + 1) if key == 'local-seo' else ''
     inc = ''
     for it in included(key):
         paras = ''.join(f'<p>{x}</p>' for x in it['paras'])
         more = f'<a class="pp-inc-more" href="{it["more"][0]}">{it["more"][1]} {ic("arrow_forward")}</a>' if it.get('more') else ''
-        inc += f'''    <article class="pp-inc{' pp-channel' if it.get('channel') else ''}">
+        inc += f'''    <article class="pp-inc{' pp-channel' if it.get('channel') else ''}{' pp-wide' if it.get('wide') else ''}">
       <div class="pp-inc-ic">{ic(it['icon'])}</div>
       <h3>{it['title']}</h3>
       {paras}
       {more}
     </article>
 '''
-    inc_note = ''
+    inc_note = f'<p class="pp-inc-note">{AD_SPEND}</p>' if p.get('channels') == 3 else ''
     billing = [
       ('event_available', 'Month-to-month.', 'Every plan is month-to-month. Cancel any time with 30 days&#8217; written notice.'),
       ('calendar_month', 'Prepaid year.', 'If you pay the year up front, that year can&#8217;t be cancelled. It renews yearly; to stop it renewing, give 30 days&#8217; written notice before the renewal date.'),
@@ -349,7 +533,7 @@ def page(key):
 <link rel="stylesheet" href="{CSS_HREF}">
 {THEME}
 <script type="application/ld+json">
-{schema(key, url, faq)}
+{schema(key, url, faq_all)}
 </script>
 {ICONS}
 </head>
@@ -442,6 +626,7 @@ def page(key):
   <p class="pp-compare-note">Every plan is month-to-month with 30 days&#8217; notice to cancel. <a href="/marketing-programs/">See all pricing</a></p>
 </section>
 
+{extra}
 <!-- 7 · CLOSING CTA -->
 <section class="final-cta wrap">
   <div class="cta-band">
