@@ -20,3 +20,6 @@ stdout
 
 # Editor config
 .vscode/
+
+# Source for generated pages (program pages); only the build output is deployed
+_src/

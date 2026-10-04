@@ -365,6 +365,12 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
 .prog-prepay-renew{display:block;margin-top:3px;font-size:11px;opacity:.85}
 .prog-pay-yearly{color:var(--amount-c);font-weight:700;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
 .prog-spots.is-empty{visibility:hidden}
+/* Revenue bands came off the growth cards (Oct 2026), so the prepay note now
+   follows the price directly. "Learn more" goes to each program's own page. */
+.prog-price + .prog-prepay{margin-top:16px}
+.prog-more{display:inline-flex;align-items:center;gap:4px;min-height:24px;margin:-4px 0 4px;font-family:var(--head);font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--copy-c);text-decoration:underline;text-underline-offset:2px}
+.prog-more:hover{color:var(--amount-c)}
+.prog-more .material-symbols-outlined{font-size:14px}
 .prog-book{font-family:var(--head);font-size:12px;text-align:center;color:var(--copy-c)}
 .prog-book a{color:var(--amount-c);font-weight:700;text-decoration:underline;text-underline-offset:2px}
 .prog-terms-all{text-align:center;font-family:var(--head);font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted, inherit);margin-top:28px}
@@ -1055,6 +1061,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Light Website Updates</li>
         </ul>
         <p class="prog-note">Website rebuilds and custom development are quoted separately.</p>
+        <a class="prog-more" href="/marketing-programs/local-seo/" aria-label="Learn more about Local SEO + Google Business Profile">Learn more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
       </div>
       <div class="prog-footer">
         <a href="/schedule/" class="btn-cta" data-checkout="local-seo" data-period="monthly">Let&#8217;s Get Started <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true" data-icon="arrow_forward"></span></a>
@@ -1068,7 +1075,6 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <div class="prog-body">
         <div class="prog-name">Spark Growth</div>
         <div class="prog-price"><span class="amount">$2,500</span><span class="per">/month</span></div>
-        <div class="prog-sub">$0.5M – $1.5M annual revenue</div>
         <p class="prog-prepay">Pay the year up front: save 10% and get a 12-month plan with the heavy lifting done up front.<br><strong>$27,000/yr</strong> ($2,250/mo)<span class="prog-pay-yearly-wrap" hidden> &middot; <a class="prog-pay-yearly" href="/schedule/" data-checkout="spark" data-period="yearly">Pay yearly</a></span><span class="prog-prepay-renew">Prepaid years renew yearly; 30 days&#8217; notice before renewal.</span></p>
         <ul class="prog-features">
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Custom Website Design</li>
@@ -1077,6 +1083,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Local Services Ads</li>
           <li class="prog-channel"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>1 Ad Channel of Your Choice (Google, Meta, or ChatGPT)</li>
         </ul>
+        <a class="prog-more" href="/marketing-programs/spark/" aria-label="Learn more about Spark Growth">Learn more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
       </div>
       <div class="prog-footer">
         <a href="/schedule/" class="btn-cta" data-checkout="spark" data-period="monthly">Let&#8217;s Get Started <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true" data-icon="arrow_forward"></span></a>
@@ -1091,7 +1098,6 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <div class="prog-body">
         <div class="prog-name">Expand Growth</div>
         <div class="prog-price"><span class="amount">$3,500</span><span class="per">/month</span></div>
-        <div class="prog-sub">$1.5M – $5M annual revenue</div>
         <p class="prog-prepay">Pay the year up front: save 10% and get a 12-month plan with the heavy lifting done up front.<br><strong>$37,800/yr</strong> ($3,150/mo)<span class="prog-pay-yearly-wrap" hidden> &middot; <a class="prog-pay-yearly" href="/schedule/" data-checkout="expand" data-period="yearly">Pay yearly</a></span><span class="prog-prepay-renew">Prepaid years renew yearly; 30 days&#8217; notice before renewal.</span></p>
         <ul class="prog-features">
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Custom Website Design</li>
@@ -1100,6 +1106,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Local Services Ads</li>
           <li class="prog-channel"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>2 Ad Channels of Your Choice (Google, Meta, or ChatGPT)</li>
         </ul>
+        <a class="prog-more" href="/marketing-programs/expand/" aria-label="Learn more about Expand Growth">Learn more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
       </div>
       <div class="prog-footer">
         <a href="/schedule/" class="btn-cta" data-checkout="expand" data-period="monthly">Let&#8217;s Get Started <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true" data-icon="arrow_forward"></span></a>
@@ -1113,7 +1120,6 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <div class="prog-body">
         <div class="prog-name">Conquer Growth</div>
         <div class="prog-price"><span class="amount">$4,500+</span><span class="per">/month</span></div>
-        <div class="prog-sub">$5M – $10M annual revenue</div>
         <p class="prog-prepay">Pay the year up front: save 10% and get a 12-month plan with the heavy lifting done up front.<br><strong>$48,600+/yr</strong> ($4,050+/mo)<span class="prog-pay-yearly-wrap" hidden> &middot; <a class="prog-pay-yearly" href="/schedule/" data-checkout="conquer" data-period="yearly">Pay yearly</a></span><span class="prog-prepay-renew">Prepaid years renew yearly; 30 days&#8217; notice before renewal.</span></p>
         <ul class="prog-features">
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Custom Website Design</li>
@@ -1122,6 +1128,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Local Services Ads</li>
           <li class="prog-channel"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>All 3 Ad Channels (Google, Meta, and ChatGPT)</li>
         </ul>
+        <a class="prog-more" href="/marketing-programs/conquer/" aria-label="Learn more about Conquer Growth">Learn more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
       </div>
       <div class="prog-footer">
         <a href="/schedule/" class="btn-cta" data-checkout="conquer" data-period="monthly">Let&#8217;s Get Started <span class="material-symbols-outlined" style="font-size:16px" aria-hidden="true" data-icon="arrow_forward"></span></a>
@@ -1133,32 +1140,8 @@ a.f-social{width:44px;height:44px;text-decoration:none}
   </div>
   <p class="prog-terms-all">Month-to-month &middot; 30 days&#8217; notice to cancel</p>
 
-  <!-- ===== STRIPE: program checkout links (all 8 live here, live mode) =====
-       "Let's Get Started" uses each plan's monthly link; the "Pay yearly" link in the
-       prepay note uses the yearly link. If a value is missing or isn't a
-       https://buy.stripe.com/ URL, that button falls back to the booking page
-       (/schedule/) and its "Pay yearly" link stays hidden. Without JavaScript the
-       buttons go to /schedule/. -->
-  <script type="application/json" id="programCheckoutLinks">
-  {
-    "local-seo": { "monthly": "https://buy.stripe.com/bJeaEX3XM5Mq3Wn7ESgIo0a", "yearly": "https://buy.stripe.com/14AbJ1fGu8YC3Wn6AOgIo0b" },
-    "spark":     { "monthly": "https://buy.stripe.com/9B69ATbqe6Qu1Of5wKgIo0c", "yearly": "https://buy.stripe.com/cNicN52TIdeS2Sjf7kgIo0d" },
-    "expand":    { "monthly": "https://buy.stripe.com/5kQ4gz65UdeS64v2kygIo0e", "yearly": "https://buy.stripe.com/cNi14ngKygr4eB10cqgIo0f" },
-    "conquer":   { "monthly": "https://buy.stripe.com/dRm9AT65U8YC3WngbogIo0g", "yearly": "https://buy.stripe.com/7sY7sLdyma2G1OfbV8gIo0h" }
-  }
-  </script>
-  <script>
-  (function(){
-    var cfg; try { cfg = JSON.parse(document.getElementById('programCheckoutLinks').textContent); } catch(e) { return; }
-    function ok(u){ return typeof u === 'string' && /^https:\/\/buy\.stripe\.com\/[A-Za-z0-9_]+$/.test(u); }
-    [].slice.call(document.querySelectorAll('.program-grid [data-checkout]')).forEach(function(a){
-      var plan = cfg[a.getAttribute('data-checkout')] || {}, url = plan[a.getAttribute('data-period')];
-      if (!ok(url)) return;                       /* keep the /schedule/ fallback */
-      a.setAttribute('href', url);
-      var wrap = a.closest('.prog-pay-yearly-wrap'); if (wrap) wrap.hidden = false;
-    });
-  })();
-  </script>
+  <!-- STRIPE: the 8 program checkout links live in /js/program-checkout.js (shared with the program pages). -->
+  <script src="/js/program-checkout.js" defer></script>
 </section>
 
 <!-- ============ STATS ============ -->
@@ -1611,9 +1594,9 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <div class="faq-a">
         <p>We offer three distinct programs based on your business stage and goals:</p>
         <ul>
-          <li><strong>Spark Growth ($2,500/mo):</strong> Perfect for established companies ($0.5M–$1.5M revenue) focused on sustainable growth and building long-term market presence.</li>
-          <li><strong>Expand Growth ($3,500/mo):</strong> Designed for companies ($1.5M–$5M revenue) ready to accelerate. Combines organic and paid strategies for faster results.</li>
-          <li><strong>Conquer Growth ($4,500+/mo):</strong> Built for companies ($5M–$10M revenue) targeting market domination with multi-area expansion.</li>
+          <li><strong>Spark Growth ($2,500/mo):</strong> Perfect for established companies focused on sustainable growth and building long-term market presence.</li>
+          <li><strong>Expand Growth ($3,500/mo):</strong> Designed for companies ready to accelerate. Combines organic and paid strategies for faster results.</li>
+          <li><strong>Conquer Growth ($4,500+/mo):</strong> Built for companies targeting market domination with multi-area expansion.</li>
         </ul>
         <p>Every plan is month-to-month with 30 days&#8217; notice to cancel, and you can pay the year up front to save 10%. Not ready for a full program? Local SEO + Google Business Profile starts at $350/month.</p>
       </div>
