@@ -7,10 +7,11 @@
 
    Any element with data-checkout="<plan>" and data-period="monthly|yearly"
    gets its href set from the table below. "Let's Get Started" uses each plan's
-   monthly link; "Pay yearly" uses the yearly link. If a value is missing or
-   isn't a https://buy.stripe.com/ URL, that button keeps its /schedule/
-   fallback and any wrapper marked [data-checkout-wrap] (or the cards'
-   .prog-pay-yearly-wrap) stays hidden. Without JavaScript the buttons go to
+   monthly link; "Pay yearly" uses the yearly link. The pricing cards carry
+   monthly buttons only (Oct 2026); the yearly buttons are on the program
+   pages. If a value is missing or isn't a https://buy.stripe.com/ URL, that
+   button keeps its /schedule/ fallback and any wrapper marked
+   [data-checkout-wrap] stays hidden. Without JavaScript the buttons go to
    /schedule/. */
 (function(){
   var programCheckoutLinks = {
@@ -25,7 +26,7 @@
       var plan = programCheckoutLinks[a.getAttribute('data-checkout')] || {}, url = plan[a.getAttribute('data-period')];
       if (!ok(url)) return;                       /* keep the /schedule/ fallback */
       a.setAttribute('href', url);
-      var wrap = a.closest('[data-checkout-wrap], .prog-pay-yearly-wrap'); if (wrap) wrap.hidden = false;
+      var wrap = a.closest('[data-checkout-wrap]'); if (wrap) wrap.hidden = false;
     });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply); else apply();

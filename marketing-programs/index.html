@@ -357,27 +357,21 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
 .prog-price{display:flex;align-items:baseline;gap:4px;margin-bottom:6px}
 .prog-price .amount{font-family:var(--head);font-size:48px;font-weight:800;color:var(--amount-c);line-height:1}
 .prog-price .per{font-family:var(--head);font-size:14px;color:var(--copy-c)}
-.prog-sub{font-family:var(--head);font-size:11px;color:var(--copy-c);letter-spacing:.06em;
-  text-transform:uppercase;margin-bottom:24px}
-.prog-sub:has(+ .prog-prepay){margin-bottom:14px}
 /* The ad-channel line is the one feature that differs between tiers. */
 .prog-features li.prog-channel{font-weight:800;background:var(--rule-c);border-radius:6px;padding:7px 8px;margin-inline:-8px}
-.prog-prepay-renew{display:block;margin-top:3px;font-size:11px;opacity:.85}
-.prog-pay-yearly{color:var(--amount-c);font-weight:700;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
 .prog-spots.is-empty{visibility:hidden}
-/* Revenue bands came off the growth cards (Oct 2026), so the prepay note now
-   follows the price directly. "Learn more" goes to each program's own page. */
-.prog-price + .prog-prepay{margin-top:16px}
+/* Slim cards (Oct 2026): price, a few bullets, spots, actions. The annual plan and
+   yearly checkout live on each program page. "Learn more" goes to that page. */
+.prog-price + .prog-features,.prog-price + .prog-inherit{margin-top:18px}
+.prog-inherit{border-top:1px solid var(--rule-c);padding-top:18px;font-family:var(--head);font-size:12px;font-weight:600;letter-spacing:.03em;color:var(--copy-c)}
+.prog-inherit + .prog-features{border-top:none;padding-top:10px}
+.prog-li-sub{display:block;margin-top:2px;font-size:11px;font-weight:500;letter-spacing:.02em;text-transform:none;color:var(--copy-c)}
 .prog-more{display:inline-flex;align-items:center;gap:4px;min-height:24px;margin:-4px 0 4px;font-family:var(--head);font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--copy-c);text-decoration:underline;text-underline-offset:2px}
 .prog-more:hover{color:var(--amount-c)}
 .prog-more .material-symbols-outlined{font-size:14px}
 .prog-book{font-family:var(--head);font-size:12px;text-align:center;color:var(--copy-c)}
 .prog-book a{color:var(--amount-c);font-weight:700;text-decoration:underline;text-underline-offset:2px}
 .prog-terms-all{text-align:center;font-family:var(--head);font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted, inherit);margin-top:28px}
-.prog-prepay{font-family:var(--head);font-size:12px;line-height:1.45;color:var(--copy-c);margin-bottom:24px;
-  padding:8px 10px;border:1px dashed var(--rule-c);border-radius:8px}
-.prog-prepay strong{color:var(--amount-c);font-weight:700}
-.prog-note{font-family:var(--head);font-size:12px;line-height:1.45;color:var(--copy-c);margin:-6px 0 20px}
 .program-grid.has-entry .prog-body{padding:26px 22px 0}
 .program-grid.has-entry .prog-footer{padding:20px 22px 24px}
 .program-grid.has-entry .prog-price{flex-wrap:wrap}
@@ -1053,14 +1047,11 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <div class="prog-body">
         <div class="prog-name">Local SEO + Google Business Profile</div>
         <div class="prog-price"><span class="amount">$350</span><span class="per">/month</span></div>
-        <div class="prog-sub">Google Business Profile + light website care</div>
-        <p class="prog-prepay">Pay the year up front: save 10% and get a 12-month plan with the heavy lifting done up front.<br><strong>$3,780/yr</strong> ($315/mo)<span class="prog-pay-yearly-wrap" hidden> &middot; <a class="prog-pay-yearly" href="/schedule/" data-checkout="local-seo" data-period="yearly">Pay yearly</a></span><span class="prog-prepay-renew">Prepaid years renew yearly; 30 days&#8217; notice before renewal.</span></p>
         <ul class="prog-features">
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Business Profile Management</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Light Website Review</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Light Website Updates</li>
         </ul>
-        <p class="prog-note">Website rebuilds and custom development are quoted separately.</p>
         <a class="prog-more" href="/marketing-programs/local-seo/" aria-label="Learn more about Local SEO + Google Business Profile">Learn more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
       </div>
       <div class="prog-footer">
@@ -1075,13 +1066,12 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <div class="prog-body">
         <div class="prog-name">Spark Growth</div>
         <div class="prog-price"><span class="amount">$2,500</span><span class="per">/month</span></div>
-        <p class="prog-prepay">Pay the year up front: save 10% and get a 12-month plan with the heavy lifting done up front.<br><strong>$27,000/yr</strong> ($2,250/mo)<span class="prog-pay-yearly-wrap" hidden> &middot; <a class="prog-pay-yearly" href="/schedule/" data-checkout="spark" data-period="yearly">Pay yearly</a></span><span class="prog-prepay-renew">Prepaid years renew yearly; 30 days&#8217; notice before renewal.</span></p>
         <ul class="prog-features">
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Custom Website Design</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Search Engine Optimization</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Reputation Management</li>
           <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Local Services Ads</li>
-          <li class="prog-channel"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>1 Ad Channel of Your Choice (Google, Meta, or ChatGPT)</li>
+          <li class="prog-channel"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span><span>1 Ad Channel of Your Choice<span class="prog-li-sub">Google, Meta or ChatGPT</span></span></li>
         </ul>
         <a class="prog-more" href="/marketing-programs/spark/" aria-label="Learn more about Spark Growth">Learn more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
       </div>
@@ -1098,13 +1088,9 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <div class="prog-body">
         <div class="prog-name">Expand Growth</div>
         <div class="prog-price"><span class="amount">$3,500</span><span class="per">/month</span></div>
-        <p class="prog-prepay">Pay the year up front: save 10% and get a 12-month plan with the heavy lifting done up front.<br><strong>$37,800/yr</strong> ($3,150/mo)<span class="prog-pay-yearly-wrap" hidden> &middot; <a class="prog-pay-yearly" href="/schedule/" data-checkout="expand" data-period="yearly">Pay yearly</a></span><span class="prog-prepay-renew">Prepaid years renew yearly; 30 days&#8217; notice before renewal.</span></p>
+        <p class="prog-inherit">Everything in Spark, with:</p>
         <ul class="prog-features">
-          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Custom Website Design</li>
-          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Search Engine Optimization</li>
-          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Reputation Management</li>
-          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Local Services Ads</li>
-          <li class="prog-channel"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>2 Ad Channels of Your Choice (Google, Meta, or ChatGPT)</li>
+          <li class="prog-channel"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span><span>2 Ad Channels of Your Choice<span class="prog-li-sub">Google, Meta or ChatGPT</span></span></li>
         </ul>
         <a class="prog-more" href="/marketing-programs/expand/" aria-label="Learn more about Expand Growth">Learn more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
       </div>
@@ -1120,13 +1106,9 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <div class="prog-body">
         <div class="prog-name">Conquer Growth</div>
         <div class="prog-price"><span class="amount">$4,500+</span><span class="per">/month</span></div>
-        <p class="prog-prepay">Pay the year up front: save 10% and get a 12-month plan with the heavy lifting done up front.<br><strong>$48,600+/yr</strong> ($4,050+/mo)<span class="prog-pay-yearly-wrap" hidden> &middot; <a class="prog-pay-yearly" href="/schedule/" data-checkout="conquer" data-period="yearly">Pay yearly</a></span><span class="prog-prepay-renew">Prepaid years renew yearly; 30 days&#8217; notice before renewal.</span></p>
+        <p class="prog-inherit">Everything in Spark, with:</p>
         <ul class="prog-features">
-          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Custom Website Design</li>
-          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Search Engine Optimization</li>
-          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Reputation Management</li>
-          <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>Google Local Services Ads</li>
-          <li class="prog-channel"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span>All 3 Ad Channels (Google, Meta, and ChatGPT)</li>
+          <li class="prog-channel"><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span><span>All 3 Ad Channels<span class="prog-li-sub">Google, Meta and ChatGPT</span></span></li>
         </ul>
         <a class="prog-more" href="/marketing-programs/conquer/" aria-label="Learn more about Conquer Growth">Learn more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
       </div>
