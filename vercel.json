@@ -28,6 +28,26 @@
   ],
   "redirects": [
     {
+      "source": "/marketing-services/local-seo-services/",
+      "destination": "https://www.outworkemdigital.com/marketing-programs/local-seo/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/local-seo-services",
+      "destination": "https://www.outworkemdigital.com/marketing-programs/local-seo/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/local-seo-services/index.html",
+      "destination": "https://www.outworkemdigital.com/marketing-programs/local-seo/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/local-seo-services.html",
+      "destination": "https://www.outworkemdigital.com/marketing-programs/local-seo/",
+      "permanent": true
+    },
+    {
       "source": "/news/jana-kearney-joins-top-seer-marketers-full-time-as-creative-director/",
       "destination": "/news/jana-kearney-joins-outworkem-digital-full-time-as-creative-director/",
       "permanent": true
@@ -159,12 +179,12 @@
     },
     {
       "source": "/marketing-services/hvac-local-seo-services/",
-      "destination": "/marketing-services/local-seo-services/",
+      "destination": "https://www.outworkemdigital.com/marketing-programs/local-seo/",
       "permanent": true
     },
     {
       "source": "/marketing-services/hvac-local-seo-services",
-      "destination": "/marketing-services/local-seo-services/",
+      "destination": "https://www.outworkemdigital.com/marketing-programs/local-seo/",
       "permanent": true
     },
     {

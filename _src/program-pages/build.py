@@ -150,8 +150,7 @@ INC_GBP = dict(icon='pin_drop', title='Google Business Profile management', para
   # local-seo-services "Why Local SEO"
   'Your Google Business Profile is what homeowners see in Google Maps and the Map Pack when they search for a contractor near them. When homeowners need home services they turn to Google first, and the contractor who shows up in the Map Pack gets the call.',
   # local-seo-services FAQ 02 (NAP consistency is a Local SEO ranking signal)
-  'We manage your profile for you. Consistent business information, meaning your name, address and phone number, is one of the signals Google uses for local rankings.'],
-  more=('/marketing-services/local-seo-services/', 'More about Local SEO'))
+  'We manage your profile for you. Consistent business information, meaning your name, address and phone number, is one of the signals Google uses for local rankings.'])
 INC_REVIEW = dict(icon='fact_check', title='Light website review', paras=[
   # local-seo-services FAQ 02
   'Homeowners who find you on Maps click through to your website, and if they land on a slow, confusing or outdated page, they leave. Service area pages, schema markup, consistent business information and page speed all affect how you rank in the Map Pack, which is why the plan includes a light review of your current site.'])
@@ -299,7 +298,7 @@ def schema(key, url, faq):
 
 
 # ------------------------------------------------------------------ Local SEO: extra sections
-# Copy pulled from /marketing-services/local-seo-services/ (Oct 4 2026), restyled with the
+# Copy pulled from the former Local SEO service page (now redirected here, Oct 4 2026), restyled with the
 # program-page components. Results stats, lead counts, cost-per-lead figures, timelines and
 # guarantees on that page are deliberately left out.
 LSEO_WHY_WITHOUT = ['Missing out on &#8220;near me&#8221; searches and emergency calls',
@@ -386,7 +385,7 @@ def lseo_extra(faq_start):
 """ for icon, t, rows in LSEO_GROWTH)
     prog_links = ''.join(f'<a class="pp-inc-more" href="/marketing-programs/{k}/">View {PROGRAMS[k]["short"]} {ic("arrow_forward")}</a>' for k in ('spark', 'expand', 'conquer'))
     return f"""
-<!-- 8 · WHY LOCAL SEO (from /marketing-services/local-seo-services/) -->
+<!-- 8 · WHY LOCAL SEO (copy from the former Local SEO service page) -->
 <section class="pp-section wrap" aria-labelledby="why-h">
   <div class="section-head center">
     <div class="kicker" style="justify-content:center"><span class="label">Why Local SEO</span></div>
