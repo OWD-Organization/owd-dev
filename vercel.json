@@ -276,6 +276,151 @@
       "source": "/hvac-marketing/2025-digital-marketing-planning-workshop-for-for-hvac-home-service-contractors",
       "destination": "/hvac-marketing/2025-digital-marketing-planning-workshop-for-hvac-home-service-contractors/",
       "permanent": true
+    },
+    {
+      "source": "/2025-plan",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/2025-plan/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/2025-worksheet",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/2025-worksheet/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/news",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/news/",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing/local-seo",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing/local-seo/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing/search-engine-optimization",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing/search-engine-optimization/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing/website-design",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing/website-design/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing/pay-per-click-advertising",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing/pay-per-click-advertising/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing/database-reactivation-hvac-marketing",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing/database-reactivation-hvac-marketing/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/organic-seo-services",
+      "destination": "/marketing-services/organic-seo-services/",
+      "permanent": true
+    },
+    {
+      "source": "/organic-seo-services/",
+      "destination": "/marketing-services/organic-seo-services/",
+      "permanent": true
+    },
+    {
+      "source": "/local-seo-services",
+      "destination": "/marketing-programs/local-seo/",
+      "permanent": true
+    },
+    {
+      "source": "/local-seo-services/",
+      "destination": "/marketing-programs/local-seo/",
+      "permanent": true
+    },
+    {
+      "source": "/ppc-advertising-services",
+      "destination": "/marketing-services/ppc-advertising-services/",
+      "permanent": true
+    },
+    {
+      "source": "/ppc-advertising-services/",
+      "destination": "/marketing-services/ppc-advertising-services/",
+      "permanent": true
+    },
+    {
+      "source": "/local-services-ads",
+      "destination": "/marketing-services/local-services-ads/",
+      "permanent": true
+    },
+    {
+      "source": "/local-services-ads/",
+      "destination": "/marketing-services/local-services-ads/",
+      "permanent": true
+    },
+    {
+      "source": "/reputation-management-services",
+      "destination": "/marketing-services/reputation-management-services/",
+      "permanent": true
+    },
+    {
+      "source": "/reputation-management-services/",
+      "destination": "/marketing-services/reputation-management-services/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
     }
   ]
 }
