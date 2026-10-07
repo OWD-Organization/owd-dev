@@ -23,7 +23,7 @@ the existing permalink structure of /%category%/%postname%/.
 | `/home-service-marketing-academy/` | `home-service-marketing-academy/index.html` | live on production |
 | `/home-service-marketing-academy/page/2/` | `home-service-marketing-academy/page/2/index.html` | NEW (not on production yet) |
 | `/hvac-marketing/2024-ultimate-guide-to-hvac-marketing-more-leads-jobs-roi/` | `hvac-marketing/2024-ultimate-guide-to-hvac-marketing-more-leads-jobs-roi/index.html` | live on production |
-| `/hvac-marketing/2025-digital-marketing-planning-workshop-for-for-hvac-home-service-contractors/` | `hvac-marketing/2025-digital-marketing-planning-workshop-for-for-hvac-home-service-contractors/index.html` | live on production |
+| `/hvac-marketing/2025-digital-marketing-planning-workshop-for-hvac-home-service-contractors/` | `hvac-marketing/2025-digital-marketing-planning-workshop-for-hvac-home-service-contractors/index.html` | live on production |
 | `/hvac-marketing/5-proven-strategies-to-boost-your-hvac-website-conversion-rate/` | `hvac-marketing/5-proven-strategies-to-boost-your-hvac-website-conversion-rate/index.html` | live on production |
 | `/hvac-marketing/8-proven-strategies-to-dominate-google-map-pack-rankings-for-hvac-home-service-contractors/` | `hvac-marketing/8-proven-strategies-to-dominate-google-map-pack-rankings-for-hvac-home-service-contractors/index.html` | live on production |
 | `/hvac-marketing/database-reactivation-hvac-marketing/145000-from-past-customers-5-step-database-reactivation-strategy/` | `hvac-marketing/database-reactivation-hvac-marketing/145000-from-past-customers-5-step-database-reactivation-strategy/index.html` | live on production |
@@ -44,7 +44,7 @@ the existing permalink structure of /%category%/%postname%/.
 | `/marketing-services/` | `marketing-services/index.html` | live on production |
 | `/marketing-services/client-gifting-direct-mail/` | `marketing-services/client-gifting-direct-mail/index.html` | NEW (not on production yet) |
 | `/marketing-services/local-seo-services/` | `marketing-services/local-seo-services/index.html` | live on production |
-| `/marketing-services/local-services-ads-2/` | `marketing-services/local-services-ads-2/index.html` | live on production |
+| `/marketing-services/local-services-ads/` | `marketing-services/local-services-ads/index.html` | live on production |
 | `/marketing-services/media-content-production/` | `marketing-services/media-content-production/index.html` | NEW (not on production yet) |
 | `/marketing-services/organic-seo-services/` | `marketing-services/organic-seo-services/index.html` | live on production |
 | `/marketing-services/ppc-advertising-services/` | `marketing-services/ppc-advertising-services/index.html` | live on production |

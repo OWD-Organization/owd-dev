@@ -199,12 +199,12 @@
     },
     {
       "source": "/marketing-services/hvac-local-services-ads/",
-      "destination": "/marketing-services/local-services-ads-2/",
+      "destination": "/marketing-services/local-services-ads/",
       "permanent": true
     },
     {
       "source": "/marketing-services/hvac-local-services-ads",
-      "destination": "/marketing-services/local-services-ads-2/",
+      "destination": "/marketing-services/local-services-ads/",
       "permanent": true
     },
     {
@@ -215,6 +215,66 @@
     {
       "source": "/marketing-services/hvac-reputation-management-services",
       "destination": "/marketing-services/reputation-management-services/",
+      "permanent": true
+    },
+    {
+      "source": "/news/reddit-chatgpt-citation-drop-ai-search/",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/news/reddit-chatgpt-citation-drop-ai-search",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/news/thomas-eberts-featured-in-forbes-alongside-jordan-belfort/",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/news/thomas-eberts-featured-in-forbes-alongside-jordan-belfort",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/post-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/page-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/category-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/local-services-ads-2/",
+      "destination": "/marketing-services/local-services-ads/",
+      "permanent": true
+    },
+    {
+      "source": "/marketing-services/local-services-ads-2",
+      "destination": "/marketing-services/local-services-ads/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing/2025-digital-marketing-planning-workshop-for-for-hvac-home-service-contractors/",
+      "destination": "/hvac-marketing/2025-digital-marketing-planning-workshop-for-hvac-home-service-contractors/",
+      "permanent": true
+    },
+    {
+      "source": "/hvac-marketing/2025-digital-marketing-planning-workshop-for-for-hvac-home-service-contractors",
+      "destination": "/hvac-marketing/2025-digital-marketing-planning-workshop-for-hvac-home-service-contractors/",
       "permanent": true
     }
   ]

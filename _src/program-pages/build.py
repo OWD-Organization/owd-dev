@@ -114,11 +114,11 @@ INC_REP = dict(icon='star_rate', title='Reputation management', paras=[
   'We monitor your reviews across platforms in one dashboard, with real-time alerts, and write professional, on-brand responses, including to negative reviews. Your best reviews are showcased on your website, and review schema markup helps them show up as star snippets in search.'],
   more=('/marketing-services/reputation-management-services/', 'More about reputation management'))
 INC_LSA = dict(icon='storefront', title='Google Local Services Ads', paras=[
-  # local-services-ads-2 intro + "With Professional LSA Management"
+  # local-services-ads intro + "With Professional LSA Management"
   'Local Services Ads put your business at the very top of Google, above the pay-per-click ads and the organic results, with the Google Guarantee badge homeowners look for. You pay when a real customer contacts you directly, not for every click.',
-  # local-services-ads-2 "Google Guarantee" + "What's Included"
+  # local-services-ads "Google Guarantee" + "What's Included"
   'We take care of the Google Guarantee verification (background checks, plus license and insurance verification by Google), set up and optimize your profile, choose which services to advertise, watch lead quality and costs, and handle invalid lead disputes to protect your budget.'],
-  more=('/marketing-services/local-services-ads-2/', 'More about Local Services Ads'))
+  more=('/marketing-services/local-services-ads/', 'More about Local Services Ads'))
 
 # Ad channel descriptions. Google comes from ppc-advertising-services "What's Included";
 # Meta and ChatGPT were written for these pages (approved by Orion, Oct 4 2026): general
@@ -347,8 +347,8 @@ LSEO_NOFIT = ['Looking for quick, temporary fixes', 'Without a growth mindset', 
 LSEO_FAQ_MORE = [  # old page FAQs 01, 02, 04; 03 (lead counts / cost per lead) left out
   ('How long until I see results from Local SEO?',
    'Unlike paid advertising that delivers instant results, Local SEO is a long-term strategy. It builds lasting authority that delivers leads long-term.'),
-  ('Why can&#8217;t I just do Local SEO without a new website?',
-   'Your Google Business Profile can only take you so far. When homeowners click through from Maps to your website and find a slow, confusing, or outdated page, they leave, and your Local SEO investment is wasted. More importantly, service area pages, proper schema markup, NAP consistency, and page speed are all direct Local SEO ranking signals. A poorly built site actively undermines your Map Pack rankings. The best Local SEO results come when your website and local presence are built as one integrated system.'),
+  ('Do I need a new website for Local SEO?',
+   'No. The Local SEO plan works with your current site. A strong site can still amplify your Map Pack results. Service area pages, schema markup and page speed all help you rank. Our growth programs (Spark, Expand and Conquer) include a custom website.'),
   ('Do you guarantee rankings or results?',
    'No ethical agency can guarantee specific rankings: Google&#8217;s algorithm is outside anyone&#8217;s control, and anyone promising a specific Map Pack position is not being straight with you.'),
 ]
