@@ -421,6 +421,196 @@
       "source": "/wp-sitemap.xml",
       "destination": "/sitemap.xml",
       "permanent": true
+    },
+    {
+      "source": "/category/news",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/category/news/",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/category/news/:path*",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/category/news/:path*/",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/category",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:path*",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:path*/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/tag",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/tag/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/tag/:path*",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/tag/:path*/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/author",
+      "destination": "/about-us/meet-the-team/",
+      "permanent": true
+    },
+    {
+      "source": "/author/",
+      "destination": "/about-us/meet-the-team/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:path*",
+      "destination": "/about-us/meet-the-team/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:path*/",
+      "destination": "/about-us/meet-the-team/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/:path*",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/:year(\\d{4})/:path*/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/hvac-seo",
+      "destination": "/marketing-services/organic-seo-services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/hvac-seo/",
+      "destination": "/marketing-services/organic-seo-services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/hvac-local-seo",
+      "destination": "/marketing-programs/local-seo/",
+      "permanent": true
+    },
+    {
+      "source": "/services/hvac-local-seo/",
+      "destination": "/marketing-programs/local-seo/",
+      "permanent": true
+    },
+    {
+      "source": "/services/hvac-website-design",
+      "destination": "/marketing-services/website-design-services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/hvac-website-design/",
+      "destination": "/marketing-services/website-design-services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/hvac-content-marketing",
+      "destination": "/marketing-services/media-content-production/",
+      "permanent": true
+    },
+    {
+      "source": "/services/hvac-content-marketing/",
+      "destination": "/marketing-services/media-content-production/",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/marketing-services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/",
+      "destination": "/marketing-services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:path*",
+      "destination": "/marketing-services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:path*/",
+      "destination": "/marketing-services/",
+      "permanent": true
+    },
+    {
+      "source": "/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/comments/feed",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/comments/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:path+/feed",
+      "destination": "/:path+/",
+      "permanent": true
+    },
+    {
+      "source": "/:path+/feed/",
+      "destination": "/:path+/",
+      "permanent": true
     }
   ]
 }
