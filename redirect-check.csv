@@ -1,0 +1,211 @@
+old_url,source,first_status,final_url,hops,final_status,flags,action
+https://outworkemdigital.com/,url-map.md,308,https://www.outworkemdigital.com/,1,200,,
+https://outworkemdigital.com/about-us/,url-map.md,308,https://www.outworkemdigital.com/about-us/,1,200,,
+https://outworkemdigital.com/about-us/meet-the-team/,url-map.md,308,https://www.outworkemdigital.com/about-us/meet-the-team/,1,200,,
+https://outworkemdigital.com/about-us/news/,url-map.md,308,https://www.outworkemdigital.com/about-us/news/,1,200,,
+https://outworkemdigital.com/careers,vercel.json,308,https://www.outworkemdigital.com/about-us/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/careers/,vercel.json,308,https://www.outworkemdigital.com/about-us/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/case-studies/,url-map.md,308,https://www.outworkemdigital.com/case-studies/,1,200,,
+https://outworkemdigital.com/case-studies/comfort-one-air-conditioning-case-study/,url-map.md,308,https://www.outworkemdigital.com/case-studies/comfort-one-air-conditioning-case-study/,1,200,,
+https://outworkemdigital.com/case-studies/desert-state-roofing-case-study/,url-map.md,308,https://www.outworkemdigital.com/case-studies/desert-state-roofing-case-study/,1,200,,
+https://outworkemdigital.com/case-studies/integrity-exterior-solutions-case-study/,url-map.md,308,https://www.outworkemdigital.com/case-studies/integrity-exterior-solutions-case-study/,1,200,,
+https://outworkemdigital.com/case-studies/janecek-construction-remodeling-case-study/,url-map.md,308,https://www.outworkemdigital.com/case-studies/janecek-construction-remodeling-case-study/,1,200,,
+https://outworkemdigital.com/case-studies/pool-boys-case-study/,url-map.md,308,https://www.outworkemdigital.com/case-studies/pool-boys-case-study/,1,200,,
+https://outworkemdigital.com/desert-state-roofing-case-study,vercel.json,308,https://www.outworkemdigital.com/case-studies/desert-state-roofing-case-study/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/desert-state-roofing-case-study/,vercel.json,308,https://www.outworkemdigital.com/case-studies/desert-state-roofing-case-study/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/guides,vercel.json,308,https://www.outworkemdigital.com/home-service-marketing-academy/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/guides/,vercel.json,308,https://www.outworkemdigital.com/home-service-marketing-academy/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/home-service-marketing-academy/,url-map.md,308,https://www.outworkemdigital.com/home-service-marketing-academy/,1,200,,
+https://outworkemdigital.com/home-service-marketing-academy/page/2/,url-map.md,308,https://www.outworkemdigital.com/home-service-marketing-academy/page/2/,1,200,,
+https://outworkemdigital.com/hvac-marketing-programs,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/hvac-marketing-programs/,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/hvac-marketing/2024-ultimate-guide-to-hvac-marketing-more-leads-jobs-roi/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/2024-ultimate-guide-to-hvac-marketing-more-leads-jobs-roi/,1,200,,
+https://outworkemdigital.com/hvac-marketing/2025-digital-marketing-planning-workshop-for-for-hvac-home-service-contractors/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/2025-digital-marketing-planning-workshop-for-for-hvac-home-service-contractors/,1,200,,
+https://outworkemdigital.com/hvac-marketing/5-proven-strategies-to-boost-your-hvac-website-conversion-rate/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/5-proven-strategies-to-boost-your-hvac-website-conversion-rate/,1,200,,
+https://outworkemdigital.com/hvac-marketing/8-proven-strategies-to-dominate-google-map-pack-rankings-for-hvac-home-service-contractors/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/8-proven-strategies-to-dominate-google-map-pack-rankings-for-hvac-home-service-contractors/,1,200,,
+https://outworkemdigital.com/hvac-marketing/database-reactivation-hvac-marketing/145000-from-past-customers-5-step-database-reactivation-strategy/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/database-reactivation-hvac-marketing/145000-from-past-customers-5-step-database-reactivation-strategy/,1,200,,
+https://outworkemdigital.com/hvac-marketing/google-my-business-for-hvac/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/google-my-business-for-hvac/,1,200,,
+https://outworkemdigital.com/hvac-marketing/guide-to-hvac-social-media-marketing/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/guide-to-hvac-social-media-marketing/,1,200,,
+https://outworkemdigital.com/hvac-marketing/local-seo-tactics-for-hvac-contractors-to-maximize-visibility/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/local-seo-tactics-for-hvac-contractors-to-maximize-visibility/,1,200,,
+https://outworkemdigital.com/hvac-marketing/local-seo/how-much-does-seo-cost-for-hvac-companies/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/local-seo/how-much-does-seo-cost-for-hvac-companies/,1,200,,
+https://outworkemdigital.com/hvac-marketing/local-seo/how-to-dominate-google-maps/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/local-seo/how-to-dominate-google-maps/,1,200,,
+https://outworkemdigital.com/hvac-marketing/pay-per-click-advertising/hvac-ppc-campaign-strategies/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/pay-per-click-advertising/hvac-ppc-campaign-strategies/,1,200,,
+https://outworkemdigital.com/hvac-marketing/search-engine-optimization/2024-seo-forumla-replay/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/search-engine-optimization/2024-seo-forumla-replay/,1,200,,
+https://outworkemdigital.com/hvac-marketing/search-engine-optimization/guide-to-seo-for-hvac-contractors/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/search-engine-optimization/guide-to-seo-for-hvac-contractors/,1,200,,
+https://outworkemdigital.com/hvac-marketing/search-engine-optimization/local-seo-for-hvac-companies/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/search-engine-optimization/local-seo-for-hvac-companies/,1,200,,
+https://outworkemdigital.com/hvac-marketing/search-engine-optimization/seo-link-building-for-hvac/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/search-engine-optimization/seo-link-building-for-hvac/,1,200,,
+https://outworkemdigital.com/hvac-marketing/triple-your-lead-conversion-rates-5-step-speed-to-lead-system/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/triple-your-lead-conversion-rates-5-step-speed-to-lead-system/,1,200,,
+https://outworkemdigital.com/hvac-marketing/website-design/guide-to-hvac-website-design/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/website-design/guide-to-hvac-website-design/,1,200,,
+https://outworkemdigital.com/hvac-marketing/website-design/the-2025-website-formula-how-to-get-more-leads-booked-online/,url-map.md,308,https://www.outworkemdigital.com/hvac-marketing/website-design/the-2025-website-formula-how-to-get-more-leads-booked-online/,1,200,,
+https://outworkemdigital.com/marketing-programs/,url-map.md,308,https://www.outworkemdigital.com/marketing-programs/,1,200,,
+https://outworkemdigital.com/marketing-services/,url-map.md,308,https://www.outworkemdigital.com/marketing-services/,1,200,,
+https://outworkemdigital.com/marketing-services/client-gifting-direct-mail/,url-map.md,308,https://www.outworkemdigital.com/marketing-services/client-gifting-direct-mail/,1,200,,
+https://outworkemdigital.com/marketing-services/hvac-local-seo-services,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/local-seo/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/hvac-local-seo-services/,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/local-seo/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/hvac-local-services-ads,vercel.json,308,https://www.outworkemdigital.com/marketing-services/local-services-ads-2/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/hvac-local-services-ads/,vercel.json,308,https://www.outworkemdigital.com/marketing-services/local-services-ads-2/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/hvac-ppc-advertising-services,vercel.json,308,https://www.outworkemdigital.com/marketing-services/ppc-advertising-services/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/hvac-ppc-advertising-services/,vercel.json,308,https://www.outworkemdigital.com/marketing-services/ppc-advertising-services/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/hvac-reputation-management-services,vercel.json,308,https://www.outworkemdigital.com/marketing-services/reputation-management-services/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/hvac-reputation-management-services/,vercel.json,308,https://www.outworkemdigital.com/marketing-services/reputation-management-services/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/hvac-seo-services,vercel.json,308,https://www.outworkemdigital.com/marketing-services/organic-seo-services/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/hvac-seo-services/,vercel.json,308,https://www.outworkemdigital.com/marketing-services/organic-seo-services/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/hvac-website-design-services,vercel.json,308,https://www.outworkemdigital.com/marketing-services/website-design-services/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/hvac-website-design-services/,vercel.json,308,https://www.outworkemdigital.com/marketing-services/website-design-services/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/local-seo-services,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/local-seo/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/local-seo-services.html,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/local-seo/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/local-seo-services/,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/local-seo/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/local-seo-services/index.html,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/local-seo/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/marketing-services/local-services-ads-2/,url-map.md,308,https://www.outworkemdigital.com/marketing-services/local-services-ads-2/,1,200,,
+https://outworkemdigital.com/marketing-services/media-content-production/,url-map.md,308,https://www.outworkemdigital.com/marketing-services/media-content-production/,1,200,,
+https://outworkemdigital.com/marketing-services/organic-seo-services/,url-map.md,308,https://www.outworkemdigital.com/marketing-services/organic-seo-services/,1,200,,
+https://outworkemdigital.com/marketing-services/ppc-advertising-services/,url-map.md,308,https://www.outworkemdigital.com/marketing-services/ppc-advertising-services/,1,200,,
+https://outworkemdigital.com/marketing-services/reputation-management-services/,url-map.md,308,https://www.outworkemdigital.com/marketing-services/reputation-management-services/,1,200,,
+https://outworkemdigital.com/marketing-services/web-hosting-services/,url-map.md,308,https://www.outworkemdigital.com/marketing-services/web-hosting-services/,1,200,,
+https://outworkemdigital.com/marketing-services/website-design-services/,url-map.md,308,https://www.outworkemdigital.com/marketing-services/website-design-services/,1,200,,
+https://outworkemdigital.com/news/bullseye-automobile-partners-with-outworkem-digital/,url-map.md,308,https://www.outworkemdigital.com/news/bullseye-automobile-partners-with-outworkem-digital/,1,200,,
+https://outworkemdigital.com/news/comfort-one-air-conditioning-launches-new-website/,url-map.md,308,https://www.outworkemdigital.com/news/comfort-one-air-conditioning-launches-new-website/,1,200,,
+https://outworkemdigital.com/news/comfort-one-air-conditioning-partners-with-outworkem-digital/,url-map.md,308,https://www.outworkemdigital.com/news/comfort-one-air-conditioning-partners-with-outworkem-digital/,1,200,,
+https://outworkemdigital.com/news/dryrite-restoration-partners-with-outworkem-digital/,url-map.md,308,https://www.outworkemdigital.com/news/dryrite-restoration-partners-with-outworkem-digital/,1,200,,
+https://outworkemdigital.com/news/jana-kearney-joins-top-seer-marketers-full-time-as-creative-director,vercel.json,308,https://www.outworkemdigital.com/news/jana-kearney-joins-outworkem-digital-full-time-as-creative-director/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/news/jana-kearney-joins-top-seer-marketers-full-time-as-creative-director/,vercel.json,308,https://www.outworkemdigital.com/news/jana-kearney-joins-outworkem-digital-full-time-as-creative-director/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/news/janecek-construction-selects-outworkem-digital-for-digital-transformation/,url-map.md,308,https://www.outworkemdigital.com/news/janecek-construction-selects-outworkem-digital-for-digital-transformation/,1,200,,
+https://outworkemdigital.com/news/outworkem-digital-achieves-seven-figure-agency-5-figure-award/,url-map.md,308,https://www.outworkemdigital.com/news/outworkem-digital-achieves-seven-figure-agency-5-figure-award/,1,200,,
+https://outworkemdigital.com/news/outworkem-digital-co-founder-thomas-eberts-achieves-clickfunnels-2-comma-club-award,vercel.json,308,https://www.outworkemdigital.com/about-us/news/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/news/outworkem-digital-co-founder-thomas-eberts-achieves-clickfunnels-2-comma-club-award/,vercel.json,308,https://www.outworkemdigital.com/about-us/news/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/news/outworkem-digital-hosts-first-official-work-retreat/,url-map.md,308,https://www.outworkemdigital.com/news/outworkem-digital-hosts-first-official-work-retreat/,1,200,,
+https://outworkemdigital.com/news/outworkem-digital-launches-outworkem-podcast/,url-map.md,308,https://www.outworkemdigital.com/news/outworkem-digital-launches-outworkem-podcast/,1,200,,
+https://outworkemdigital.com/news/paragon-homes-launches-new-brand-identity-and-website/,url-map.md,308,https://www.outworkemdigital.com/news/paragon-homes-launches-new-brand-identity-and-website/,1,200,,
+https://outworkemdigital.com/news/paragon-homes-selects-outworkem-digital-as-their-digital-marketing-partner/,url-map.md,308,https://www.outworkemdigital.com/news/paragon-homes-selects-outworkem-digital-as-their-digital-marketing-partner/,1,200,,
+https://outworkemdigital.com/news/reddit-chatgpt-citation-drop-ai-search/,url-map.md,308,https://www.outworkemdigital.com/news/reddit-chatgpt-citation-drop-ai-search/,1,404,404/ERROR,301 added in vercel.json -> /about-us/news/
+https://outworkemdigital.com/news/thomas-eberts-featured-in-forbes-alongside-jordan-belfort/,url-map.md,308,https://www.outworkemdigital.com/news/thomas-eberts-featured-in-forbes-alongside-jordan-belfort/,1,404,404/ERROR,301 added in vercel.json -> /about-us/news/
+https://outworkemdigital.com/our-work/,url-map.md,308,https://www.outworkemdigital.com/our-work/,1,200,,
+https://outworkemdigital.com/outwork-em-podcast,vercel.json,308,https://www.outworkemdigital.com/podcast/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/outwork-em-podcast/,vercel.json,308,https://www.outworkemdigital.com/podcast/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/podcast/,url-map.md,308,https://www.outworkemdigital.com/podcast/,1,200,,
+https://outworkemdigital.com/pool-boys-case-study,vercel.json,308,https://www.outworkemdigital.com/case-studies/pool-boys-case-study/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/pool-boys-case-study/,vercel.json,308,https://www.outworkemdigital.com/case-studies/pool-boys-case-study/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/privacy-policy/,url-map.md,308,https://www.outworkemdigital.com/privacy-policy/,1,200,,
+https://outworkemdigital.com/schedule/,url-map.md,308,https://www.outworkemdigital.com/schedule/,1,200,,
+https://outworkemdigital.com/terms-and-conditions/,url-map.md,308,https://www.outworkemdigital.com/terms-and-conditions/,1,200,,
+https://outworkemdigital.com/trial,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/trial/,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/verified-support,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/verified-support/,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/who-we-serve/,url-map.md,308,https://www.outworkemdigital.com/who-we-serve/,1,200,,
+https://outworkemdigital.com/workshops,vercel.json,308,https://www.outworkemdigital.com/home-service-marketing-academy/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://outworkemdigital.com/workshops/,vercel.json,308,https://www.outworkemdigital.com/home-service-marketing-academy/,2,200,CHAIN>1 (apex),apex->www (domain-level 308) then vercel.json 301 = 2 hops; not fixable in vercel.json
+https://www.outworkemdigital.com/,url-map.md,200,https://www.outworkemdigital.com/,0,200,,
+https://www.outworkemdigital.com/about-us/,url-map.md,200,https://www.outworkemdigital.com/about-us/,0,200,,
+https://www.outworkemdigital.com/about-us/meet-the-team/,url-map.md,200,https://www.outworkemdigital.com/about-us/meet-the-team/,0,200,,
+https://www.outworkemdigital.com/about-us/news/,url-map.md,200,https://www.outworkemdigital.com/about-us/news/,0,200,,
+https://www.outworkemdigital.com/careers,vercel.json,308,https://www.outworkemdigital.com/about-us/,1,200,,
+https://www.outworkemdigital.com/careers/,url-map.md,308,https://www.outworkemdigital.com/about-us/,1,200,,
+https://www.outworkemdigital.com/case-studies/,url-map.md,200,https://www.outworkemdigital.com/case-studies/,0,200,,
+https://www.outworkemdigital.com/case-studies/comfort-one-air-conditioning-case-study/,url-map.md,200,https://www.outworkemdigital.com/case-studies/comfort-one-air-conditioning-case-study/,0,200,,
+https://www.outworkemdigital.com/case-studies/desert-state-roofing-case-study/,url-map.md,200,https://www.outworkemdigital.com/case-studies/desert-state-roofing-case-study/,0,200,,
+https://www.outworkemdigital.com/case-studies/integrity-exterior-solutions-case-study/,url-map.md,200,https://www.outworkemdigital.com/case-studies/integrity-exterior-solutions-case-study/,0,200,,
+https://www.outworkemdigital.com/case-studies/janecek-construction-remodeling-case-study/,url-map.md,200,https://www.outworkemdigital.com/case-studies/janecek-construction-remodeling-case-study/,0,200,,
+https://www.outworkemdigital.com/case-studies/pool-boys-case-study/,url-map.md,200,https://www.outworkemdigital.com/case-studies/pool-boys-case-study/,0,200,,
+https://www.outworkemdigital.com/category-sitemap.xml,wp-default/parent,404,https://www.outworkemdigital.com/category-sitemap.xml,0,404,404/ERROR,301 added in vercel.json -> /sitemap.xml
+https://www.outworkemdigital.com/desert-state-roofing-case-study,vercel.json,308,https://www.outworkemdigital.com/case-studies/desert-state-roofing-case-study/,1,200,,
+https://www.outworkemdigital.com/desert-state-roofing-case-study/,vercel.json,308,https://www.outworkemdigital.com/case-studies/desert-state-roofing-case-study/,1,200,,
+https://www.outworkemdigital.com/feed/,wp-default/parent,404,https://www.outworkemdigital.com/feed/,0,404,404/ERROR,"NOT ADDED: guessed WP path, no evidence it was indexed"
+https://www.outworkemdigital.com/guides,vercel.json,308,https://www.outworkemdigital.com/home-service-marketing-academy/,1,200,,
+https://www.outworkemdigital.com/guides/,url-map.md,308,https://www.outworkemdigital.com/home-service-marketing-academy/,1,200,,
+https://www.outworkemdigital.com/home-service-marketing-academy/,url-map.md,200,https://www.outworkemdigital.com/home-service-marketing-academy/,0,200,,
+https://www.outworkemdigital.com/home-service-marketing-academy/page/2/,url-map.md,200,https://www.outworkemdigital.com/home-service-marketing-academy/page/2/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing-programs,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/,1,200,,
+https://www.outworkemdigital.com/hvac-marketing-programs/,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/,1,200,,
+https://www.outworkemdigital.com/hvac-marketing/,wp-default/parent,404,https://www.outworkemdigital.com/hvac-marketing/,0,404,404/ERROR,"NOT ADDED: guessed WP category archive, no evidence it was indexed"
+https://www.outworkemdigital.com/hvac-marketing/2024-ultimate-guide-to-hvac-marketing-more-leads-jobs-roi/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/2024-ultimate-guide-to-hvac-marketing-more-leads-jobs-roi/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/2025-digital-marketing-planning-workshop-for-for-hvac-home-service-contractors/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/2025-digital-marketing-planning-workshop-for-for-hvac-home-service-contractors/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/5-proven-strategies-to-boost-your-hvac-website-conversion-rate/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/5-proven-strategies-to-boost-your-hvac-website-conversion-rate/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/8-proven-strategies-to-dominate-google-map-pack-rankings-for-hvac-home-service-contractors/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/8-proven-strategies-to-dominate-google-map-pack-rankings-for-hvac-home-service-contractors/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/database-reactivation-hvac-marketing/,wp-default/parent,404,https://www.outworkemdigital.com/hvac-marketing/database-reactivation-hvac-marketing/,0,404,404/ERROR,"NOT ADDED: guessed WP category archive, no evidence it was indexed"
+https://www.outworkemdigital.com/hvac-marketing/database-reactivation-hvac-marketing/145000-from-past-customers-5-step-database-reactivation-strategy/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/database-reactivation-hvac-marketing/145000-from-past-customers-5-step-database-reactivation-strategy/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/google-my-business-for-hvac/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/google-my-business-for-hvac/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/guide-to-hvac-social-media-marketing/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/guide-to-hvac-social-media-marketing/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/local-seo-tactics-for-hvac-contractors-to-maximize-visibility/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/local-seo-tactics-for-hvac-contractors-to-maximize-visibility/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/local-seo/,wp-default/parent,404,https://www.outworkemdigital.com/hvac-marketing/local-seo/,0,404,404/ERROR,"NOT ADDED: guessed WP category archive, no evidence it was indexed"
+https://www.outworkemdigital.com/hvac-marketing/local-seo/how-much-does-seo-cost-for-hvac-companies/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/local-seo/how-much-does-seo-cost-for-hvac-companies/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/local-seo/how-to-dominate-google-maps/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/local-seo/how-to-dominate-google-maps/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/pay-per-click-advertising/,wp-default/parent,404,https://www.outworkemdigital.com/hvac-marketing/pay-per-click-advertising/,0,404,404/ERROR,"NOT ADDED: guessed WP category archive, no evidence it was indexed"
+https://www.outworkemdigital.com/hvac-marketing/pay-per-click-advertising/hvac-ppc-campaign-strategies/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/pay-per-click-advertising/hvac-ppc-campaign-strategies/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/search-engine-optimization/,wp-default/parent,404,https://www.outworkemdigital.com/hvac-marketing/search-engine-optimization/,0,404,404/ERROR,"NOT ADDED: guessed WP category archive, no evidence it was indexed"
+https://www.outworkemdigital.com/hvac-marketing/search-engine-optimization/2024-seo-forumla-replay/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/search-engine-optimization/2024-seo-forumla-replay/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/search-engine-optimization/guide-to-seo-for-hvac-contractors/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/search-engine-optimization/guide-to-seo-for-hvac-contractors/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/search-engine-optimization/local-seo-for-hvac-companies/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/search-engine-optimization/local-seo-for-hvac-companies/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/search-engine-optimization/seo-link-building-for-hvac/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/search-engine-optimization/seo-link-building-for-hvac/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/triple-your-lead-conversion-rates-5-step-speed-to-lead-system/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/triple-your-lead-conversion-rates-5-step-speed-to-lead-system/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/website-design/,wp-default/parent,404,https://www.outworkemdigital.com/hvac-marketing/website-design/,0,404,404/ERROR,"NOT ADDED: guessed WP category archive, no evidence it was indexed"
+https://www.outworkemdigital.com/hvac-marketing/website-design/guide-to-hvac-website-design/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/website-design/guide-to-hvac-website-design/,0,200,,
+https://www.outworkemdigital.com/hvac-marketing/website-design/the-2025-website-formula-how-to-get-more-leads-booked-online/,url-map.md,200,https://www.outworkemdigital.com/hvac-marketing/website-design/the-2025-website-formula-how-to-get-more-leads-booked-online/,0,200,,
+https://www.outworkemdigital.com/local-seo-services/,wp-default/parent,404,https://www.outworkemdigital.com/local-seo-services/,0,404,404/ERROR,"NOT ADDED: guessed WP path, no evidence it was indexed"
+https://www.outworkemdigital.com/local-services-ads/,wp-default/parent,404,https://www.outworkemdigital.com/local-services-ads/,0,404,404/ERROR,"NOT ADDED: guessed WP path, no evidence it was indexed"
+https://www.outworkemdigital.com/marketing-programs/,url-map.md,200,https://www.outworkemdigital.com/marketing-programs/,0,200,,
+https://www.outworkemdigital.com/marketing-services/,url-map.md,200,https://www.outworkemdigital.com/marketing-services/,0,200,,
+https://www.outworkemdigital.com/marketing-services/client-gifting-direct-mail/,url-map.md,200,https://www.outworkemdigital.com/marketing-services/client-gifting-direct-mail/,0,200,,
+https://www.outworkemdigital.com/marketing-services/hvac-local-seo-services,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/local-seo/,1,200,,
+https://www.outworkemdigital.com/marketing-services/hvac-local-seo-services/,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/local-seo/,1,200,,
+https://www.outworkemdigital.com/marketing-services/hvac-local-services-ads,vercel.json,308,https://www.outworkemdigital.com/marketing-services/local-services-ads-2/,1,200,,
+https://www.outworkemdigital.com/marketing-services/hvac-local-services-ads/,vercel.json,308,https://www.outworkemdigital.com/marketing-services/local-services-ads-2/,1,200,,
+https://www.outworkemdigital.com/marketing-services/hvac-ppc-advertising-services,vercel.json,308,https://www.outworkemdigital.com/marketing-services/ppc-advertising-services/,1,200,,
+https://www.outworkemdigital.com/marketing-services/hvac-ppc-advertising-services/,vercel.json,308,https://www.outworkemdigital.com/marketing-services/ppc-advertising-services/,1,200,,
+https://www.outworkemdigital.com/marketing-services/hvac-reputation-management-services,vercel.json,308,https://www.outworkemdigital.com/marketing-services/reputation-management-services/,1,200,,
+https://www.outworkemdigital.com/marketing-services/hvac-reputation-management-services/,vercel.json,308,https://www.outworkemdigital.com/marketing-services/reputation-management-services/,1,200,,
+https://www.outworkemdigital.com/marketing-services/hvac-seo-services,vercel.json,308,https://www.outworkemdigital.com/marketing-services/organic-seo-services/,1,200,,
+https://www.outworkemdigital.com/marketing-services/hvac-seo-services/,vercel.json,308,https://www.outworkemdigital.com/marketing-services/organic-seo-services/,1,200,,
+https://www.outworkemdigital.com/marketing-services/hvac-website-design-services,vercel.json,308,https://www.outworkemdigital.com/marketing-services/website-design-services/,1,200,,
+https://www.outworkemdigital.com/marketing-services/hvac-website-design-services/,vercel.json,308,https://www.outworkemdigital.com/marketing-services/website-design-services/,1,200,,
+https://www.outworkemdigital.com/marketing-services/local-seo-services,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/local-seo/,1,200,,
+https://www.outworkemdigital.com/marketing-services/local-seo-services.html,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/local-seo/,1,200,,
+https://www.outworkemdigital.com/marketing-services/local-seo-services/,url-map.md,308,https://www.outworkemdigital.com/marketing-programs/local-seo/,1,200,,
+https://www.outworkemdigital.com/marketing-services/local-seo-services/index.html,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/local-seo/,1,200,,
+https://www.outworkemdigital.com/marketing-services/local-services-ads-2/,url-map.md,200,https://www.outworkemdigital.com/marketing-services/local-services-ads-2/,0,200,,
+https://www.outworkemdigital.com/marketing-services/media-content-production/,url-map.md,200,https://www.outworkemdigital.com/marketing-services/media-content-production/,0,200,,
+https://www.outworkemdigital.com/marketing-services/organic-seo-services/,url-map.md,200,https://www.outworkemdigital.com/marketing-services/organic-seo-services/,0,200,,
+https://www.outworkemdigital.com/marketing-services/ppc-advertising-services/,url-map.md,200,https://www.outworkemdigital.com/marketing-services/ppc-advertising-services/,0,200,,
+https://www.outworkemdigital.com/marketing-services/reputation-management-services/,url-map.md,200,https://www.outworkemdigital.com/marketing-services/reputation-management-services/,0,200,,
+https://www.outworkemdigital.com/marketing-services/web-hosting-services/,url-map.md,200,https://www.outworkemdigital.com/marketing-services/web-hosting-services/,0,200,,
+https://www.outworkemdigital.com/marketing-services/website-design-services/,url-map.md,200,https://www.outworkemdigital.com/marketing-services/website-design-services/,0,200,,
+https://www.outworkemdigital.com/news/,wp-default/parent,404,https://www.outworkemdigital.com/news/,0,404,404/ERROR,"NOT ADDED: guessed WP path, no evidence it was indexed"
+https://www.outworkemdigital.com/news/bullseye-automobile-partners-with-outworkem-digital/,url-map.md,200,https://www.outworkemdigital.com/news/bullseye-automobile-partners-with-outworkem-digital/,0,200,,
+https://www.outworkemdigital.com/news/comfort-one-air-conditioning-launches-new-website/,url-map.md,200,https://www.outworkemdigital.com/news/comfort-one-air-conditioning-launches-new-website/,0,200,,
+https://www.outworkemdigital.com/news/comfort-one-air-conditioning-partners-with-outworkem-digital/,url-map.md,200,https://www.outworkemdigital.com/news/comfort-one-air-conditioning-partners-with-outworkem-digital/,0,200,,
+https://www.outworkemdigital.com/news/dryrite-restoration-partners-with-outworkem-digital/,url-map.md,200,https://www.outworkemdigital.com/news/dryrite-restoration-partners-with-outworkem-digital/,0,200,,
+https://www.outworkemdigital.com/news/jana-kearney-joins-top-seer-marketers-full-time-as-creative-director,vercel.json,308,https://www.outworkemdigital.com/news/jana-kearney-joins-outworkem-digital-full-time-as-creative-director/,1,200,,
+https://www.outworkemdigital.com/news/jana-kearney-joins-top-seer-marketers-full-time-as-creative-director/,url-map.md,308,https://www.outworkemdigital.com/news/jana-kearney-joins-outworkem-digital-full-time-as-creative-director/,1,200,,
+https://www.outworkemdigital.com/news/janecek-construction-selects-outworkem-digital-for-digital-transformation/,url-map.md,200,https://www.outworkemdigital.com/news/janecek-construction-selects-outworkem-digital-for-digital-transformation/,0,200,,
+https://www.outworkemdigital.com/news/outworkem-digital-achieves-seven-figure-agency-5-figure-award/,url-map.md,200,https://www.outworkemdigital.com/news/outworkem-digital-achieves-seven-figure-agency-5-figure-award/,0,200,,
+https://www.outworkemdigital.com/news/outworkem-digital-co-founder-thomas-eberts-achieves-clickfunnels-2-comma-club-award,vercel.json,308,https://www.outworkemdigital.com/about-us/news/,1,200,,
+https://www.outworkemdigital.com/news/outworkem-digital-co-founder-thomas-eberts-achieves-clickfunnels-2-comma-club-award/,url-map.md,308,https://www.outworkemdigital.com/about-us/news/,1,200,,
+https://www.outworkemdigital.com/news/outworkem-digital-hosts-first-official-work-retreat/,url-map.md,200,https://www.outworkemdigital.com/news/outworkem-digital-hosts-first-official-work-retreat/,0,200,,
+https://www.outworkemdigital.com/news/outworkem-digital-launches-outworkem-podcast/,url-map.md,200,https://www.outworkemdigital.com/news/outworkem-digital-launches-outworkem-podcast/,0,200,,
+https://www.outworkemdigital.com/news/paragon-homes-launches-new-brand-identity-and-website/,url-map.md,200,https://www.outworkemdigital.com/news/paragon-homes-launches-new-brand-identity-and-website/,0,200,,
+https://www.outworkemdigital.com/news/paragon-homes-selects-outworkem-digital-as-their-digital-marketing-partner/,url-map.md,200,https://www.outworkemdigital.com/news/paragon-homes-selects-outworkem-digital-as-their-digital-marketing-partner/,0,200,,
+https://www.outworkemdigital.com/news/reddit-chatgpt-citation-drop-ai-search/,url-map.md,404,https://www.outworkemdigital.com/news/reddit-chatgpt-citation-drop-ai-search/,0,404,404/ERROR,301 added in vercel.json -> /about-us/news/
+https://www.outworkemdigital.com/news/thomas-eberts-featured-in-forbes-alongside-jordan-belfort/,url-map.md,404,https://www.outworkemdigital.com/news/thomas-eberts-featured-in-forbes-alongside-jordan-belfort/,0,404,404/ERROR,301 added in vercel.json -> /about-us/news/
+https://www.outworkemdigital.com/organic-seo-services/,wp-default/parent,404,https://www.outworkemdigital.com/organic-seo-services/,0,404,404/ERROR,"NOT ADDED: guessed WP path, no evidence it was indexed"
+https://www.outworkemdigital.com/our-work/,url-map.md,200,https://www.outworkemdigital.com/our-work/,0,200,,
+https://www.outworkemdigital.com/outwork-em-podcast,vercel.json,308,https://www.outworkemdigital.com/podcast/,1,200,,
+https://www.outworkemdigital.com/outwork-em-podcast/,url-map.md,308,https://www.outworkemdigital.com/podcast/,1,200,,
+https://www.outworkemdigital.com/page-sitemap.xml,wp-default/parent,404,https://www.outworkemdigital.com/page-sitemap.xml,0,404,404/ERROR,301 added in vercel.json -> /sitemap.xml
+https://www.outworkemdigital.com/podcast/,url-map.md,200,https://www.outworkemdigital.com/podcast/,0,200,,
+https://www.outworkemdigital.com/pool-boys-case-study,vercel.json,308,https://www.outworkemdigital.com/case-studies/pool-boys-case-study/,1,200,,
+https://www.outworkemdigital.com/pool-boys-case-study/,vercel.json,308,https://www.outworkemdigital.com/case-studies/pool-boys-case-study/,1,200,,
+https://www.outworkemdigital.com/post-sitemap.xml,wp-default/parent,404,https://www.outworkemdigital.com/post-sitemap.xml,0,404,404/ERROR,301 added in vercel.json -> /sitemap.xml
+https://www.outworkemdigital.com/ppc-advertising-services/,wp-default/parent,404,https://www.outworkemdigital.com/ppc-advertising-services/,0,404,404/ERROR,"NOT ADDED: guessed WP path, no evidence it was indexed"
+https://www.outworkemdigital.com/privacy-policy/,url-map.md,200,https://www.outworkemdigital.com/privacy-policy/,0,200,,
+https://www.outworkemdigital.com/reputation-management-services/,wp-default/parent,404,https://www.outworkemdigital.com/reputation-management-services/,0,404,404/ERROR,"NOT ADDED: guessed WP path, no evidence it was indexed"
+https://www.outworkemdigital.com/schedule/,url-map.md,200,https://www.outworkemdigital.com/schedule/,0,200,,
+https://www.outworkemdigital.com/sitemap_index.xml,wp-default/parent,404,https://www.outworkemdigital.com/sitemap_index.xml,0,404,404/ERROR,301 added in vercel.json -> /sitemap.xml
+https://www.outworkemdigital.com/terms-and-conditions/,url-map.md,200,https://www.outworkemdigital.com/terms-and-conditions/,0,200,,
+https://www.outworkemdigital.com/trial,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/,1,200,,
+https://www.outworkemdigital.com/trial/,url-map.md,308,https://www.outworkemdigital.com/marketing-programs/,1,200,,
+https://www.outworkemdigital.com/verified-support,vercel.json,308,https://www.outworkemdigital.com/marketing-programs/,1,200,,
+https://www.outworkemdigital.com/verified-support/,url-map.md,308,https://www.outworkemdigital.com/marketing-programs/,1,200,,
+https://www.outworkemdigital.com/who-we-serve/,url-map.md,200,https://www.outworkemdigital.com/who-we-serve/,0,200,,
+https://www.outworkemdigital.com/workshops,vercel.json,308,https://www.outworkemdigital.com/home-service-marketing-academy/,1,200,,
+https://www.outworkemdigital.com/workshops/,url-map.md,308,https://www.outworkemdigital.com/home-service-marketing-academy/,1,200,,
+https://www.outworkemdigital.com/wp-sitemap.xml,wp-default/parent,404,https://www.outworkemdigital.com/wp-sitemap.xml,0,404,404/ERROR,"NOT ADDED: guessed WP path, no evidence it was indexed"
