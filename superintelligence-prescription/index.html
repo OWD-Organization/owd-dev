@@ -166,6 +166,7 @@ html[data-theme="dark"]{
 .todo-flag p{margin:8px 0 0;font-size:15px;line-height:1.5}
 .todo-kicker,.sp-hero .todo-kicker{display:inline-block;font-family:var(--head);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:#c45c12;color:#fff !important;border-radius:999px;padding:4px 8px}
 .todo-amt{font-family:var(--head);font-weight:800;font-size:clamp(32px,5vw,48px);line-height:1.1;color:#1a120c;margin:12px 0 0}
+.sp-card .sp-amt{font-family:var(--head);font-weight:800;font-size:clamp(36px,5vw,56px);line-height:1.05;letter-spacing:-.03em;margin:0 0 10px;color:var(--text)}
 .sp-plain{list-style:none;margin:0;padding:0;display:grid;gap:14px}
 .sp-plain li{display:flex;gap:12px;align-items:flex-start;font-size:17px;line-height:1.55}
 .sp-plain .material-symbols-outlined{font-size:22px;color:var(--orange-text);margin-top:2px}
@@ -279,6 +280,16 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
           "@type": "Question",
           "name": "What do I leave with?",
           "acceptedAnswer": {"@type": "Answer", "text": "Recommendations for the tools, workflows and prompts that will make the most impact on your business."}
+        },
+        {
+          "@type": "Question",
+          "name": "How much does it cost?",
+          "acceptedAnswer": {"@type": "Answer", "text": "The 1-hour call is $650."}
+        },
+        {
+          "@type": "Question",
+          "name": "Who do I talk to?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Orion Ra, founder of Outwork'em Digital."}
         }
       ]
     },
@@ -290,7 +301,14 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
       "serviceType": "1-hour technology assessment and prescription for home service businesses",
       "description": "A 1-hour call for home service business owners. Part 1 is a Superintelligence Assessment of operations, fulfillment, sales, marketing operations, and finance. Part 2 is a prescription of tools, workflows and prompts.",
       "audience": {"@type": "BusinessAudience", "name": "Home service business owners"},
-      "provider": {"@id": "https://www.outworkemdigital.com/#organization"}
+      "provider": {"@id": "https://www.outworkemdigital.com/#organization"},
+      "offers": {
+        "@type": "Offer",
+        "name": "1-hour call",
+        "price": "650",
+        "priceCurrency": "USD",
+        "description": "Superintelligence Opportunity Prescription, a 1-hour call hosted by Orion Ra, founder of Outwork'em Digital."
+      }
     }
   ]
 }
@@ -644,20 +662,20 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
 <section class="sp-section" id="details">
   <div class="wrap">
     <div class="sp-head center sp-reveal">
-      <div class="sp-kicker"><span>Still open</span></div>
-      <h2>Price and host are not set yet.</h2>
-      <p class="sub">We are not going to invent either one. Both are marked TODO until Outwork'em Digital fills them in.</p>
+      <div class="sp-kicker"><span>The hour</span></div>
+      <h2>$650 with Orion Ra.</h2>
+      <p class="sub">Orion Ra, founder of Outwork'em Digital, hosts the call. The price is $650 for the hour.</p>
     </div>
     <div class="sp-grid-2">
-      <article class="todo-flag sp-reveal">
-        <span class="todo-kicker">TODO: price</span>
-        <p class="todo-amt">TODO: price</p>
-        <p>The price of this 1-hour call is not on this page yet.</p>
+      <article class="sp-card sp-reveal">
+        <h3>Price</h3>
+        <p class="sp-amt">$650</p>
+        <p>For the 1-hour Superintelligence Opportunity Prescription.</p>
       </article>
-      <article class="todo-flag sp-reveal">
-        <span class="todo-kicker">TODO: host name</span>
-        <p class="todo-amt">TODO: host name</p>
-        <p>The person who hosts the call is not named on this page yet.</p>
+      <article class="sp-card sp-reveal">
+        <h3>Your host</h3>
+        <p class="sp-amt">Orion Ra</p>
+        <p>Founder of Outwork'em Digital.</p>
       </article>
     </div>
   </div>
@@ -710,11 +728,11 @@ try{if(localStorage.getItem('owd-theme-v2')==='light')
     </div>
     <div class="acc-item">
       <button class="acc-trigger" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-q4"><span class="acc-n">04</span><span class="acc-head">How much does it cost?</span><span class="material-symbols-outlined acc-icon" aria-hidden="true" data-icon="expand_more"></span></button>
-      <div class="acc-body" id="faq-4" role="region" aria-labelledby="faq-q4" aria-hidden="true"><div class="acc-inner"><p><span class="todo-kicker">TODO: price</span> The price is not set on this page yet.</p></div></div>
+      <div class="acc-body" id="faq-4" role="region" aria-labelledby="faq-q4" aria-hidden="true"><div class="acc-inner"><p>The 1-hour call is $650.</p></div></div>
     </div>
     <div class="acc-item">
       <button class="acc-trigger" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-q5"><span class="acc-n">05</span><span class="acc-head">Who do I talk to?</span><span class="material-symbols-outlined acc-icon" aria-hidden="true" data-icon="expand_more"></span></button>
-      <div class="acc-body" id="faq-5" role="region" aria-labelledby="faq-q5" aria-hidden="true"><div class="acc-inner"><p><span class="todo-kicker">TODO: host name</span> The host is not named on this page yet.</p></div></div>
+      <div class="acc-body" id="faq-5" role="region" aria-labelledby="faq-q5" aria-hidden="true"><div class="acc-inner"><p>Orion Ra, founder of Outwork'em Digital.</p></div></div>
     </div>
   </div>
 </section>
