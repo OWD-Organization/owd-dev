@@ -68,6 +68,8 @@
 <link rel="stylesheet" href="/css/news.c93463c2a5.css">
 <style>
 .page-hero-img{height:480px;border-radius:var(--radius);overflow:hidden}
+.page-hero-grid--solo{grid-template-columns:minmax(0,1fr)}
+.page-hero-grid--solo > div{max-width:40rem}
 .nw{padding-block:clamp(3.25rem,8vw,5rem)}
 .nw-thumb{aspect-ratio:16/10;overflow:hidden;background:var(--box);flex:none}
 .nw-thumb img{width:100%;height:100%;object-fit:cover;display:block;
@@ -424,7 +426,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
 
 <!-- ============ PAGE HERO ============ -->
 <section class="page-hero wrap">
-  <div class="page-hero-grid">
+  <div class="page-hero-grid page-hero-grid--solo">
 
     <div>
       <div class="svc-chip">
@@ -439,9 +441,6 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       </a>
     </div>
 
-    <!-- TEMP hero image — swap for a news or team photo -->
-    <div class="ph page-hero-img filled" style="background-image:url('/img/ryan-jana167727.webp');background-position:center center"></div>
-
   </div>
 </section>
 
@@ -450,7 +449,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
   <div class="section-head">
     <div class="kicker"><span class="label">Latest</span><span class="rule"></span></div>
     <h2>The Archive</h2>
-    <p class="lead">Everything we have shipped, announced or won, newest first.</p>
+    <p class="lead">Everything we have shipped, announced or won.</p>
   </div>
 
   <article class="nw-lead">
@@ -544,6 +543,35 @@ a.f-social{width:44px;height:44px;text-decoration:none}
           <span class="nw-date">August 1, 2023</span>
           <h3>Comfort One Air Conditioning Partners With Outwork'em Digital</h3>
           <a class="nw-more" href="/news/comfort-one-air-conditioning-partners-with-outworkem-digital/">Read more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
+        </div>
+      </article>
+      <!-- TODO: dates, delivered work, and sort order are unconfirmed.
+           These three sit after the dated entries so they are not presented as the newest.
+           Public names differ from the request: Jake's Certified Air Duct & Carpet Cleaning,
+           Pristine Turf Cleaning, Exclusive Pest Solutions. Stub pages are noindex until copy is confirmed.
+           Do not add them to sitemap.xml until then. -->
+      <article class="nw-card">
+        <div class="nw-thumb"><img src="/img/archive-jakes.webp" width="1600" height="1000" alt="The Jake&rsquo;s Certified Air Duct &amp; Carpet Cleaning website, headlined Cleaner. Happier. Healthier." loading="lazy" decoding="async"></div>
+        <div class="nw-body">
+          <span class="nw-date">TODO: confirm date</span>
+          <h3>Jake&rsquo;s Certified Air Duct &amp; Carpet Cleaning</h3>
+          <a class="nw-more" href="/news/jakes-carpet-cleaning/">Read more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
+        </div>
+      </article>
+      <article class="nw-card">
+        <div class="nw-thumb"><img src="/img/archive-pristine.webp" width="1600" height="1000" alt="The Pristine Turf Cleaning website, headlined Arizona&rsquo;s Turf Cleaning Experts." loading="lazy" decoding="async"></div>
+        <div class="nw-body">
+          <span class="nw-date">TODO: confirm date</span>
+          <h3>Pristine Turf Cleaning</h3>
+          <a class="nw-more" href="/news/pristine-turf-cleaning/">Read more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
+        </div>
+      </article>
+      <article class="nw-card">
+        <div class="nw-thumb"><img src="/img/archive-exclusive.webp" width="1600" height="1000" alt="The Exclusive Pest Solutions website, headlined Comfort. Starts. Here." loading="lazy" decoding="async"></div>
+        <div class="nw-body">
+          <span class="nw-date">TODO: confirm date</span>
+          <h3>Exclusive Pest Solutions</h3>
+          <a class="nw-more" href="/news/exclusive-pest-solutions/">Read more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
         </div>
       </article>
   </div>
