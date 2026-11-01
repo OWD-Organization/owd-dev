@@ -48,13 +48,13 @@
 })();
 </script>
 <title>Meet the Team | Outwork'em Digital</title>
-<meta name="description" content="Meet the U.S.-based team behind Outwork'em Digital: marketing specialists for HVAC and home service contractors with over 20 years of experience.">
+<meta name="description" content="Meet our team of experts at Outwork'em Digital: marketing specialists for HVAC and home service contractors with over 20 years of experience.">
 <link rel="canonical" href="https://www.outworkemdigital.com/about-us/meet-the-team/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Outwork&#39;em Digital">
 <meta property="og:url" content="https://www.outworkemdigital.com/about-us/meet-the-team/">
 <meta property="og:title" content="Meet the Team | Outwork'em Digital">
-<meta property="og:description" content="Meet the U.S.-based team behind Outwork'em Digital: marketing specialists for HVAC and home service contractors with over 20 years of experience.">
+<meta property="og:description" content="Meet our team of experts at Outwork'em Digital: marketing specialists for HVAC and home service contractors with over 20 years of experience.">
 <meta property="og:image" content="https://www.outworkemdigital.com/img/og-default.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -147,6 +147,10 @@
   .mt-row.reverse .mt-photo{order:1}
   .mt-row.reverse .mt-body{order:2}
   .mt-photo{aspect-ratio:3/2}
+  /* The 3/2 cover crop is much shorter than the portrait. Centered, it
+     slices through the top of Jana's head. Keep the crown in frame on
+     small screens only; desktop stays on the default center crop. */
+  .mt-photo img.mt-photo-jana{object-position:center 30%}
 }
 @media (prefers-reduced-motion:reduce){
   .mt-photo img{transition:none}
@@ -209,7 +213,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
    "@id": "https://www.outworkemdigital.com/about-us/meet-the-team/#webpage",
    "url": "https://www.outworkemdigital.com/about-us/meet-the-team/",
    "name": "Meet the Team",
-   "description": "Meet the U.S.-based team behind Outwork'em Digital: marketing specialists for HVAC and home service contractors with over 20 years of experience.",
+   "description": "Meet our team of experts at Outwork'em Digital: marketing specialists for HVAC and home service contractors with over 20 years of experience.",
    "isPartOf": {
     "@id": "https://www.outworkemdigital.com/#website"
    },
@@ -437,7 +441,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
         Meet the Team
       </div>
       <h1>The Experts Behind Outwork'em Digital</h1>
-      <p class="lead">Our U.S.-based team specializes exclusively in home service marketing, with over 20 years of industry experience. Ready to grow your company? Call <a href="tel:8336951214" style="color:var(--orange-text);text-decoration:none">833-695-1214</a> to discuss your market potential with our team of experts.</p>
+      <p class="lead">Our team of experts specializes exclusively in home service marketing, with over 20 years of industry experience. Ready to grow your company? Call <a href="tel:8336951214" style="color:var(--orange-text);text-decoration:none">833-695-1214</a> to discuss your market potential.</p>
       <a class="btn-cta" href="/schedule/">
         Book a Discovery Call
         <span class="material-symbols-outlined" style="font-size:18px" aria-hidden="true" data-icon="arrow_forward"></span>
@@ -472,7 +476,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
 
   <article class="mt-row reverse">
     <div class="mt-photo">
-      <img src="/img/jana-kearney-creative-director.webp" width="1600" height="2405" alt="Jana Kearney, Creative Director at Outwork'em Digital" loading="lazy" decoding="async">
+      <img class="mt-photo-jana" src="/img/jana-kearney-creative-director.webp" width="1600" height="2405" alt="Jana Kearney, Creative Director at Outwork'em Digital" loading="lazy" decoding="async">
     </div>
     <div class="mt-body">
       <span class="mt-role">Creative Director</span>
