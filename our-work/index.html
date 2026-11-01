@@ -68,6 +68,8 @@
 <link rel="stylesheet" href="/css/news.c93463c2a5.css">
 <style>
 .page-hero-img{height:480px;border-radius:var(--radius);overflow:hidden}
+.page-hero-grid--solo{grid-template-columns:minmax(0,1fr)}
+.page-hero-grid--solo > div{max-width:40rem}
 @media(max-width:1000px){
   .page-hero-grid{grid-template-columns:1fr;gap:32px}
   .page-hero-img{height:320px}
@@ -420,7 +422,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
 
 <!-- ============ PAGE HERO ============ -->
 <section class="page-hero wrap">
-  <div class="page-hero-grid">
+  <div class="page-hero-grid page-hero-grid--solo">
 
     <div>
       <div class="svc-chip">
@@ -434,8 +436,6 @@ a.f-social{width:44px;height:44px;text-decoration:none}
         <span class="material-symbols-outlined" style="font-size:18px" aria-hidden="true" data-icon="arrow_forward"></span>
       </a>
     </div>
-
-    <div class="ph page-hero-img filled" style="background-image:url('/img/ryan-jana167727.webp');background-position:center 30%"></div>
 
   </div>
 </section>
@@ -509,9 +509,9 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <span class="ow-name">Kokua Physical Therapy</span>
       <span class="ow-zoom"><span class="material-symbols-outlined" aria-hidden="true" data-icon="zoom_in"></span></span>
     </button>
-    <button class="ow-cell" type="button" data-lb="/img/jakes.webp" data-cap="Jake&rsquo;s Carpet &amp; Duct Cleaning">
-      <img src="/img/jakes.webp" width="1700" height="1051" alt="The Jake&rsquo;s Carpet &amp; Duct Cleaning website" loading="lazy" decoding="async">
-      <span class="ow-name">Jake&rsquo;s Carpet &amp; Duct Cleaning</span>
+    <button class="ow-cell" type="button" data-lb="/img/jakes.webp" data-cap="Jake&rsquo;s Certified Air Duct &amp; Carpet Cleaning">
+      <img src="/img/jakes.webp" width="1700" height="1051" alt="The Jake&rsquo;s Certified Air Duct &amp; Carpet Cleaning website" loading="lazy" decoding="async">
+      <span class="ow-name">Jake&rsquo;s Certified Air Duct &amp; Carpet Cleaning</span>
       <span class="ow-zoom"><span class="material-symbols-outlined" aria-hidden="true" data-icon="zoom_in"></span></span>
     </button>
     <button class="ow-cell" type="button" data-lb="/img/Home-made.webp" data-cap="Homemade by Colleen">

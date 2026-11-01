@@ -65,7 +65,7 @@ Hosting Plans
 Simple Plans. No Surprises. No Hidden Fees.
 
 **Lead**
-Pick the plan that fits your business. All plans include free migration, SSL, and U.S.-based support from our team.
+Pick the plan that fits your business. All plans include free migration, SSL, and support from our team of experts.
 
 ---
 
@@ -343,7 +343,7 @@ Book Your Free Strategy Call
 Web Hosting for Contractors | Outwork'em Digital
 
 **Meta Description** (155 chars)
-Fast, secure WordPress hosting built for home service contractor websites. Free migration, SSL, daily backups, and U.S.-based support. Plans starting at $29/mo.
+Fast, secure WordPress hosting built for home service contractor websites. Free migration, SSL, daily backups, and support from our team of experts. Plans starting at $29/mo.
 
 ---
 
