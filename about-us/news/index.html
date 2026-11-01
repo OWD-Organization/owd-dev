@@ -68,6 +68,8 @@
 <link rel="stylesheet" href="/css/news.c93463c2a5.css">
 <style>
 .page-hero-img{height:480px;border-radius:var(--radius);overflow:hidden}
+.page-hero-grid--solo{grid-template-columns:minmax(0,1fr)}
+.page-hero-grid--solo > div{max-width:40rem}
 .nw{padding-block:clamp(3.25rem,8vw,5rem)}
 .nw-thumb{aspect-ratio:16/10;overflow:hidden;background:var(--box);flex:none}
 .nw-thumb img{width:100%;height:100%;object-fit:cover;display:block;
@@ -111,6 +113,7 @@
 .nw-body h3{font-family:var(--head);font-size:15px;font-weight:800;
   text-transform:uppercase;letter-spacing:.02em;line-height:1.32;
   color:var(--text);margin-bottom:16px}
+.nw-dek{font-family:var(--body);font-size:14.5px;line-height:1.55;color:var(--muted);margin:-4px 0 16px}
 @media(max-width:1000px){
   .nw-grid{grid-template-columns:repeat(2,1fr)}
   .nw-lead{grid-template-columns:1fr}
@@ -424,7 +427,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
 
 <!-- ============ PAGE HERO ============ -->
 <section class="page-hero wrap">
-  <div class="page-hero-grid">
+  <div class="page-hero-grid page-hero-grid--solo">
 
     <div>
       <div class="svc-chip">
@@ -439,9 +442,6 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       </a>
     </div>
 
-    <!-- TEMP hero image — swap for a news or team photo -->
-    <div class="ph page-hero-img filled" style="background-image:url('/img/ryan-jana167727.webp');background-position:center center"></div>
-
   </div>
 </section>
 
@@ -450,7 +450,37 @@ a.f-social{width:44px;height:44px;text-decoration:none}
   <div class="section-head">
     <div class="kicker"><span class="label">Latest</span><span class="rule"></span></div>
     <h2>The Archive</h2>
-    <p class="lead">Everything we have shipped, announced or won, newest first.</p>
+    <p class="lead">Everything we have shipped, announced or won.</p>
+  </div>
+
+  <div class="nw-grid" style="margin-bottom:26px">
+      <article class="nw-card">
+        <div class="nw-thumb"><img src="/img/archive-pristine.webp" width="1600" height="1000" alt="The Pristine Turf Cleaning website, headlined Arizona&rsquo;s Turf Cleaning Experts." loading="lazy" decoding="async"></div>
+        <div class="nw-body">
+          <span class="nw-date">October 2026</span>
+          <h3>Pristine Turf Cleaning Replaces Squarespace With a Store</h3>
+          <p class="nw-dek">A multi-page site with service pages, service area pages, and an online store.</p>
+          <a class="nw-more" href="/news/pristine-turf-cleaning/">Read more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
+        </div>
+      </article>
+      <article class="nw-card">
+        <div class="nw-thumb"><img src="/img/archive-exclusive.webp" width="1600" height="1000" alt="The Exclusive Pest Solutions website, headlined Comfort. Starts. Here." loading="lazy" decoding="async"></div>
+        <div class="nw-body">
+          <span class="nw-date">September 2026</span>
+          <h3>Exclusive Pest Solutions Moves Past a One-Page Site</h3>
+          <p class="nw-dek">An SEO-optimized site with service pages and service area pages.</p>
+          <a class="nw-more" href="/news/exclusive-pest-solutions/">Read more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
+        </div>
+      </article>
+      <article class="nw-card">
+        <div class="nw-thumb"><img src="/img/archive-jakes.webp" width="1600" height="1000" alt="The Jake&rsquo;s Certified Air Duct &amp; Carpet Cleaning website, headlined Cleaner. Happier. Healthier." loading="lazy" decoding="async"></div>
+        <div class="nw-body">
+          <span class="nw-date">February 2026</span>
+          <h3>Jake&rsquo;s Certified Air Duct &amp; Carpet Cleaning Books $5,000 Jobs Online</h3>
+          <p class="nw-dek">Customers book a cleaning job on the site. No conversation required.</p>
+          <a class="nw-more" href="/news/jakes-carpet-cleaning/">Read more <span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_forward"></span></a>
+        </div>
+      </article>
   </div>
 
   <article class="nw-lead">

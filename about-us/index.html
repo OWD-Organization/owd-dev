@@ -309,6 +309,7 @@ html.switching *,html.switching *::before,html.switching *::after{transition:bac
 
 @media(max-width:1000px){
   .au-story-grid,.au-approach-grid,.promise-grid{grid-template-columns:1fr}
+  .promise-img{min-height:0;aspect-ratio:4/5}
   .review-grid{grid-template-columns:repeat(2,1fr)}
   .car-arrow{display:none}
   .values-grid{grid-template-columns:1fr 1fr}
@@ -324,6 +325,10 @@ html.switching *,html.switching *::before,html.switching *::after{transition:bac
   .nav-links{display:none !important}
   .nav-actions .theme-toggle,.nav-actions .btn-solid{display:none}
   .au-story-img,.au-approach-img,.promise-img{min-height:280px}
+  /* The promise photo is a portrait. A 280px-tall box on a phone turns it
+     into a wide crop and slices off the top of Jana's head. Keep a portrait
+     frame here only. Desktop still stretches with the text column. */
+  .promise-img{min-height:0;aspect-ratio:4/5}
   .promise-ctas{flex-direction:column}
 }
 .nav-phone{display:inline-flex;align-items:center;gap:6px;font-family:var(--head);font-size:13px;font-weight:600;color:var(--copy);text-decoration:none}
