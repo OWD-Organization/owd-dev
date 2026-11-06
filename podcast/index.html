@@ -143,8 +143,8 @@ p{font-family:var(--body);color:var(--copy)}
 .lead{font-family:var(--body);font-size:var(--fs-body);color:var(--copy);max-width:520px}
 .band{position:relative;isolation:isolate}
 .band::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:var(--bg-2);z-index:-1}
-.btn-solid{background:var(--orange);border-color:var(--orange);color:oklch(0.99 0.005 70)}
-.btn-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);font-size:14px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;background:var(--orange);color:oklch(0.99 0.005 70);border:1px solid var(--orange);border-radius:8px;padding:15px 32px;cursor:pointer}
+.btn-solid{background:var(--orange);border-color:var(--orange);color:#1a120c}
+.btn-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);font-size:14px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;background:var(--orange);color:#1a120c;border:1px solid var(--orange);border-radius:8px;padding:15px 32px;cursor:pointer}
 .btn{font-family:var(--head);font-size:14px;border-radius:999px;padding:10px 20px;border:1px solid var(--line);background:var(--card);cursor:pointer;color:var(--copy)}
 
 /* HEADER */
@@ -223,7 +223,7 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
 .f-logo{display:flex;align-items:center;gap:10px;margin-bottom:18px}
 .f-logo img{height:30px;width:auto;display:block}
 .f-phone{font-family:var(--head);font-size:26px;font-weight:700;color:#fff;margin-bottom:18px}
-.f-cta{display:inline-block;font-family:var(--head);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;background:var(--orange);color:oklch(0.99 0.005 70);border:none;border-radius:8px;padding:14px 28px;cursor:pointer}
+.f-cta{display:inline-block;font-family:var(--head);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;background:var(--orange);color:#1a120c;border:none;border-radius:8px;padding:14px 28px;cursor:pointer}
 .f-socials{display:flex;gap:10px;margin-top:24px}
 .f-social{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
 .f-head{font-family:var(--head);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:16px}
@@ -336,7 +336,7 @@ html[data-theme="dark"] .step-pod-num{color:oklch(0.50 0.110 50)}
 .pod-cta-band{background:linear-gradient(140deg,var(--blue-soft) 0%,var(--blue-deep) 100%);border-radius:var(--radius);text-align:center;padding:72px 32px}
 .pod-cta-band h2{font-family:var(--head);font-size:clamp(28px,4.5vw,44px);color:#fff;margin-bottom:16px}
 .pod-cta-band p{font-family:var(--body);font-size:var(--fs-body);color:oklch(0.92 0.020 85);max-width:580px;margin:0 auto 32px}
-.pod-cta-band .btn-cta{background:var(--orange);border-color:var(--orange);color:oklch(0.99 0.005 70);font-size:15px;padding:17px 38px}
+.pod-cta-band .btn-cta{background:var(--orange);border-color:var(--orange);color:#1a120c;font-size:15px;padding:17px 38px}
 
 /* SCROLL ANIMATIONS */
 @media (prefers-reduced-motion:reduce){
@@ -402,7 +402,7 @@ html.switching *,html.switching *::before,html.switching *::after{transition:bac
   .mobile-cta-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--bg);border-top:1px solid var(--line);gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
   .mobile-cta-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;font-family:var(--head);font-size:13px;font-weight:600;letter-spacing:.02em;text-decoration:none;border-radius:10px;padding:12px 14px}
   .mobile-cta-bar .mcb-call{background:transparent;border:1px solid var(--line);color:var(--copy)}
-  .mobile-cta-bar .mcb-book{background:var(--orange);border:1px solid var(--orange);color:#fff}
+  .mobile-cta-bar .mcb-book{background:var(--orange);border:1px solid var(--orange);color:#1a120c}
   .mobile-cta-bar .material-symbols-outlined{font-size:18px}
   body{padding-bottom:76px}
 }

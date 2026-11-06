@@ -86,7 +86,7 @@
 .pp-compare tbody th{text-align:left;font-weight:700;color:var(--text);width:24%;position:sticky;left:0;background:var(--card);z-index:1}
 .pp-compare thead th:first-child{position:sticky;left:0;z-index:2;text-align:left}
 .pp-compare .is-current{background:var(--orange-tint)}
-.pp-compare thead th.is-current{background:var(--orange);color:oklch(0.99 0.005 70)}
+.pp-compare thead th.is-current{background:var(--orange);color:#1a120c}
 .pp-compare thead th.is-current a{color:inherit}
 .pp-compare .pp-yes{color:var(--orange-text);font-size:20px;font-variation-settings:'FILL' 1,'wght' 400;vertical-align:middle}
 .pp-compare .pp-no{color:var(--muted)}
