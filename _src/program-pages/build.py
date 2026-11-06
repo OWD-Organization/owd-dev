@@ -36,7 +36,7 @@ open(os.path.join(ROOT, CSS_HREF.lstrip('/')), 'w').write(
 
 # ------------------------------------------------------- chrome from homepage
 home = rd('index.html')
-ANALYTICS = home[home.index('<script>'):home.index('</script>', home.index('z9i7znce5k')) + 9]
+ANALYTICS = home[home.index('<script>'):home.index('</script>') + 9]
 FONTS = '\n'.join(l for l in home.split('\n') if l.startswith('<link') and 'fonts.g' in l)
 THEME = re.search(r'<script>\s*/\* Dark is the default.*?</script>', home, re.S).group(0)
 ICONS = '\n'.join(l for l in home.split('\n') if l.startswith('<link rel="icon"') or l.startswith('<link rel="apple-touch-icon"'))
@@ -507,6 +507,13 @@ def page(key):
     return f'''<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "z9i7znce5k");
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {ANALYTICS}
