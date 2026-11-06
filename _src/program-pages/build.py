@@ -643,6 +643,7 @@ def page(key):
 
 <script src="/js/program-checkout.js" defer></script>
 {open(os.path.join(SRC, 'page.js')).read()}
+<script defer src="/js/a11y-widget.js"></script>
 </body>
 </html>
 '''
