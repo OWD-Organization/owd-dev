@@ -24,8 +24,20 @@
    code from an earlier install that nobody removed. Worth confirming in the
    Clarity dashboard which project is actually receiving traffic, and cleaning
    up the WordPress header once that is settled. */
+/* Cookie consent (see /js/cookie-consent.js): a visitor who declined keeps
+   Google Ads and the Meta Pixel off, and Clarity runs without cookies. */
 (function(){
-  if (/(^|\.)vercel\.app$/.test(location.hostname)) return;
+  var cc; try { cc = localStorage.getItem('owd-cookie-consent'); } catch (e) {}
+  if (cc === 'denied') {
+    window.__owdNoTrack = true;
+    if (window.clarity) {
+      clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
+      clarity('consent', false);
+    }
+  }
+})();
+(function(){
+  if (/(^|\.)vercel\.app$/.test(location.hostname) || window.__owdNoTrack) return;
 
   // Google Ads (gtag.js) -- AW-16636468173
   var gs = document.createElement('script');
@@ -713,5 +725,6 @@ a.f-social{width:44px;height:44px;text-decoration:none}
 </script>
 
 <script defer src="/js/a11y-widget.js"></script>
+<script defer src="/js/cookie-consent.js"></script>
 </body>
 </html>

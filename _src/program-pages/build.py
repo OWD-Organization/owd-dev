@@ -651,6 +651,7 @@ def page(key):
 <script src="/js/program-checkout.js" defer></script>
 {open(os.path.join(SRC, 'page.js')).read()}
 <script defer src="/js/a11y-widget.js"></script>
+<script defer src="/js/cookie-consent.js"></script>
 </body>
 </html>
 '''
