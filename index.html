@@ -27,7 +27,7 @@
 /* Cookie consent (see /js/cookie-consent.js): a visitor who declined keeps
    Google Ads and the Meta Pixel off, and Clarity runs without cookies. */
 (function(){
-  var cc; try { cc = localStorage.getItem('owd-cookie-consent'); } catch (e) {}
+  var cc; try { cc = sessionStorage.getItem('owd-cookie-consent'); } catch (e) {}
   if (cc === 'denied') {
     window.__owdNoTrack = true;
     if (window.clarity) {

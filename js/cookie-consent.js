@@ -1,9 +1,11 @@
 // Outwork'em Digital cookie banner.
-// Shows once per visitor. "Accept" keeps analytics on; "Decline" turns off
-// Google Ads and the Meta Pixel and tells Microsoft Clarity not to use
-// cookies. The choice is saved in localStorage ("owd-cookie-consent") and is
-// read in the <head> of every page before the trackers load, so it holds on
-// later visits. window.owdCookieSettings() reopens the banner.
+// Shows at the start of every browser session and again on every reload
+// (F5 / Ctrl+Shift+R); moving between pages by clicking links does not bring
+// it back. "Accept" keeps analytics on; "Decline" turns off Google Ads and the
+// Meta Pixel and tells Microsoft Clarity not to use cookies. The choice lives
+// in sessionStorage ("owd-cookie-consent") for the rest of the session and is
+// read in the <head> of every page before the trackers load.
+// window.owdCookieSettings() reopens the banner.
 (function () {
   "use strict";
   if (window.__owdCookieBanner) return;
@@ -12,8 +14,18 @@
   var KEY = "owd-cookie-consent";
   var PRIVACY = "/privacy-policy/";
 
-  function getChoice() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
-  function setChoice(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  function getChoice() { try { return sessionStorage.getItem(KEY); } catch (e) { return null; } }
+  function setChoice(v) { try { sessionStorage.setItem(KEY, v); } catch (e) {} }
+  // Older builds kept the choice forever in localStorage; drop it.
+  try { localStorage.removeItem(KEY); } catch (e) {}
+
+  function isReload() {
+    try {
+      var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+      if (nav) return nav.type === "reload";
+      return performance.navigation && performance.navigation.type === 1;
+    } catch (e) { return false; }
+  }
 
   function applyChoice(v) {
     var granted = v === "granted";
@@ -87,7 +99,7 @@
 
   window.owdCookieSettings = show;
 
-  function init() { if (!getChoice()) show(); }
+  function init() { if (!getChoice() || isReload()) show(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 })();
