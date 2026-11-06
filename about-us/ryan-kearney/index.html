@@ -39,31 +39,34 @@
 (function(){
   if (/(^|\.)vercel\.app$/.test(location.hostname) || window.__owdNoTrack) return;
 
+  // Tracker scripts download after the page has finished loading so they
+  // don't compete with it; the queues below are ready right away, so the
+  // page view and any early events are still recorded once they arrive.
+
   // Google Ads (gtag.js) -- AW-16636468173
-  var gs = document.createElement('script');
-  gs.async = true;
-  gs.src = 'https://www.googletagmanager.com/gtag/js?id=AW-16636468173';
-  document.head.appendChild(gs);
   window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', 'AW-16636468173');
 
   // Meta Pixel -- 908509337671469
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  !function(f){if(f.fbq)return;var n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window);
   fbq('init', '908509337671469');
   fbq('track', 'PageView');
 
   // Microsoft Clarity -- xjsg05olmf (the WordPress-plugin install)
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "xjsg05olmf");
+  window.clarity = window.clarity || function(){ (clarity.q = clarity.q || []).push(arguments); };
+
+  function add(src){ var s = document.createElement('script'); s.async = true; s.src = src; document.head.appendChild(s); }
+  function go(){
+    add('https://www.googletagmanager.com/gtag/js?id=AW-16636468173');
+    add('https://connect.facebook.net/en_US/fbevents.js');
+    add('https://www.clarity.ms/tag/xjsg05olmf');
+  }
+  if (document.readyState === 'complete') setTimeout(go, 0);
+  else addEventListener('load', function(){ setTimeout(go, 0); });
 })();
 </script>
 <title>Ryan Kearney | Outwork'em Digital</title>
@@ -82,7 +85,10 @@
 <meta name="twitter:image" content="https://www.outworkemdigital.com/img/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/poppins-700-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/poppins-600-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/lora-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/fonts.32e2293067.css">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=ads_click,all_inclusive,arrow_back,arrow_downward,arrow_forward,arrow_outward,auto_awesome,auto_stories,autorenew,bar_chart,block,bolt,build,calendar_month,call,campaign,cancel,card_giftcard,check_circle,chevron_left,chevron_right,close,cloud_upload,construction,content_copy,dark_mode,dashboard,diversity_3,dns,domain_disabled,edit_note,emergency,emoji_events,event_available,expand_more,fact_check,filter_alt,find_in_page,folder,foundation,gavel,grid_view,group,groups,handshake,handyman,home_repair_service,home_work,hvac,image,info,insights,light_mode,link,link_off,local_shipping,location_off,location_on,lock,mail,manage_accounts,map,menu_book,mic,military_tech,money_off,monitor_heart,monitoring,movie_edit,newspaper,no_accounts,phone_disabled,photo_camera,pin_drop,play_arrow,play_circle,pool,rate_review,reply,reviews,rocket_launch,roofing,savings,search,search_off,sell,send,share,shield,smart_toy,star_rate,storefront,sync_alt,sync_problem,target,task_alt,thunderstorm,travel_explore,trending_down,trending_up,tune,verified,verified_user,vertical_align_top,video_library,videocam,visibility,visibility_off,web,web_asset,web_asset_off,window,workspace_premium,zoom_in" rel="stylesheet">
 <link rel="stylesheet" href="/css/about.aafcf02fc7.css">
 <style>

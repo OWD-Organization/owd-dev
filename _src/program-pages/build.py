@@ -37,7 +37,7 @@ open(os.path.join(ROOT, CSS_HREF.lstrip('/')), 'w').write(
 # ------------------------------------------------------- chrome from homepage
 home = rd('index.html')
 ANALYTICS = home[home.index('<script>'):home.index('</script>') + 9]
-FONTS = '\n'.join(l for l in home.split('\n') if l.startswith('<link') and 'fonts.g' in l)
+FONTS = '\n'.join(l for l in home.split('\n') if l.startswith('<link') and ('fonts.g' in l or '/fonts' in l))
 THEME = re.search(r'<script>\s*/\* Dark is the default.*?</script>', home, re.S).group(0)
 ICONS = '\n'.join(l for l in home.split('\n') if l.startswith('<link rel="icon"') or l.startswith('<link rel="apple-touch-icon"'))
 BODY_TOP = re.sub(r' class="current"', '', home[home.index('<body>') + 6:home.index('<main id="main">')])
