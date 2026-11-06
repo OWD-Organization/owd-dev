@@ -11,7 +11,7 @@
 
   var KEY = "owd-a11y";
   var COLOR = "#12407A";
-  var STATEMENT = ""; // no accessibility statement page yet; set a path to show the link
+  var STATEMENT = "/accessibility-statement/";
   var ROOT_ID = "c1-a11y-root";
   var html = document.documentElement;
 
