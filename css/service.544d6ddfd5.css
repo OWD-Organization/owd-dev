@@ -236,6 +236,7 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
   .js .kicker .rule{transform:scaleX(0);transform-origin:left center;transition:transform 1s cubic-bezier(.22,1,.36,1) .18s}
   .js .reveal.in .kicker .rule{transform:scaleX(1)}
   .js .page-hero h1,.js .page-hero .hero-bullets,.js .page-hero .btn-cta{opacity:0;transform:translateY(22px);animation:od-in .9s cubic-bezier(.22,1,.36,1) forwards}
+.js .page-hero h1{opacity:1} /* headline stays visible so it paints right away (LCP); it still slides up */
   .js .page-hero h1{animation-delay:.10s}
   .js .page-hero .hero-bullets{animation-delay:.22s}
   .js .page-hero .btn-cta{animation-delay:.34s}

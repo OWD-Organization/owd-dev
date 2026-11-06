@@ -37,7 +37,7 @@ open(os.path.join(ROOT, CSS_HREF.lstrip('/')), 'w').write(
 # ------------------------------------------------------- chrome from homepage
 home = rd('index.html')
 ANALYTICS = home[home.index('<script>'):home.index('</script>') + 9]
-FONTS = '\n'.join(l for l in home.split('\n') if l.startswith('<link') and ('fonts.g' in l or '/fonts' in l))
+FONTS = '\n'.join(l for l in home.split('\n') if l.startswith(('<link','<noscript','<style id="icons-css"')) and ('fonts.g' in l or '/fonts' in l or 'icons-wait' in l) or 'icons-wait' in l and l.startswith(('<script','(function')))
 THEME = re.search(r'<script>\s*/\* Dark is the default.*?</script>', home, re.S).group(0)
 ICONS = '\n'.join(l for l in home.split('\n') if l.startswith('<link rel="icon"') or l.startswith('<link rel="apple-touch-icon"'))
 BODY_TOP = re.sub(r' class="current"', '', home[home.index('<body>') + 6:home.index('<main id="main">')])
@@ -540,7 +540,7 @@ def page(key):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 {FONTS}
-<link rel="stylesheet" href="/css/service.718350f55c.css">
+<link rel="stylesheet" href="/css/service.544d6ddfd5.css">
 <link rel="stylesheet" href="{CSS_HREF}">
 {THEME}
 <script type="application/ld+json">
