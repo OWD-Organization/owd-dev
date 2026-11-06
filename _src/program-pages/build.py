@@ -507,14 +507,19 @@ def page(key):
     return f'''<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+<meta charset="UTF-8">
 <script type="text/javascript">
+    /* Microsoft Clarity -- z9i7znce5k. The clarity() queue is ready right away;
+       the tag itself downloads on the visitor's first scroll, tap, click, key
+       press or mouse move (or 10 s after load), so it doesn't slow the page. */
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        (c.__owdLater=c.__owdLater||[]).push(function(){
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        });
     })(window, document, "clarity", "script", "z9i7znce5k");
 </script>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {ANALYTICS}
 <title>{html.escape(pg['title'], quote=False)}</title>

@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+<meta charset="UTF-8">
 <script type="text/javascript">
+    /* Microsoft Clarity -- z9i7znce5k. The clarity() queue is ready right away;
+       the tag itself downloads on the visitor's first scroll, tap, click, key
+       press or mouse move (or 10 s after load), so it doesn't slow the page. */
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        (c.__owdLater=c.__owdLater||[]).push(function(){
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        });
     })(window, document, "clarity", "script", "z9i7znce5k");
 </script>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
 /* Analytics, ported from the live WordPress header: Google Ads (gtag),
@@ -36,12 +41,35 @@
     }
   }
 })();
+/* Trackers wait for the visitor's first interaction (or 10 s after load):
+   scripts queued on window.__owdLater run then. Their queues (dataLayer, fbq,
+   clarity) exist from the start, so the page view is still recorded. */
+(function(){
+  var done = false, ev = ['scroll','mousemove','touchstart','pointerdown','keydown','click'];
+  function fire(){
+    if (done) return; done = true;
+    ev.forEach(function(e){ removeEventListener(e, fire, true); });
+    removeEventListener('mousemove', moved, true);
+    var q = window.__owdLater || [];
+    window.__owdLater = { push: function(f){ try { f(); } catch (e) {} } };
+    q.forEach(function(f){ try { f(); } catch (e) {} });
+  }
+  ev.forEach(function(e){ addEventListener(e, e === 'mousemove' ? moved : fire, { passive: true, capture: true }); });
+  // A mousemove also fires when the page lays out under a still cursor; only
+  // count the pointer actually travelling.
+  var mx = null, my = null;
+  function moved(e){
+    if (mx === null) { mx = e.clientX; my = e.clientY; return; }
+    if (Math.abs(e.clientX - mx) + Math.abs(e.clientY - my) > 4) { removeEventListener('mousemove', moved, true); fire(); }
+  }
+  function later(){ setTimeout(fire, 10000); }
+  if (document.readyState === 'complete') later(); else addEventListener('load', later);
+})();
 (function(){
   if (/(^|\.)vercel\.app$/.test(location.hostname) || window.__owdNoTrack) return;
 
-  // Tracker scripts download after the page has finished loading so they
-  // don't compete with it; the queues below are ready right away, so the
-  // page view and any early events are still recorded once they arrive.
+  // Tracker scripts download on the first interaction (see above); the
+  // queues below are ready right away, so the page view is still recorded.
 
   // Google Ads (gtag.js) -- AW-16636468173
   window.dataLayer = window.dataLayer || [];
@@ -65,8 +93,7 @@
     add('https://connect.facebook.net/en_US/fbevents.js');
     add('https://www.clarity.ms/tag/xjsg05olmf');
   }
-  if (document.readyState === 'complete') setTimeout(go, 0);
-  else addEventListener('load', function(){ setTimeout(go, 0); });
+  (window.__owdLater = window.__owdLater || []).push(go);
 })();
 </script>
 <title>The Ultimate Guide to SEO for HVAC Contractors</title>
