@@ -540,7 +540,7 @@ def page(key):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 {FONTS}
-<link rel="stylesheet" href="/css/service.544d6ddfd5.css">
+<link rel="stylesheet" href="/css/service.56985d7308.css">
 <link rel="stylesheet" href="{CSS_HREF}">
 {THEME}
 <script type="application/ld+json">
@@ -657,6 +657,7 @@ def page(key):
 {open(os.path.join(SRC, 'page.js')).read()}
 <script defer src="/js/a11y-widget.js"></script>
 <script defer src="/js/cookie-consent.js"></script>
+<script defer src="/js/nav-a11y.js"></script>
 </body>
 </html>
 '''

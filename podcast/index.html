@@ -275,8 +275,8 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
 .step-pod.reverse .step-pod-num{order:3}
 .step-pod.reverse .step-pod-content{order:2}
 .step-pod.reverse .step-pod-img{order:1}
-.step-pod-num{font-family:var(--head);font-size:72px;font-weight:800;color:var(--orange-tint);line-height:1;text-align:center;flex:none}
-html[data-theme="dark"] .step-pod-num{color:oklch(0.25 0.060 50)}
+.step-pod-num{font-family:var(--head);font-size:72px;font-weight:800;color:oklch(0.64 0.130 52);line-height:1;text-align:center;flex:none}
+html[data-theme="dark"] .step-pod-num{color:oklch(0.50 0.110 50)}
 .step-pod-content h3{font-family:var(--head);font-size:22px;font-weight:700;color:var(--text);margin-bottom:14px}
 .step-pod-content p{font-family:var(--body);font-size:var(--fs-body);color:var(--copy);line-height:1.78}
 .step-pod-img{height:280px;border-radius:var(--radius);overflow:hidden;flex:none}
@@ -661,7 +661,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
         <img loading="eager" class="logo-light" src="/img/outworkem-digital-logo-light-bg.webp" width="650" height="112" alt="Outwork'em Digital">
         <img loading="eager" class="logo-dark"  src="/img/outworkem-digital-logo-dark-bg.webp" width="650" height="112"  alt="Outwork'em Digital">
       </a>
-      <button class="mob-close" id="mobClose"><span class="material-symbols-outlined" aria-hidden="true" data-icon="close"></span></button>
+      <button class="mob-close" id="mobClose" aria-label="Close menu"><span class="material-symbols-outlined" aria-hidden="true" data-icon="close"></span></button>
     </div>
     <div class="mob-links">
       <a class="mob-link" href="/marketing-programs/">Pricing</a>
@@ -709,7 +709,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <a class="btn-cta" href="/schedule/">Let's Talk <span class="material-symbols-outlined" style="font-size:18px" aria-hidden="true" data-icon="arrow_forward"></span></a>
       <div class="mob-theme-row">
         <span>Dark Mode</span>
-        <button class="theme-toggle" id="themeToggleMob">
+        <button class="theme-toggle" id="themeToggleMob" aria-label="Toggle theme">
           <span class="material-symbols-outlined t-light" aria-hidden="true" data-icon="dark_mode"></span>
           <span class="material-symbols-outlined t-dark" aria-hidden="true" data-icon="light_mode"></span>
         </button>
@@ -1015,9 +1015,9 @@ a.f-social{width:44px;height:44px;text-decoration:none}
         <div class="f-logo"><img loading="eager" src="/img/outworkem-digital-logo-dark-bg.webp" width="650" height="112" alt="Outwork'em Digital"></div>
         <div class="f-phone"><a href="tel:8336951214" style="color:inherit;text-decoration:none">833-695-1214</a></div>
         <a class="f-cta" href="/schedule/">Book Discovery Call</a>
-        <div class="f-socials"><a class="f-social" href="https://www.instagram.com/outworkem.digital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
-          <a class="f-social" href="https://www.facebook.com/outworkem.digital" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
-          <a class="f-social" href="https://www.youtube.com/@outworkem.digital" target="_blank" rel="noopener noreferrer" aria-label="YouTube">&#9654;</a></div>
+        <div class="f-socials"><a class="f-social" href="https://www.instagram.com/outworkem.digital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in new tab)">IG</a>
+          <a class="f-social" href="https://www.facebook.com/outworkem.digital" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in new tab)">f</a>
+          <a class="f-social" href="https://www.youtube.com/@outworkem.digital" target="_blank" rel="noopener noreferrer" aria-label="YouTube (opens in new tab)">&#9654;</a></div>
       </div>
       <div class="footer-contact">
         <div class="f-head">Contact Info</div>
@@ -1149,5 +1149,6 @@ a.f-social{width:44px;height:44px;text-decoration:none}
 </script>
 <script defer src="/js/a11y-widget.js"></script>
 <script defer src="/js/cookie-consent.js"></script>
+<script defer src="/js/nav-a11y.js"></script>
 </body>
 </html>
