@@ -639,6 +639,436 @@
       "source": "/:path+/feed/",
       "destination": "/:path+/",
       "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
+      "source": "/academy",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/academy/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/accessibility",
+      "destination": "/accessibility-statement/",
+      "permanent": true
+    },
+    {
+      "source": "/accessibility/",
+      "destination": "/accessibility-statement/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/page/2",
+      "destination": "/home-service-marketing-academy/page/2/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/page/2/",
+      "destination": "/home-service-marketing-academy/page/2/",
+      "permanent": true
+    },
+    {
+      "source": "/book",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/book-a-call",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/book-a-call/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/book/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/booking",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/booking/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/case-study",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-study/",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/consultation",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/consultation/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/contacts",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/contacts/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/discovery-call",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/discovery-call/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/free-consultation",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/free-consultation/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/get-started",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/get-started/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/google-ads",
+      "destination": "/marketing-services/ppc-advertising-services/",
+      "permanent": true
+    },
+    {
+      "source": "/google-ads/",
+      "destination": "/marketing-services/ppc-advertising-services/",
+      "permanent": true
+    },
+    {
+      "source": "/local-seo",
+      "destination": "/marketing-programs/local-seo/",
+      "permanent": true
+    },
+    {
+      "source": "/local-seo/",
+      "destination": "/marketing-programs/local-seo/",
+      "permanent": true
+    },
+    {
+      "source": "/meet-the-team",
+      "destination": "/about-us/meet-the-team/",
+      "permanent": true
+    },
+    {
+      "source": "/meet-the-team/",
+      "destination": "/about-us/meet-the-team/",
+      "permanent": true
+    },
+    {
+      "source": "/news-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/news-sitemap.xml/",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/news/page/1",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/news/page/1/",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/news/page/2",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/news/page/2/",
+      "destination": "/about-us/news/",
+      "permanent": true
+    },
+    {
+      "source": "/our-team",
+      "destination": "/about-us/meet-the-team/",
+      "permanent": true
+    },
+    {
+      "source": "/our-team/",
+      "destination": "/about-us/meet-the-team/",
+      "permanent": true
+    },
+    {
+      "source": "/podcasts",
+      "destination": "/podcast/",
+      "permanent": true
+    },
+    {
+      "source": "/podcasts/",
+      "destination": "/podcast/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/our-work/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/",
+      "destination": "/our-work/",
+      "permanent": true
+    },
+    {
+      "source": "/ppc",
+      "destination": "/marketing-services/ppc-advertising-services/",
+      "permanent": true
+    },
+    {
+      "source": "/ppc/",
+      "destination": "/marketing-services/ppc-advertising-services/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/resources",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/resources/",
+      "destination": "/home-service-marketing-academy/",
+      "permanent": true
+    },
+    {
+      "source": "/ryan-kearney",
+      "destination": "/about-us/ryan-kearney/",
+      "permanent": true
+    },
+    {
+      "source": "/ryan-kearney/",
+      "destination": "/about-us/ryan-kearney/",
+      "permanent": true
+    },
+    {
+      "source": "/schedule-a-call",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/schedule-a-call/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/seo",
+      "destination": "/marketing-services/organic-seo-services/",
+      "permanent": true
+    },
+    {
+      "source": "/seo/",
+      "destination": "/marketing-services/organic-seo-services/",
+      "permanent": true
+    },
+    {
+      "source": "/service",
+      "destination": "/marketing-services/",
+      "permanent": true
+    },
+    {
+      "source": "/service/",
+      "destination": "/marketing-services/",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap.html",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap.html/",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/about-us/meet-the-team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/",
+      "destination": "/about-us/meet-the-team/",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms-and-conditions/",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms-and-conditions/",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service/",
+      "destination": "/terms-and-conditions/",
+      "permanent": true
+    },
+    {
+      "source": "/terms/",
+      "destination": "/terms-and-conditions/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/thanks",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/thanks/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/thankyou",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/thankyou/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/web-design",
+      "destination": "/marketing-services/website-design-services/",
+      "permanent": true
+    },
+    {
+      "source": "/web-design/",
+      "destination": "/marketing-services/website-design-services/",
+      "permanent": true
+    },
+    {
+      "source": "/website-design",
+      "destination": "/marketing-services/website-design-services/",
+      "permanent": true
+    },
+    {
+      "source": "/website-design/",
+      "destination": "/marketing-services/website-design-services/",
+      "permanent": true
+    },
+    {
+      "source": "/work",
+      "destination": "/our-work/",
+      "permanent": true
+    },
+    {
+      "source": "/work/",
+      "destination": "/our-work/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*/index.html",
+      "destination": "/:path*/",
+      "permanent": true
     }
   ]
 }
