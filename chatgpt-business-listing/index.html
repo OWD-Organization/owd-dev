@@ -126,8 +126,6 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=ads_click,all_inclusive,arrow_back,arrow_downward,arrow_forward,arrow_outward,auto_awesome,auto_stories,autorenew,bar_chart,block,bolt,build,calendar_month,call,campaign,cancel,card_giftcard,check_circle,chevron_left,chevron_right,close,cloud_upload,construction,content_copy,dark_mode,dashboard,diversity_3,dns,domain_disabled,edit_note,emergency,emoji_events,event_available,expand_more,fact_check,filter_alt,find_in_page,folder,foundation,gavel,grid_view,group,groups,handshake,handyman,home_repair_service,home_work,hvac,image,info,insights,light_mode,link,link_off,local_shipping,location_off,location_on,lock,mail,manage_accounts,map,menu_book,mic,military_tech,money_off,monitor_heart,monitoring,movie_edit,newspaper,no_accounts,phone_disabled,photo_camera,pin_drop,play_arrow,play_circle,pool,rate_review,reply,reviews,rocket_launch,roofing,savings,search,search_off,sell,send,share,shield,smart_toy,star_rate,storefront,sync_alt,sync_problem,target,task_alt,thunderstorm,travel_explore,trending_down,trending_up,tune,verified,verified_user,vertical_align_top,video_library,videocam,visibility,visibility_off,web,web_asset,web_asset_off,window,workspace_premium,zoom_in"></noscript>
 <link rel="stylesheet" href="/css/news.ae06828a30.css">
 <style>
-.page-hero-img{height:420px;border-radius:var(--radius);overflow:hidden}
-.ph.filled.hero-ry{background-size:auto 240%;background-position:28% 52%}
 .page-hero h1{font-size:clamp(32px,5vw,52px);margin-bottom:16px}
 .js .page-hero h1{opacity:1}
 .page-hero .lead{margin-bottom:22px}
@@ -171,22 +169,20 @@
 .cbl-sources p,.cbl-sources li{font-family:var(--body);font-size:14px;line-height:1.55;color:var(--muted)}
 .cbl-sources ol{margin:0;padding-left:1.2em}
 .cbl-sources a{color:var(--orange-text)}
-.sc-cal{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(10px,1.6vw,18px);overflow:hidden}
-.sc-cal iframe{width:100%;border:0;display:block;min-height:620px}
-.sc-cal-note{font-family:var(--head);font-size:13.5px;color:var(--muted);text-align:center;margin:18px 0 0}
+.page-hero-grid{align-items:start}
+.sc-cal{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(10px,1.6vw,18px);overflow:hidden;min-width:0}
+.sc-cal iframe{width:100%;border:0;display:block;min-height:640px}
+.sc-cal-note{font-family:var(--head);font-size:13.5px;color:var(--muted);text-align:center;margin:14px 0 0}
 .sc-cal-note a{color:var(--orange-text)}
 #calendar{scroll-margin-top:96px}
 @media(max-width:1000px){
   .page-hero-grid{grid-template-columns:1fr;gap:28px}
-  .page-hero-img{height:280px}
   .cbl-why,.cbl-steps{grid-template-columns:1fr}
 }
 @media(max-width:900px){
-  .ph.filled.hero-ry{background-size:auto 215%;background-position:33% 54%}
   .sc-cal iframe{min-height:760px}
 }
 @media(max-width:600px){
-  .page-hero-img{height:200px}
   .cbl-actions{align-items:stretch}
   .cbl-actions .btn-cta{justify-content:center;width:100%;box-sizing:border-box}
   .acc-inner{padding-left:0}
@@ -516,7 +512,13 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       </div>
       <p class="cbl-deadline">Get your side finished before the end of November 2026. OpenAI reviews claims on its own clock.</p>
     </div>
-    <div class="ph page-hero-img filled hero-ry" style="background-image:url('/img/ryan-jana166030.webp')" role="img" aria-label="Ryan Kearney standing against the red rock of Sedona"></div>
+    <div class="sc-cal" id="calendar">
+      <iframe src="https://api.leadconnectorhq.com/widget/booking/pvs58tcnnod1WExkREup"
+              title="Book a discovery call with Outwork'em Digital"
+              allow="payment" scrolling="no"
+              id="pvs58tcnnod1WExkREup_1787676911364"></iframe>
+      <p class="sc-cal-note">Calendar not loading? <a href="tel:8336951214">Call 833-695-1214</a> and we will book it with you.</p>
+    </div>
   </div>
 </section>
 
@@ -599,21 +601,6 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <div class="acc-body"><div class="acc-inner"><p>No. Keep that profile accurate. OpenAI has not said that Google Business Profile, Bing Places, or Apple Business Connect feed ChatGPT. ChatGPT search uses the web, and it may use other providers for nearby listings. Yelp has said its business details can appear in ChatGPT. A messy public record can still be what people see after you claim a profile.</p></div></div>
     </div>
   </div>
-</section>
-
-<section class="cbl-section wrap" id="calendar">
-  <div class="section-head">
-    <div class="kicker"><span class="label">Discovery call</span><span class="rule"></span></div>
-    <h2>Book a time.</h2>
-    <p class="lead">Fifteen minutes. We look at whether your company can claim a ChatGPT listing, and what doing it right would take. Nothing is sold on the call. We hold one contractor per trade, per service area, so the answer is sometimes no.</p>
-  </div>
-  <div class="sc-cal">
-    <iframe src="https://api.leadconnectorhq.com/widget/booking/pvs58tcnnod1WExkREup"
-            title="Book a discovery call with Outwork'em Digital"
-            allow="payment" scrolling="no"
-            id="pvs58tcnnod1WExkREup_1787676911364"></iframe>
-  </div>
-  <p class="sc-cal-note">Calendar not loading? <a href="tel:8336951214">Call 833-695-1214</a> and we will book it with you.</p>
 </section>
 
 <section class="cbl-sources wrap">
