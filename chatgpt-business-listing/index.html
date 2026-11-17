@@ -197,23 +197,6 @@
 .sc-cal-note{font-family:var(--head);font-size:13.5px;color:var(--muted);text-align:center;margin:14px 0 0}
 .sc-cal-note a{color:var(--orange-text)}
 #calendar{scroll-margin-top:96px}
-/* Book-a-call pop-up: sends visitors to the hero calendar on this page */
-.cbl-pop{width:min(460px,calc(100vw - 32px));box-sizing:border-box;margin:auto;padding:28px 26px 24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);color:var(--text);box-shadow:0 24px 60px rgba(0,0,0,.35)}
-.cbl-pop::backdrop{background:rgba(6,14,28,.6)}
-.cbl-pop[open]{animation:cblPopIn .28s cubic-bezier(.22,1,.36,1)}
-@keyframes cblPopIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.cbl-pop[open]{animation:none}}
-.cbl-pop-x{position:absolute;top:8px;right:8px;width:44px;height:44px;display:grid;place-items:center;background:none;border:0;border-radius:8px;color:var(--muted);cursor:pointer}
-.cbl-pop-x:hover{color:var(--text)}
-.cbl-pop .svc-chip{margin-bottom:12px}
-.cbl-pop-title{font-family:var(--head);font-size:clamp(20px,3vw,24px);font-weight:800;line-height:1.25;margin:0 0 10px;padding-right:28px;text-wrap:balance}
-.cbl-pop-text{font-family:var(--body);font-size:15.5px;line-height:1.6;color:var(--copy);margin:0 0 20px}
-.cbl-pop-actions{display:flex;flex-direction:column;gap:6px;align-items:stretch}
-.cbl-pop-actions .btn-cta{justify-content:center;border:0;cursor:pointer;text-decoration:none}
-.cbl-pop-later{min-height:44px;background:none;border:0;font-family:var(--head);font-size:14px;font-weight:600;color:var(--muted);cursor:pointer}
-.cbl-pop-later:hover{color:var(--text)}
-.cbl-pop-phone{font-family:var(--head);font-size:13.5px;color:var(--muted);text-align:center;margin:6px 0 0}
-.cbl-pop-phone a{color:var(--orange-text);text-decoration:none}
 @media(max-width:1000px){
   .page-hero-grid{display:flex;flex-direction:column;gap:28px}
   .cbl-hero-copy{display:contents}
@@ -888,17 +871,6 @@ a.f-social{width:44px;height:44px;text-decoration:none}
 
 <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
 
-<dialog class="cbl-pop" id="cblPop" aria-labelledby="cblPopTitle" aria-describedby="cblPopText">
-  <button class="cbl-pop-x" type="button" data-pop-close aria-label="Close"><span class="material-symbols-outlined" aria-hidden="true" data-icon="close"></span></button>
-  <div class="svc-chip"><span class="material-symbols-outlined" aria-hidden="true" data-icon="storefront"></span>ChatGPT listings</div>
-  <p class="cbl-pop-title" id="cblPopTitle">Not sure where your business stands on ChatGPT?</p>
-  <p class="cbl-pop-text" id="cblPopText">Book a discovery call. We look up whether ChatGPT already has your company and walk you through what OpenAI lets you do with it today. Nothing is sold on the call.</p>
-  <div class="cbl-pop-actions">
-    <button class="btn-cta" type="button" data-pop-book autofocus>Pick a time <span class="material-symbols-outlined" style="font-size:18px" aria-hidden="true" data-icon="calendar_month"></span></button>
-    <button class="cbl-pop-later" type="button" data-pop-close>Not now</button>
-  </div>
-  <p class="cbl-pop-phone">Rather talk now? <a href="tel:8336951214">Call 833-695-1214</a></p>
-</dialog>
 </main>
 <footer class="site-footer">
   <div class="wrap">
@@ -1092,61 +1064,9 @@ a.f-social{width:44px;height:44px;text-decoration:none}
 })();
 </script>
 
-<script>
-/* Book-a-call pop-up. Shows once per browser session, after 20 s on the page,
-   after 40% scroll, or on desktop exit intent. Never while the hero calendar is
-   on screen, and never after the visitor already headed for the calendar.
-   "Pick a time" closes it and scrolls to #calendar on this same page. */
-(function(){
-  var pop = document.getElementById('cblPop');
-  var cal = document.getElementById('calendar');
-  if(!pop || !cal || typeof pop.showModal !== 'function') return;
-  var KEY = 'owd-cbl-pop';
-  try{ if(sessionStorage.getItem(KEY)) return; }catch(e){}
-  var done = false, timer;
-  function mark(){ done = true; clearTimeout(timer); try{ sessionStorage.setItem(KEY,'1'); }catch(e){} }
-  /* Measured on the spot, so a fast scroll never reads a stale value. */
-  function calVisible(){
-    var r = cal.getBoundingClientRect();
-    return r.bottom > innerHeight * 0.25 && r.top < innerHeight * 0.75;
-  }
-  function open(){
-    if(done || calVisible() || document.querySelector('dialog[open]')) return;
-    mark();
-    pop.showModal();
-  }
-  timer = setTimeout(function tick(){ if(calVisible()){ timer = setTimeout(tick, 5000); } else open(); }, 20000);
-  addEventListener('scroll', function(){
-    var max = document.documentElement.scrollHeight - innerHeight;
-    if(max > 0 && scrollY / max > 0.4) open();
-  }, {passive:true});
-  if(matchMedia('(hover:hover) and (pointer:fine)').matches){
-    document.addEventListener('mouseout', function(e){ if(!e.relatedTarget && e.clientY <= 0) open(); });
-  }
-  /* Anyone who already clicked a calendar link does not need the nudge. */
-  document.addEventListener('click', function(e){
-    var a = e.target.closest && e.target.closest('a[href="#calendar"]');
-    if(a) mark();
-  });
-  [].forEach.call(pop.querySelectorAll('[data-pop-close]'), function(b){ b.addEventListener('click', function(){ pop.close(); }); });
-  pop.addEventListener('click', function(e){
-    /* Backdrop clicks land on the dialog itself, outside its box. */
-    if(e.target !== pop) return;
-    var r = pop.getBoundingClientRect();
-    if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) pop.close();
-  });
-  pop.querySelector('[data-pop-book]').addEventListener('click', function(){
-    pop.close();
-    var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
-    cal.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
-    var frame = cal.querySelector('iframe');
-    if(frame){ frame.setAttribute('tabindex','-1'); setTimeout(function(){ frame.focus({preventScroll:true}); }, reduce ? 0 : 500); }
-    if(history.replaceState) history.replaceState(null, '', '#calendar');
-  });
-})();
-</script>
 <script defer src="/js/a11y-widget.js"></script>
 <script defer src="/js/cookie-consent.js"></script>
+<script defer src="/js/chatgpt-popup.js"></script>
 <script defer src="/js/nav-a11y.js"></script>
 </body>
 </html>
