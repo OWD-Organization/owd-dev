@@ -170,13 +170,18 @@
 .cbl-sources ol{margin:0;padding-left:1.2em}
 .cbl-sources a{color:var(--orange-text)}
 .page-hero-grid{align-items:start}
+.cbl-hero-copy{min-width:0}
 .sc-cal{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(10px,1.6vw,18px);overflow:hidden;min-width:0}
 .sc-cal iframe{width:100%;border:0;display:block;min-height:640px}
 .sc-cal-note{font-family:var(--head);font-size:13.5px;color:var(--muted);text-align:center;margin:14px 0 0}
 .sc-cal-note a{color:var(--orange-text)}
 #calendar{scroll-margin-top:96px}
 @media(max-width:1000px){
-  .page-hero-grid{grid-template-columns:1fr;gap:28px}
+  .page-hero-grid{display:flex;flex-direction:column;gap:28px}
+  .cbl-hero-copy{display:contents}
+  .cbl-hero-head{order:1}
+  .page-hero .sc-cal{order:2}
+  .cbl-hero-rest{order:3}
   .cbl-why,.cbl-steps{grid-template-columns:1fr}
 }
 @media(max-width:900px){
@@ -493,12 +498,15 @@ a.f-social{width:44px;height:44px;text-decoration:none}
 
 <section class="page-hero wrap">
   <div class="page-hero-grid">
-    <div>
+    <div class="cbl-hero-copy">
+    <div class="cbl-hero-head">
       <div class="svc-chip">
         <span class="material-symbols-outlined" aria-hidden="true" data-icon="storefront"></span>
         ChatGPT listings
       </div>
-      <h1>Claim your business on ChatGPT. Then do it right.</h1>
+      <h1>Claim your business on ChatGPT. Then optimize it right.</h1>
+    </div>
+    <div class="cbl-hero-rest">
       <p class="lead">OpenAI opened Businesses in ChatGPT on November 10, 2026. It is still in beta. ChatGPT can already answer questions about nearby businesses. Claiming a listing is a real step. It is not the whole job.</p>
       <ul class="cbl-points">
         <li><span class="material-symbols-outlined" aria-hidden="true" data-icon="check_circle"></span><span>Find out if ChatGPT already has your company, and whether you can claim it.</span></li>
@@ -511,6 +519,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
         <a class="cbl-phone" href="tel:8336951214">Or call 833-695-1214</a>
       </div>
       <p class="cbl-deadline">Get your side finished before the end of November 2026. OpenAI reviews claims on its own clock.</p>
+    </div>
     </div>
     <div class="sc-cal" id="calendar">
       <iframe src="https://api.leadconnectorhq.com/widget/booking/pvs58tcnnod1WExkREup"
