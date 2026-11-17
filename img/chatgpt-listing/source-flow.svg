@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" fill="none">
+  <rect width="720" height="420" rx="28" fill="#F7F3EB"/>
+  <rect x="36" y="36" width="200" height="78" rx="16" fill="#FFFFFF" stroke="#E4D8C8"/>
+  <text x="56" y="68" fill="#0D2E58" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Your website</text>
+  <text x="56" y="92" fill="#221E1F" font-family="Arial, Helvetica, sans-serif" font-size="13">Services and cities</text>
+  <rect x="36" y="132" width="200" height="78" rx="16" fill="#FFFFFF" stroke="#E4D8C8"/>
+  <text x="56" y="164" fill="#0D2E58" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Reviews</text>
+  <text x="56" y="188" fill="#221E1F" font-family="Arial, Helvetica, sans-serif" font-size="13">What customers wrote</text>
+  <rect x="36" y="228" width="200" height="78" rx="16" fill="#FFFFFF" stroke="#E4D8C8"/>
+  <text x="56" y="260" fill="#0D2E58" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Directories</text>
+  <text x="56" y="284" fill="#221E1F" font-family="Arial, Helvetica, sans-serif" font-size="13">Name, address, phone</text>
+  <rect x="36" y="324" width="200" height="60" rx="16" fill="#0D2E58"/>
+  <text x="56" y="360" fill="#F7F3EB" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Schema on the site</text>
+  <path d="M248 75h70M248 171h70M248 267h70M248 354h70" stroke="#E8893A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M310 75c40 0 40 120 80 120M310 171h80M310 267c40 0 40-76 80-76M310 354c30-40 50-90 80-130" stroke="#E8893A" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <rect x="400" y="110" width="284" height="200" rx="24" fill="#0D2E58"/>
+  <text x="424" y="156" fill="#E8893A" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Chat answer</text>
+  <text x="424" y="192" fill="#F7F3EB" font-family="Arial, Helvetica, sans-serif" font-size="16">It can cite a page</text>
+  <text x="424" y="220" fill="#F7F3EB" font-family="Arial, Helvetica, sans-serif" font-size="16">or a public listing.</text>
+  <text x="424" y="268" fill="#F8E2CC" font-family="Arial, Helvetica, sans-serif" font-size="13">Matching facts are easier to quote.</text>
+</svg>
