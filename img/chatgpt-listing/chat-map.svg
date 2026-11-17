@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" fill="none">
+  <rect width="720" height="480" rx="28" fill="#F7F3EB"/>
+  <rect x="36" y="40" width="300" height="400" rx="22" fill="#0D2E58"/>
+  <rect x="56" y="64" width="168" height="28" rx="14" fill="#17498A"/>
+  <circle cx="74" cy="78" r="6" fill="#E8893A"/>
+  <text x="88" y="83" fill="#F7F3EB" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">ChatGPT</text>
+  <rect x="56" y="116" width="248" height="72" rx="16" fill="#12407A"/>
+  <text x="74" y="146" fill="#F7F3EB" font-family="Arial, Helvetica, sans-serif" font-size="15">Who can fix my AC</text>
+  <text x="74" y="168" fill="#F7F3EB" font-family="Arial, Helvetica, sans-serif" font-size="15">nearby?</text>
+  <rect x="72" y="214" width="232" height="150" rx="16" fill="#F7F3EB"/>
+  <text x="90" y="246" fill="#0D2E58" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">A few local companies</text>
+  <text x="90" y="278" fill="#221E1F" font-family="Arial, Helvetica, sans-serif" font-size="13">Name, services, phone</text>
+  <text x="90" y="300" fill="#221E1F" font-family="Arial, Helvetica, sans-serif" font-size="13">and website, if public</text>
+  <text x="90" y="334" fill="#E8893A" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Not a guaranteed spot</text>
+  <rect x="360" y="64" width="324" height="352" rx="22" fill="#FFFFFF" stroke="#E4D8C8" stroke-width="2"/>
+  <circle cx="522" cy="168" r="46" fill="#F8E2CC"/>
+  <path d="M522 132c-16 0-29 13-29 29 0 22 29 52 29 52s29-30 29-52c0-16-13-29-29-29z" fill="#E8893A"/>
+  <circle cx="522" cy="160" r="10" fill="#F7F3EB"/>
+  <text x="388" y="250" fill="#0D2E58" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Your company</text>
+  <text x="388" y="286" fill="#221E1F" font-family="Arial, Helvetica, sans-serif" font-size="15">AC repair and install</text>
+  <text x="388" y="318" fill="#221E1F" font-family="Arial, Helvetica, sans-serif" font-size="15">Your phone number</text>
+  <text x="388" y="350" fill="#12407A" font-family="Arial, Helvetica, sans-serif" font-size="15">yourcompany.com</text>
+  <text x="388" y="386" fill="#6B6258" font-family="Arial, Helvetica, sans-serif" font-size="12">Same facts on the site and the profile</text>
+</svg>
