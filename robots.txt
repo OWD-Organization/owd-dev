@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /photo-review/
 
 Sitemap: https://www.outworkemdigital.com/sitemap.xml
