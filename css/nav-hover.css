@@ -1,0 +1,28 @@
+/* Desktop dropdowns sit 14px below their trigger. Only a 12px-wide
+   arrow crossed that gap, so a slow or diagonal move left :hover and
+   the panel closed. This strip is part of the trigger, so the pointer
+   stays inside .nav-item the whole way down. It is invisible, sits
+   under the panel (z-index 200), and disappears with the nav when
+   .nav-links is display:none. */
+.nav-item::after{
+  content:"";
+  position:absolute;
+  z-index:190;
+  left:50%;
+  top:calc(100% - 2px);
+  transform:translateX(-50%);
+  width:max(100%, 680px);
+  height:28px;
+  pointer-events:none;
+}
+.nav-item:hover::after,
+.nav-item.open::after,
+.nav-item.hovering::after{pointer-events:auto}
+.nav-item:hover,
+.nav-item.open,
+.nav-item.hovering{z-index:5}
+.nav-item.hovering .nav-drop{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateX(-50%) translateY(0);
+}
