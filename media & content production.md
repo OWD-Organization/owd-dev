@@ -56,13 +56,13 @@ This is not a quick task. It's a real production process, and we take it serious
 
 Six value videos and two ads. An à la carte purchase — not a monthly commitment — that you can grab whenever the timing is right. We script, you film, we produce.
 
-**Starting at $1,500 for retainer clients.**
+**Starting at $1,500.**
 
 ### **On-Site Content Pack**
 
 Same deliverables, but we travel to you and produce the shoot on location. Pricing is customized based on the scope of your project, so you'll always know exactly what you're investing before we book.
 
-**Custom quote.**
+**Starting at $4,800.**
 
 ### **Blog & Clip Package**
 
