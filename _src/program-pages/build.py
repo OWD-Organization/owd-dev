@@ -37,7 +37,7 @@ open(os.path.join(ROOT, CSS_HREF.lstrip('/')), 'w').write(
 # ------------------------------------------------------- chrome from homepage
 home = rd('index.html')
 ANALYTICS = home[home.index('<script>'):home.index('</script>') + 9]
-FONTS = '\n'.join(l for l in home.split('\n') if l.startswith('<link') and 'fonts.g' in l)
+FONTS = '\n'.join(l for l in home.split('\n') if l.startswith(('<link','<noscript','<style id="icons-css"')) and ('fonts.g' in l or '/fonts' in l or 'icons-wait' in l) or 'icons-wait' in l and l.startswith(('<script','(function')))
 THEME = re.search(r'<script>\s*/\* Dark is the default.*?</script>', home, re.S).group(0)
 ICONS = '\n'.join(l for l in home.split('\n') if l.startswith('<link rel="icon"') or l.startswith('<link rel="apple-touch-icon"'))
 BODY_TOP = re.sub(r' class="current"', '', home[home.index('<body>') + 6:home.index('<main id="main">')])
@@ -508,6 +508,18 @@ def page(key):
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
+<script type="text/javascript">
+    /* Microsoft Clarity -- z9i7znce5k. The clarity() queue is ready right away;
+       the tag itself downloads on the visitor's first scroll, tap, click, key
+       press or mouse move (or 10 s after load), so it doesn't slow the page. */
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        (c.__owdLater=c.__owdLater||[]).push(function(){
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        });
+    })(window, document, "clarity", "script", "z9i7znce5k");
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {ANALYTICS}
 <title>{html.escape(pg['title'], quote=False)}</title>
@@ -528,7 +540,7 @@ def page(key):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 {FONTS}
-<link rel="stylesheet" href="/css/service.718350f55c.css">
+<link rel="stylesheet" href="/css/service.afac007f00.css">
 <link rel="stylesheet" href="{CSS_HREF}">
 {THEME}
 <script type="application/ld+json">
@@ -643,6 +655,9 @@ def page(key):
 
 <script src="/js/program-checkout.js" defer></script>
 {open(os.path.join(SRC, 'page.js')).read()}
+<script defer src="/js/a11y-widget.js"></script>
+<script defer src="/js/cookie-consent.js"></script>
+<script defer src="/js/nav-a11y.js"></script>
 </body>
 </html>
 '''

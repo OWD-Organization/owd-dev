@@ -2,6 +2,18 @@
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
+<script type="text/javascript">
+    /* Microsoft Clarity -- z9i7znce5k. The clarity() queue is ready right away;
+       the tag itself downloads on the visitor's first scroll, tap, click, key
+       press or mouse move (or 10 s after load), so it doesn't slow the page. */
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        (c.__owdLater=c.__owdLater||[]).push(function(){
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        });
+    })(window, document, "clarity", "script", "z9i7znce5k");
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
 /* Analytics, ported from the live WordPress header: Google Ads (gtag),
@@ -17,34 +29,71 @@
    code from an earlier install that nobody removed. Worth confirming in the
    Clarity dashboard which project is actually receiving traffic, and cleaning
    up the WordPress header once that is settled. */
+/* Cookie consent (see /js/cookie-consent.js): a visitor who declined keeps
+   Google Ads and the Meta Pixel off, and Clarity runs without cookies. */
 (function(){
-  if (/(^|\.)vercel\.app$/.test(location.hostname)) return;
+  var cc; try { cc = sessionStorage.getItem('owd-cookie-consent'); } catch (e) {}
+  if (cc === 'denied') {
+    window.__owdNoTrack = true;
+    if (window.clarity) {
+      clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
+      clarity('consent', false);
+    }
+  }
+})();
+/* Trackers wait for the visitor's first interaction (or 10 s after load):
+   scripts queued on window.__owdLater run then. Their queues (dataLayer, fbq,
+   clarity) exist from the start, so the page view is still recorded. */
+(function(){
+  var done = false, ev = ['scroll','mousemove','touchstart','pointerdown','keydown','click'];
+  function fire(){
+    if (done) return; done = true;
+    ev.forEach(function(e){ removeEventListener(e, fire, true); });
+    removeEventListener('mousemove', moved, true);
+    var q = window.__owdLater || [];
+    window.__owdLater = { push: function(f){ try { f(); } catch (e) {} } };
+    q.forEach(function(f){ try { f(); } catch (e) {} });
+  }
+  ev.forEach(function(e){ addEventListener(e, e === 'mousemove' ? moved : fire, { passive: true, capture: true }); });
+  // A mousemove also fires when the page lays out under a still cursor; only
+  // count the pointer actually travelling.
+  var mx = null, my = null;
+  function moved(e){
+    if (mx === null) { mx = e.clientX; my = e.clientY; return; }
+    if (Math.abs(e.clientX - mx) + Math.abs(e.clientY - my) > 4) { removeEventListener('mousemove', moved, true); fire(); }
+  }
+  function later(){ setTimeout(fire, 10000); }
+  if (document.readyState === 'complete') later(); else addEventListener('load', later);
+})();
+(function(){
+  if (/(^|\.)vercel\.app$/.test(location.hostname) || window.__owdNoTrack) return;
+
+  // Tracker scripts download on the first interaction (see above); the
+  // queues below are ready right away, so the page view is still recorded.
 
   // Google Ads (gtag.js) -- AW-16636468173
-  var gs = document.createElement('script');
-  gs.async = true;
-  gs.src = 'https://www.googletagmanager.com/gtag/js?id=AW-16636468173';
-  document.head.appendChild(gs);
   window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', 'AW-16636468173');
 
   // Meta Pixel -- 908509337671469
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  !function(f){if(f.fbq)return;var n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window);
   fbq('init', '908509337671469');
   fbq('track', 'PageView');
 
   // Microsoft Clarity -- xjsg05olmf (the WordPress-plugin install)
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "xjsg05olmf");
+  window.clarity = window.clarity || function(){ (clarity.q = clarity.q || []).push(arguments); };
+
+  function add(src){ var s = document.createElement('script'); s.async = true; s.src = src; document.head.appendChild(s); }
+  function go(){
+    add('https://www.googletagmanager.com/gtag/js?id=AW-16636468173');
+    add('https://connect.facebook.net/en_US/fbevents.js');
+    add('https://www.clarity.ms/tag/xjsg05olmf');
+  }
+  (window.__owdLater = window.__owdLater || []).push(go);
 })();
 </script>
 <title>Grok Bot AI Office Assistant for Home Services | OWD</title>
@@ -64,9 +113,16 @@
 <meta name="twitter:image" content="https://www.outworkemdigital.com/img/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=ads_click,all_inclusive,arrow_back,arrow_downward,arrow_forward,arrow_outward,auto_awesome,auto_stories,autorenew,bar_chart,block,bolt,build,calendar_month,call,campaign,cancel,card_giftcard,check_circle,chevron_left,chevron_right,close,cloud_upload,construction,content_copy,dark_mode,dashboard,diversity_3,dns,domain_disabled,edit_note,emergency,emoji_events,event_available,expand_more,fact_check,filter_alt,find_in_page,folder,foundation,gavel,grid_view,group,groups,handshake,handyman,home_repair_service,home_work,hvac,image,info,insights,light_mode,link,link_off,local_shipping,location_off,location_on,lock,mail,manage_accounts,map,menu_book,mic,military_tech,money_off,monitor_heart,monitoring,movie_edit,newspaper,no_accounts,phone_disabled,photo_camera,pin_drop,play_arrow,play_circle,pool,rate_review,reply,reviews,rocket_launch,roofing,savings,search,search_off,sell,send,share,shield,smart_toy,star_rate,storefront,sync_alt,sync_problem,target,task_alt,thunderstorm,travel_explore,trending_down,trending_up,tune,verified,verified_user,vertical_align_top,video_library,videocam,visibility,visibility_off,web,web_asset,web_asset_off,window,workspace_premium,zoom_in" rel="stylesheet">
-<link rel="stylesheet" href="/css/service.718350f55c.css">
+<link rel="preload" href="/fonts/poppins-700-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/poppins-600-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/lora-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/fonts.32e2293067.css">
+<style id="icons-css">.material-symbols-outlined{width:1em;overflow:hidden}html.icons-wait .material-symbols-outlined{visibility:hidden}</style>
+<script>/* Icon font loads without blocking the first paint; icons stay hidden (their space kept) until it arrives, 3 s at most. icons-wait */
+(function(){var h=document.documentElement;h.classList.add('icons-wait');function done(){h.classList.remove('icons-wait')}setTimeout(done,3000);window.__owdIcons=function(){if(document.fonts&&document.fonts.load){document.fonts.load('24px "Material Symbols Outlined"').then(done,done)}else done()}})();</script>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=ads_click,all_inclusive,arrow_back,arrow_downward,arrow_forward,arrow_outward,auto_awesome,auto_stories,autorenew,bar_chart,block,bolt,build,calendar_month,call,campaign,cancel,card_giftcard,check,check_circle,chevron_left,chevron_right,close,cloud_upload,construction,content_copy,dark_mode,dashboard,diversity_3,dns,domain_disabled,edit_note,emergency,emoji_events,event_available,expand_more,fact_check,filter_alt,find_in_page,folder,foundation,gavel,grid_view,group,groups,handshake,handyman,home_repair_service,home_work,hvac,image,info,insights,light_mode,link,link_off,local_shipping,location_off,location_on,lock,mail,manage_accounts,map,menu_book,mic,military_tech,money_off,monitor_heart,monitoring,movie_edit,newspaper,no_accounts,phone_disabled,photo_camera,pin_drop,play_arrow,play_circle,pool,rate_review,reply,reviews,rocket_launch,roofing,savings,search,search_off,sell,send,share,shield,smart_toy,star_rate,storefront,sync_alt,sync_problem,target,task_alt,thunderstorm,travel_explore,trending_down,trending_up,tune,verified,verified_user,vertical_align_top,video_library,videocam,visibility,visibility_off,web,web_asset,web_asset_off,window,workspace_premium,zoom_in" onload="this.onload=null;this.rel='stylesheet';__owdIcons()">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=ads_click,all_inclusive,arrow_back,arrow_downward,arrow_forward,arrow_outward,auto_awesome,auto_stories,autorenew,bar_chart,block,bolt,build,calendar_month,call,campaign,cancel,card_giftcard,check,check_circle,chevron_left,chevron_right,close,cloud_upload,construction,content_copy,dark_mode,dashboard,diversity_3,dns,domain_disabled,edit_note,emergency,emoji_events,event_available,expand_more,fact_check,filter_alt,find_in_page,folder,foundation,gavel,grid_view,group,groups,handshake,handyman,home_repair_service,home_work,hvac,image,info,insights,light_mode,link,link_off,local_shipping,location_off,location_on,lock,mail,manage_accounts,map,menu_book,mic,military_tech,money_off,monitor_heart,monitoring,movie_edit,newspaper,no_accounts,phone_disabled,photo_camera,pin_drop,play_arrow,play_circle,pool,rate_review,reply,reviews,rocket_launch,roofing,savings,search,search_off,sell,send,share,shield,smart_toy,star_rate,storefront,sync_alt,sync_problem,target,task_alt,thunderstorm,travel_explore,trending_down,trending_up,tune,verified,verified_user,vertical_align_top,video_library,videocam,visibility,visibility_off,web,web_asset,web_asset_off,window,workspace_premium,zoom_in"></noscript>
+<link rel="stylesheet" href="/css/service.afac007f00.css">
 <style>
 :root {
   --bg:#F7F3EB;--bg-2:oklch(0.950 0.022 62);--card:oklch(0.995 0.005 70);
@@ -171,9 +227,6 @@ html[data-theme="dark"]{
 .gb-hero .gb-ctas{max-width:520px}
 .gb-ctas .btn-cta{font-size:14px;font-weight:700;padding:16px 16px;min-height:56px;justify-content:center;width:100%;box-sizing:border-box;text-align:center}
 .gb-dark .btn-cta,.price-card .btn-cta,.gb-hero .btn-cta{box-shadow:0 10px 24px rgba(196,92,18,.28)}
-header .nav-actions .nav-phone,
-header .nav-actions a.btn.btn-solid{box-sizing:border-box;height:44px;min-height:44px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;background:var(--orange);border:1px solid var(--orange);border-radius:999px;color:oklch(0.99 0.005 70);font-size:14px;font-weight:600;line-height:1;white-space:nowrap}
-header .nav-actions .nav-phone .material-symbols-outlined{color:oklch(0.99 0.005 70);font-size:16px}
 .footer-bottom .legal a,.f-phone a,.footer-contact a{display:inline-flex;align-items:center;min-height:44px}
 .sample-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1a120c;background:#f0b27a;border-radius:999px;padding:6px 10px;margin:0 0 14px}
 .device-wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
@@ -202,32 +255,35 @@ header .nav-actions .nav-phone .material-symbols-outlined{color:oklch(0.99 0.005
 .ag-status{position:relative;display:block;height:16px;margin-top:3px;overflow:hidden}
 .ag-a,.ag-b{position:absolute;left:0;right:0;top:0;font-size:11px;color:rgba(244,241,234,.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ag-badge{min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:#e07a22;color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center}
-.thread{flex:1;overflow:auto;padding:12px 12px 8px;display:flex;flex-direction:column;gap:8px}
-.bubble{max-width:92%;padding:9px 11px;border-radius:16px;font-size:12.5px;line-height:1.45}
-.bubble p{margin:0;color:inherit;font-family:var(--head);font-size:12.5px;line-height:1.45}
+.thread{flex:1 0 auto;min-height:0;overflow:visible;padding:12px 12px 16px;display:flex;flex-direction:column;gap:8px}
+.thread>*{flex-shrink:0}
+.bubble{max-width:92%;padding:10px 12px;border-radius:16px;font-size:13px;line-height:1.45}
+.bubble p{margin:0;color:inherit;font-family:var(--head);font-size:13px;line-height:1.45}
 .bubble-user{margin-left:auto;background:linear-gradient(140deg,#f0b27a,#e07a22);color:#1a120c;border-bottom-right-radius:5px}
 .bubble-user p{color:#1a120c}
 .bubble-bot{margin-right:auto;background:#1c2433;color:#f4f1ea;border-bottom-left-radius:5px}
 .bubble-bot p{color:#f4f1ea}
-.typing{display:none;align-items:center;gap:4px;width:52px;padding:10px 12px;border-radius:16px;background:#1c2433}
-.typing span{width:6px;height:6px;border-radius:50%;background:#f0b27a;opacity:.4}
 .slip{background:#f7f3eb;color:#1a120c;border-radius:16px;padding:12px;margin-top:2px}
-.slip p,.slip li,.slip span,.slip b{color:#1a120c;font-family:var(--head)}
-.slip-kicker{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#c45c12 !important;margin:0 0 8px}
+.slip p,.slip li,.slip span,.slip b,.slip small{color:#1a120c;font-family:var(--head)}
+.slip-kicker{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#a34a0b !important;margin:0 0 8px}
 .slip ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
-.slip li{display:flex;justify-content:space-between;gap:8px;font-size:12px;padding-bottom:6px;border-bottom:1px solid rgba(26,18,12,.08)}
+.slip li{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:12px;padding-bottom:6px;border-bottom:1px solid rgba(26,18,12,.08)}
+.slip li span{min-width:0;line-height:1.35}
+.slip li b{flex:none;white-space:nowrap}
+.slip li small{display:block;font-size:11px;font-weight:600;color:rgba(26,18,12,.68)}
 .slip-meta{font-size:11px;font-weight:700;margin:0 0 4px}
 .slip article + article{margin-top:8px;padding-top:8px;border-top:1px solid rgba(26,18,12,.08)}
 .slip article p:last-child{margin:0;font-size:12px;line-height:1.4}
 .slip-note{margin:8px 0 0;font-size:11px;font-weight:700}
-.is-play .thread [data-step]{display:none}
-.is-play .thread [data-step].on{display:block}
-.is-play .typing.on{display:flex}
 .ex-switch{display:none;gap:8px;justify-content:center;flex-wrap:wrap;margin:0 0 22px}
-.ex-switch button{font-family:var(--head);font-size:13px;font-weight:700;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:transparent;color:#f7f3eb;padding:10px 14px;cursor:pointer}
-.ex-switch button[aria-selected="true"]{background:#e07a22;border-color:#e07a22;color:#fff}
-.ex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start;justify-items:center}
-.ex-label{margin:12px 0 0;text-align:center;font-family:var(--head);font-size:13px;font-weight:700;letter-spacing:.04em;color:#f0b27a}
+.ex-switch button{font-family:var(--head);font-size:13px;font-weight:700;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:transparent;color:#f7f3eb;padding:10px 16px;min-height:44px;cursor:pointer}
+.ex-switch button[aria-selected="true"]{background:#e07a22;border-color:#e07a22;color:#1a120c}
+.ex-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:start;justify-items:center}
+.ex-phone{width:100%;max-width:300px;justify-self:center}
+.ex-phone .device{width:100%;height:auto;aspect-ratio:auto}
+.ex-phone .device-bezel{position:relative;inset:auto}
+.ex-phone .device-screen{height:auto;min-height:560px}
+.ex-label{margin:14px 0 0;text-align:center;font-family:var(--head);font-size:13px;font-weight:700;letter-spacing:.04em;color:#f0b27a}
 .faq-section .section-head h2,.gb-faq h2{font-size:clamp(30px,4vw,46px)}
 .gb-faq{background:var(--bg)}
 .final-cta .cta-band{background:radial-gradient(600px 240px at 80% 0%, rgba(240,178,122,.35), transparent 60%), linear-gradient(140deg,#16315c,#0d1526 55%,#1c140f);border:1px solid rgba(255,255,255,.08)}
@@ -243,9 +299,6 @@ header .nav-actions .nav-phone .material-symbols-outlined{color:oklch(0.99 0.005
   .ag:nth-child(6) .ag-a,.ag:nth-child(6) .ag-b{animation-delay:3s}
   .ag-badge{animation:gb-pop 5.6s ease-in-out infinite}
   .device-wrap .device{animation:gb-float 7s ease-in-out infinite}
-  .typing span{animation:gb-dot 1s infinite}
-  .typing span:nth-child(2){animation-delay:.15s}
-  .typing span:nth-child(3){animation-delay:.3s}
   .gb-hero .gb-copy>*{animation:gb-rise .8s cubic-bezier(.22,1,.36,1) both}
   .gb-hero .gb-copy>*:nth-child(2){animation-delay:.08s}
   .gb-hero .gb-copy>*:nth-child(3){animation-delay:.16s}
@@ -255,7 +308,6 @@ header .nav-actions .nav-phone .material-symbols-outlined{color:oklch(0.99 0.005
 @keyframes gb-b{0%,42%{opacity:0;transform:translateY(8px)}50%,92%{opacity:1;transform:none}100%{opacity:0;transform:translateY(8px)}}
 @keyframes gb-pop{0%,64%,100%{transform:scale(1)}74%{transform:scale(1.16)}}
 @keyframes gb-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes gb-dot{0%,80%,100%{opacity:.3;transform:translateY(0)}40%{opacity:1;transform:translateY(-2px)}}
 @keyframes gb-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){
   .js .gb-reveal{opacity:1;transform:none}
@@ -287,7 +339,7 @@ header .nav-actions .nav-phone .material-symbols-outlined{color:oklch(0.99 0.005
 @media(max-width:820px){
   .mobile-cta-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:color-mix(in oklab, var(--bg) 88%, transparent);backdrop-filter:blur(16px);border-top:1px solid var(--line);box-shadow:0 -10px 30px rgba(0,0,0,.18);gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
   .mobile-cta-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;font-family:var(--head);font-size:14px;font-weight:700;letter-spacing:.02em;text-decoration:none;border-radius:12px;padding:14px;min-height:52px}
-  .mobile-cta-bar .mcb-call,.mobile-cta-bar .mcb-book{background:var(--orange);border:1px solid var(--orange);color:#fff}
+  .mobile-cta-bar .mcb-call,.mobile-cta-bar .mcb-book{background:var(--orange);border:1px solid var(--orange);color:#1a120c}
   .mobile-cta-bar .material-symbols-outlined{font-size:18px;color:#fff}
   body{padding-bottom:84px}
 }
@@ -379,6 +431,8 @@ a.f-social{width:44px;height:44px;text-decoration:none}
   ]
 }
 </script>
+<link rel="stylesheet" href="/css/nav-hover.css">
+<script defer src="/js/nav-hover.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -455,6 +509,10 @@ a.f-social{width:44px;height:44px;text-decoration:none}
           <a href="/marketing-programs/local-seo/">
             <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="pin_drop"></span></span>
             <span class="drop-text"><span class="drop-name">Local SEO</span><span class="drop-headline">Dominate the Google Map Pack</span></span>
+          </a>
+          <a href="/chatgpt-business-listing/">
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="auto_awesome"></span></span>
+            <span class="drop-text"><span class="drop-name">ChatGPT Listing</span><span class="drop-headline">Set up your profile in ChatGPT</span></span>
           </a>
           <a href="/marketing-services/ppc-advertising-services/">
             <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="ads_click"></span></span>
@@ -551,6 +609,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
           <a href="/marketing-services/website-design-services/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="web"></span>Website Design</a>
           <a href="/marketing-services/organic-seo-services/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="search"></span>Organic SEO</a>
           <a href="/marketing-programs/local-seo/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="pin_drop"></span>Local SEO</a>
+          <a href="/chatgpt-business-listing/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="auto_awesome"></span>ChatGPT Listing</a>
           <a href="/marketing-services/ppc-advertising-services/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="ads_click"></span>Pay-Per-Click Ads</a>
           <a href="/marketing-services/local-services-ads/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="storefront"></span>Local Services Ads</a>
           <a href="/marketing-services/reputation-management-services/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="star_rate"></span>Reputation Mgmt</a>
@@ -678,12 +737,12 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <p class="sub">A sample of how an owner can text Grok Bot. Names, jobs, and amounts below are placeholders.</p>
     </div>
     <div class="ex-switch" role="tablist" aria-label="Example conversations">
-      <button type="button" role="tab" data-tab="invoices" aria-selected="true">Invoices</button>
-      <button type="button" role="tab" data-tab="reviews" aria-selected="false">Reviews</button>
-      <button type="button" role="tab" data-tab="schedule" aria-selected="false">Schedule</button>
+      <button type="button" role="tab" id="ex-tab-invoices" data-tab="invoices" aria-selected="true" aria-controls="ex-panel-invoices">Invoices</button>
+      <button type="button" role="tab" id="ex-tab-reviews" data-tab="reviews" aria-selected="false" aria-controls="ex-panel-reviews">Reviews</button>
+      <button type="button" role="tab" id="ex-tab-schedule" data-tab="schedule" aria-selected="false" aria-controls="ex-panel-schedule">Schedule</button>
     </div>
     <div class="ex-grid">
-      <article class="ex-phone is-on gb-reveal" data-chat="invoices">
+      <article class="ex-phone is-on gb-reveal" id="ex-panel-invoices" data-chat="invoices" role="tabpanel" aria-labelledby="ex-tab-invoices">
         <div class="device">
           <span class="device-side silent"></span><span class="device-side vu"></span><span class="device-side vd"></span><span class="device-side pw"></span>
           <div class="device-bezel"><div class="device-screen">
@@ -691,24 +750,25 @@ a.f-social{width:44px;height:44px;text-decoration:none}
             <div class="device-status"><span>9:41</span><span>Grok Bot</span></div>
             <div class="appbar"><span class="app-dot"><span class="material-symbols-outlined" aria-hidden="true" data-icon="edit_note"></span></span><strong>Invoicing</strong></div>
             <div class="thread">
-              <div class="typing" aria-hidden="true"><span></span><span></span><span></span></div>
-              <div class="bubble bubble-user" data-step="user"><p>Build invoices for yesterday's completed jobs</p></div>
-              <div class="bubble bubble-bot" data-step="bot"><p>I pulled yesterday's completed jobs. Three sample invoices are ready for your OK.</p></div>
-              <div class="slip" data-step="card">
+              <div class="bubble bubble-user"><p>Build invoices for yesterday's completed jobs.</p></div>
+              <div class="bubble bubble-bot"><p>I found three finished jobs from yesterday. These are sample invoices, not live charges.</p></div>
+              <div class="bubble bubble-user"><p>Show me the amounts. Don't send anything yet.</p></div>
+              <div class="bubble bubble-bot"><p>Ready for your OK. Placeholder names and amounts only.</p></div>
+              <div class="slip">
                 <p class="slip-kicker">Sample invoice set</p>
                 <ul>
-                  <li><span>Sample Customer A · Tune-up</span><b>$240.00</b></li>
-                  <li><span>Sample Customer B · Capacitor</span><b>$186.00</b></li>
-                  <li><span>Sample Customer C · Drain line</span><b>$95.00</b></li>
+                  <li><span>Tune-up<small>Sample Customer A</small></span><b>$240.00</b></li>
+                  <li><span>Capacitor<small>Sample Customer B</small></span><b>$186.00</b></li>
+                  <li><span>Drain line<small>Sample Customer C</small></span><b>$95.00</b></li>
                 </ul>
-                <p class="slip-note">Awaiting your approval</p>
+                <p class="slip-note">Nothing sends until you approve it.</p>
               </div>
             </div>
           </div></div>
         </div>
         <p class="ex-label">Invoices</p>
       </article>
-      <article class="ex-phone gb-reveal" data-chat="reviews">
+      <article class="ex-phone gb-reveal" id="ex-panel-reviews" data-chat="reviews" role="tabpanel" aria-labelledby="ex-tab-reviews">
         <div class="device">
           <span class="device-side silent"></span><span class="device-side vu"></span><span class="device-side vd"></span><span class="device-side pw"></span>
           <div class="device-bezel"><div class="device-screen">
@@ -716,20 +776,22 @@ a.f-social{width:44px;height:44px;text-decoration:none}
             <div class="device-status"><span>9:41</span><span>Grok Bot</span></div>
             <div class="appbar"><span class="app-dot"><span class="material-symbols-outlined" aria-hidden="true" data-icon="reviews"></span></span><strong>Reviews</strong></div>
             <div class="thread">
-              <div class="typing" aria-hidden="true"><span></span><span></span><span></span></div>
-              <div class="bubble bubble-user" data-step="user"><p>Draft replies to new Google reviews</p></div>
-              <div class="bubble bubble-bot" data-step="bot"><p>Two sample drafts are ready. Nothing goes out until you approve it.</p></div>
-              <div class="slip" data-step="card">
+              <div class="bubble bubble-user"><p>Draft replies for the new Google reviews.</p></div>
+              <div class="bubble bubble-bot"><p>Two sample drafts are ready. They stay here until you approve them.</p></div>
+              <div class="bubble bubble-user"><p>Keep them short, and don't mention a discount.</p></div>
+              <div class="bubble bubble-bot"><p>Updated. Still sample copy for Sample HVAC. Nothing has been posted.</p></div>
+              <div class="slip">
                 <p class="slip-kicker">Drafts awaiting approval</p>
-                <article><p class="slip-meta">5 stars · Sample Customer</p><p>Thanks for calling Sample HVAC. Glad the visit went well.</p></article>
-                <article><p class="slip-meta">4 stars · Sample Customer</p><p>Thanks for the feedback. We will follow up about the filter.</p></article>
+                <article><p class="slip-meta">5 stars · Sample Customer A</p><p>Thanks for trusting Sample HVAC with the tune-up. Glad the visit went well.</p></article>
+                <article><p class="slip-meta">4 stars · Sample Customer B</p><p>Thanks for the note about the filter. We will follow up on that sample visit.</p></article>
+                <p class="slip-note">Sample replies only. Not posted.</p>
               </div>
             </div>
           </div></div>
         </div>
         <p class="ex-label">Reviews</p>
       </article>
-      <article class="ex-phone gb-reveal" data-chat="schedule">
+      <article class="ex-phone gb-reveal" id="ex-panel-schedule" data-chat="schedule" role="tabpanel" aria-labelledby="ex-tab-schedule">
         <div class="device">
           <span class="device-side silent"></span><span class="device-side vu"></span><span class="device-side vd"></span><span class="device-side pw"></span>
           <div class="device-bezel"><div class="device-screen">
@@ -737,17 +799,18 @@ a.f-social{width:44px;height:44px;text-decoration:none}
             <div class="device-status"><span>9:41</span><span>Grok Bot</span></div>
             <div class="appbar"><span class="app-dot"><span class="material-symbols-outlined" aria-hidden="true" data-icon="calendar_month"></span></span><strong>Schedule</strong></div>
             <div class="thread">
-              <div class="typing" aria-hidden="true"><span></span><span></span><span></span></div>
-              <div class="bubble bubble-user" data-step="user"><p>What's on the schedule tomorrow?</p></div>
-              <div class="bubble bubble-bot" data-step="bot"><p>Here is a sample of tomorrow's board. Each job has a tech assigned.</p></div>
-              <div class="slip" data-step="card">
-                <p class="slip-kicker">Sample morning summary</p>
+              <div class="bubble bubble-user"><p>What's on the board tomorrow morning?</p></div>
+              <div class="bubble bubble-bot"><p>Here is a sample of the first three jobs. Each one has a placeholder tech.</p></div>
+              <div class="bubble bubble-user"><p>Who is on the 10:30 no-cool call?</p></div>
+              <div class="bubble bubble-bot"><p>Sample tech Jordan L. Tomorrow's board is placeholder data only.</p></div>
+              <div class="slip">
+                <p class="slip-kicker">Sample morning board</p>
                 <ul>
-                  <li><span>8:00 AM · Tune-up</span><b>Alex R.</b></li>
-                  <li><span>10:30 AM · No cool</span><b>Jordan L.</b></li>
-                  <li><span>1:00 PM · Maintenance</span><b>Alex R.</b></li>
+                  <li><span>8:00 AM · Tune-up<small>Sample Customer A</small></span><b>Alex R.</b></li>
+                  <li><span>10:30 AM · No cool<small>Sample Customer B</small></span><b>Jordan L.</b></li>
+                  <li><span>1:00 PM · Maintenance<small>Sample Customer C</small></span><b>Alex R.</b></li>
                 </ul>
-                <p class="slip-note">Sample Customer on each job. Tech assigned.</p>
+                <p class="slip-note">Placeholder jobs, names, and times.</p>
               </div>
             </div>
           </div></div>
@@ -865,9 +928,9 @@ a.f-social{width:44px;height:44px;text-decoration:none}
         <div class="f-logo"><img loading="eager" src="/img/outworkem-digital-logo-dark-bg.webp" width="650" height="112" alt="Outwork'em Digital"></div>
         <div class="f-phone"><a href="tel:8336951214" style="color:inherit;text-decoration:none">833-695-1214</a></div>
         <a class="f-cta" href="/schedule/">Book Discovery Call</a>
-        <div class="f-socials"><a class="f-social" href="https://www.instagram.com/outworkem.digital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
-          <a class="f-social" href="https://www.facebook.com/outworkem.digital" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
-          <a class="f-social" href="https://www.youtube.com/@outworkem.digital" target="_blank" rel="noopener noreferrer" aria-label="YouTube">&#9654;</a></div>
+        <div class="f-socials"><a class="f-social" href="https://www.instagram.com/outworkem.digital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in new tab)"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="display:block"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
+          <a class="f-social" href="https://www.facebook.com/outworkem.digital" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in new tab)"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="display:block"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+          <a class="f-social" href="https://www.youtube.com/@outworkem.digital" target="_blank" rel="noopener noreferrer" aria-label="YouTube (opens in new tab)"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="display:block"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></div>
       </div>
       <div class="footer-contact">
         <div class="f-head">Contact Info</div>
@@ -894,6 +957,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
           <li><a href="/marketing-services/website-design-services/">Website Design</a></li>
           <li><a href="/marketing-services/organic-seo-services/">Organic SEO</a></li>
           <li><a href="/marketing-programs/local-seo/">Local SEO</a></li>
+          <li><a href="/chatgpt-business-listing/">ChatGPT Listing</a></li>
           <li><a href="/marketing-services/ppc-advertising-services/">Pay-Per-Click Advertising</a></li>
           <li><a href="/marketing-services/local-services-ads/">Local Services Ads</a></li>
           <li><a href="/marketing-services/reputation-management-services/">Reputation Management</a></li>
@@ -902,7 +966,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
     </div>
     <div class="footer-bottom">
       <span>© 2026 OUTWORK'EM DIGITAL | All Rights Reserved.</span>
-      <span class="legal"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms-and-conditions/">Terms &amp; Conditions</a><a href="/sitemap.xml">Sitemap</a></span>
+      <span class="legal"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms-and-conditions/">Terms &amp; Conditions</a><a href="/accessibility-statement/">Accessibility Statement</a><a href="/sitemap.xml">Sitemap</a></span>
     </div>
   </div>
 </footer>
@@ -1009,87 +1073,37 @@ a.f-social{width:44px;height:44px;text-decoration:none}
 (function(){
   var stage = document.getElementById('examples');
   if (!stage) return;
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var tabs = [].slice.call(stage.querySelectorAll('[data-tab]'));
-  tabs.forEach(function(tab){
-    tab.addEventListener('click', function(){
-      var id = tab.getAttribute('data-tab');
-      tabs.forEach(function(t){ t.setAttribute('aria-selected', t === tab ? 'true' : 'false'); });
-      [].slice.call(stage.querySelectorAll('.ex-phone')).forEach(function(phone){
-        phone.classList.toggle('is-on', phone.getAttribute('data-chat') === id);
-      });
+  var phones = [].slice.call(stage.querySelectorAll('.ex-phone'));
+  function show(id){
+    tabs.forEach(function(t){
+      var on = t.getAttribute('data-tab') === id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
     });
-  });
-  if (reduce) return;
-  stage.classList.add('is-play');
-  var threads = [].slice.call(stage.querySelectorAll('.thread'));
-  threads.forEach(function(thread, index){
-    var steps = [].slice.call(thread.querySelectorAll('[data-step]'));
-    var typing = thread.querySelector('.typing');
-    var state = {i:0, timer:0, delay:0, live:false, busy:false};
-    function hideAll(){
-      steps.forEach(function(s){ s.classList.remove('on'); });
-      if (typing) typing.classList.remove('on');
-    }
-    function scroll(){ thread.scrollTop = thread.scrollHeight; }
-    function tick(){
-      if (!state.live) { state.busy = false; return; }
-      state.busy = true;
-      if (state.i >= steps.length) {
-        state.timer = setTimeout(function(){ hideAll(); state.i = 0; tick(); }, 3400);
-        return;
-      }
-      var step = steps[state.i++];
-      var needsType = step.getAttribute('data-step') !== 'user';
-      if (needsType && typing) {
-        thread.appendChild(typing);
-        typing.classList.add('on');
-        scroll();
-      }
-      state.timer = setTimeout(function(){
-        if (!state.live) { state.busy = false; return; }
-        if (typing) typing.classList.remove('on');
-        step.classList.add('on');
-        scroll();
-        state.timer = setTimeout(tick, step.getAttribute('data-step') === 'card' ? 700 : 800);
-      }, needsType ? 1100 : 420);
-    }
-    thread._gb = {
-      start: function(){
-        if (state.live) return;
-        state.live = true;
-        if (!state.busy) tick();
-      },
-      stop: function(){
-        state.live = false;
-        state.busy = false;
-        clearTimeout(state.timer);
-        clearTimeout(state.delay);
-      }
-    };
-    thread._gbIndex = index;
-  });
-  function go(){
-    threads.forEach(function(thread){
-      clearTimeout(thread._gb.delayTimer);
-      thread._gb.delayTimer = setTimeout(function(){ thread._gb.start(); }, thread._gbIndex * 900);
+    phones.forEach(function(phone){
+      phone.classList.toggle('is-on', phone.getAttribute('data-chat') === id);
     });
   }
-  function halt(){
-    threads.forEach(function(thread){
-      clearTimeout(thread._gb.delayTimer);
-      thread._gb.stop();
+  tabs.forEach(function(tab, index){
+    tab.tabIndex = tab.getAttribute('aria-selected') === 'true' ? 0 : -1;
+    tab.addEventListener('click', function(){ show(tab.getAttribute('data-tab')); });
+    tab.addEventListener('keydown', function(e){
+      var next = index;
+      if (e.key === 'ArrowRight') next = (index + 1) % tabs.length;
+      else if (e.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+      else return;
+      e.preventDefault();
+      tabs[next].focus();
+      show(tabs[next].getAttribute('data-tab'));
     });
-  }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if (entry.isIntersecting) go();
-      else halt();
-    });
-  }, {threshold: 0.28});
-  io.observe(stage);
+  });
 })();
 </script>
 
+<script defer src="/js/a11y-widget.js"></script>
+<script defer src="/js/cookie-consent.js"></script>
+<script defer src="/js/chatgpt-popup.js"></script>
+<script defer src="/js/nav-a11y.js"></script>
 </body>
 </html>

@@ -2,6 +2,18 @@
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
+<script type="text/javascript">
+    /* Microsoft Clarity -- z9i7znce5k. The clarity() queue is ready right away;
+       the tag itself downloads on the visitor's first scroll, tap, click, key
+       press or mouse move (or 10 s after load), so it doesn't slow the page. */
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        (c.__owdLater=c.__owdLater||[]).push(function(){
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        });
+    })(window, document, "clarity", "script", "z9i7znce5k");
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
 /* Analytics, ported from the live WordPress header: Google Ads (gtag),
@@ -17,38 +29,76 @@
    code from an earlier install that nobody removed. Worth confirming in the
    Clarity dashboard which project is actually receiving traffic, and cleaning
    up the WordPress header once that is settled. */
+/* Cookie consent (see /js/cookie-consent.js): a visitor who declined keeps
+   Google Ads and the Meta Pixel off, and Clarity runs without cookies. */
 (function(){
-  if (/(^|\.)vercel\.app$/.test(location.hostname)) return;
+  var cc; try { cc = sessionStorage.getItem('owd-cookie-consent'); } catch (e) {}
+  if (cc === 'denied') {
+    window.__owdNoTrack = true;
+    if (window.clarity) {
+      clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
+      clarity('consent', false);
+    }
+  }
+})();
+/* Trackers wait for the visitor's first interaction (or 10 s after load):
+   scripts queued on window.__owdLater run then. Their queues (dataLayer, fbq,
+   clarity) exist from the start, so the page view is still recorded. */
+(function(){
+  var done = false, ev = ['scroll','mousemove','touchstart','pointerdown','keydown','click'];
+  function fire(){
+    if (done) return; done = true;
+    ev.forEach(function(e){ removeEventListener(e, fire, true); });
+    removeEventListener('mousemove', moved, true);
+    var q = window.__owdLater || [];
+    window.__owdLater = { push: function(f){ try { f(); } catch (e) {} } };
+    q.forEach(function(f){ try { f(); } catch (e) {} });
+  }
+  ev.forEach(function(e){ addEventListener(e, e === 'mousemove' ? moved : fire, { passive: true, capture: true }); });
+  // A mousemove also fires when the page lays out under a still cursor; only
+  // count the pointer actually travelling.
+  var mx = null, my = null;
+  function moved(e){
+    if (mx === null) { mx = e.clientX; my = e.clientY; return; }
+    if (Math.abs(e.clientX - mx) + Math.abs(e.clientY - my) > 4) { removeEventListener('mousemove', moved, true); fire(); }
+  }
+  function later(){ setTimeout(fire, 10000); }
+  if (document.readyState === 'complete') later(); else addEventListener('load', later);
+})();
+(function(){
+  if (/(^|\.)vercel\.app$/.test(location.hostname) || window.__owdNoTrack) return;
+
+  // Tracker scripts download on the first interaction (see above); the
+  // queues below are ready right away, so the page view is still recorded.
 
   // Google Ads (gtag.js) -- AW-16636468173
-  var gs = document.createElement('script');
-  gs.async = true;
-  gs.src = 'https://www.googletagmanager.com/gtag/js?id=AW-16636468173';
-  document.head.appendChild(gs);
   window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', 'AW-16636468173');
 
   // Meta Pixel -- 908509337671469
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  !function(f){if(f.fbq)return;var n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window);
   fbq('init', '908509337671469');
   fbq('track', 'PageView');
 
   // Microsoft Clarity -- xjsg05olmf (the WordPress-plugin install)
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "xjsg05olmf");
+  window.clarity = window.clarity || function(){ (clarity.q = clarity.q || []).push(arguments); };
+
+  function add(src){ var s = document.createElement('script'); s.async = true; s.src = src; document.head.appendChild(s); }
+  function go(){
+    add('https://www.googletagmanager.com/gtag/js?id=AW-16636468173');
+    add('https://connect.facebook.net/en_US/fbevents.js');
+    add('https://www.clarity.ms/tag/xjsg05olmf');
+  }
+  (window.__owdLater = window.__owdLater || []).push(go);
 })();
 </script>
 <title>Home Service Marketing Agency | Outwork'em Digital</title>
 <meta name="description" content="Outwork'em Digital is the home services marketing agency built for contractors. Transparent SEO, PPC and web design. Book your free discovery call today.">
+<meta name="google-site-verification" content="EpBUn39dGBfZbgqrSX12-DpNpkPMxZtIk4FymZ77UGw" />
 <link rel="canonical" href="https://www.outworkemdigital.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Outwork&#39;em Digital">
@@ -63,8 +113,15 @@
 <meta name="twitter:image" content="https://www.outworkemdigital.com/img/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=ads_click,all_inclusive,arrow_back,arrow_downward,arrow_forward,arrow_outward,auto_awesome,auto_stories,autorenew,bar_chart,block,bolt,build,calendar_month,call,campaign,cancel,card_giftcard,check_circle,chevron_left,chevron_right,close,cloud_upload,construction,content_copy,dark_mode,dashboard,diversity_3,dns,domain_disabled,edit_note,emergency,emoji_events,event_available,expand_more,fact_check,filter_alt,find_in_page,folder,foundation,gavel,grid_view,group,groups,handshake,handyman,home_repair_service,home_work,hvac,image,info,insights,light_mode,link,link_off,local_shipping,location_off,location_on,lock,mail,manage_accounts,map,menu_book,mic,military_tech,money_off,monitor_heart,monitoring,movie_edit,newspaper,no_accounts,phone_disabled,photo_camera,pin_drop,play_arrow,play_circle,pool,rate_review,reply,reviews,rocket_launch,roofing,savings,search,search_off,sell,send,share,shield,smart_toy,star_rate,storefront,sync_alt,sync_problem,target,task_alt,thunderstorm,travel_explore,trending_down,trending_up,tune,verified,verified_user,vertical_align_top,video_library,videocam,visibility,visibility_off,web,web_asset,web_asset_off,window,workspace_premium,zoom_in" rel="stylesheet">
+<link rel="preload" href="/fonts/poppins-700-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/poppins-600-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/lora-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/fonts.32e2293067.css">
+<style id="icons-css">.material-symbols-outlined{width:1em;overflow:hidden}html.icons-wait .material-symbols-outlined{visibility:hidden}</style>
+<script>/* Icon font loads without blocking the first paint; icons stay hidden (their space kept) until it arrives, 3 s at most. icons-wait */
+(function(){var h=document.documentElement;h.classList.add('icons-wait');function done(){h.classList.remove('icons-wait')}setTimeout(done,3000);window.__owdIcons=function(){if(document.fonts&&document.fonts.load){document.fonts.load('24px "Material Symbols Outlined"').then(done,done)}else done()}})();</script>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=ads_click,all_inclusive,arrow_back,arrow_downward,arrow_forward,arrow_outward,auto_awesome,auto_stories,autorenew,bar_chart,block,bolt,build,calendar_month,call,campaign,cancel,card_giftcard,check,check_circle,chevron_left,chevron_right,close,cloud_upload,construction,content_copy,dark_mode,dashboard,diversity_3,dns,domain_disabled,edit_note,emergency,emoji_events,event_available,expand_more,fact_check,filter_alt,find_in_page,folder,foundation,gavel,grid_view,group,groups,handshake,handyman,home_repair_service,home_work,hvac,image,info,insights,light_mode,link,link_off,local_shipping,location_off,location_on,lock,mail,manage_accounts,map,menu_book,mic,military_tech,money_off,monitor_heart,monitoring,movie_edit,newspaper,no_accounts,phone_disabled,photo_camera,pin_drop,play_arrow,play_circle,pool,rate_review,reply,reviews,rocket_launch,roofing,savings,search,search_off,sell,send,share,shield,smart_toy,star_rate,storefront,sync_alt,sync_problem,target,task_alt,thunderstorm,travel_explore,trending_down,trending_up,tune,verified,verified_user,vertical_align_top,video_library,videocam,visibility,visibility_off,web,web_asset,web_asset_off,window,workspace_premium,zoom_in" onload="this.onload=null;this.rel='stylesheet';__owdIcons()">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=ads_click,all_inclusive,arrow_back,arrow_downward,arrow_forward,arrow_outward,auto_awesome,auto_stories,autorenew,bar_chart,block,bolt,build,calendar_month,call,campaign,cancel,card_giftcard,check,check_circle,chevron_left,chevron_right,close,cloud_upload,construction,content_copy,dark_mode,dashboard,diversity_3,dns,domain_disabled,edit_note,emergency,emoji_events,event_available,expand_more,fact_check,filter_alt,find_in_page,folder,foundation,gavel,grid_view,group,groups,handshake,handyman,home_repair_service,home_work,hvac,image,info,insights,light_mode,link,link_off,local_shipping,location_off,location_on,lock,mail,manage_accounts,map,menu_book,mic,military_tech,money_off,monitor_heart,monitoring,movie_edit,newspaper,no_accounts,phone_disabled,photo_camera,pin_drop,play_arrow,play_circle,pool,rate_review,reply,reviews,rocket_launch,roofing,savings,search,search_off,sell,send,share,shield,smart_toy,star_rate,storefront,sync_alt,sync_problem,target,task_alt,thunderstorm,travel_explore,trending_down,trending_up,tune,verified,verified_user,vertical_align_top,video_library,videocam,visibility,visibility_off,web,web_asset,web_asset_off,window,workspace_premium,zoom_in"></noscript>
 <style>
 
 /* =============================================================
@@ -254,10 +311,10 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
 .btn{font-family:var(--head);font-size:14px;border-radius:999px;padding:10px 20px;
   border:1px solid var(--line);background:var(--card);cursor:pointer;color:var(--copy)}
 .btn-solid{background:var(--grad-warm);border-color:var(--edge-warm);
-  color:oklch(0.99 0.005 70)}
+  color:#1a120c}
 .btn-cta{display:inline-block;font-family:var(--head);font-size:14px;
   letter-spacing:.06em;text-transform:uppercase;font-weight:600;
-  background:var(--orange);color:oklch(0.99 0.005 70);
+  background:var(--orange);color:#1a120c;
   border:1px solid var(--orange);border-radius:8px;padding:15px 32px;cursor:pointer}
 
 /* =============================================================
@@ -481,6 +538,11 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
 .episode-embed{position:relative;aspect-ratio:16/9;border-radius:var(--radius);
   overflow:hidden;background:var(--box)}
 .episode-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.yt-facade{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:#000;cursor:pointer;display:block}
+.yt-facade img{width:100%;height:100%;object-fit:cover;display:block}
+.yt-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:.9;transition:opacity .15s}
+.yt-facade:hover .yt-play,.yt-facade:focus-visible .yt-play{opacity:1}
+.yt-facade:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 .play{width:64px;height:64px;border-radius:50%;background:var(--card);
   border:1px solid var(--line);display:flex;align-items:center;
   justify-content:center;z-index:1}
@@ -559,7 +621,7 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
 .cta-band p{font-family:var(--body);font-size:var(--fs-body);
   color:oklch(0.92 0.020 85);max-width:520px;margin:0 auto 30px}
 .cta-band .btn-cta{background:var(--orange);border-color:var(--orange);
-  color:oklch(0.99 0.005 70)}
+  color:#1a120c}
 
 /* =============================================================
    FOOTER
@@ -574,7 +636,7 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
   margin-bottom:18px}
 .f-cta{display:inline-block;font-family:var(--head);font-size:13px;
   letter-spacing:.06em;text-transform:uppercase;font-weight:700;
-  background:var(--orange);color:oklch(0.99 0.005 70);
+  background:var(--orange);color:#1a120c;
   border:none;border-radius:8px;padding:14px 28px;cursor:pointer}
 .f-socials{display:flex;gap:10px;margin-top:24px}
 .f-social{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);
@@ -631,6 +693,7 @@ html[data-theme="dark"] .theme-toggle .t-dark{display:inline-block}
   .js .hero h1,.js .hero .lead,.js .hero .btn-cta{
     opacity:0;transform:translateY(22px);
     animation:od-in .9s cubic-bezier(.22,1,.36,1) forwards}
+.js .hero h1{opacity:1} /* headline stays visible so it paints right away (LCP); it still slides up */
   .js .hero .lead{animation-delay:.14s}
   .js .hero .btn-cta{animation-delay:.26s}
   .js .hero-img{opacity:0;animation:od-fade 1s ease .45s forwards}
@@ -779,7 +842,7 @@ html[data-theme="dark"] .mob-head img.logo-dark{display:block}
   .mobile-cta-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--bg);border-top:1px solid var(--line);gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
   .mobile-cta-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;font-family:var(--head);font-size:13px;font-weight:600;letter-spacing:.02em;text-decoration:none;border-radius:10px;padding:12px 14px}
   .mobile-cta-bar .mcb-call{background:transparent;border:1px solid var(--line);color:var(--copy)}
-  .mobile-cta-bar .mcb-book{background:var(--orange);border:1px solid var(--orange);color:#fff}
+  .mobile-cta-bar .mcb-book{background:var(--orange);border:1px solid var(--orange);color:#1a120c}
   .mobile-cta-bar .material-symbols-outlined{font-size:18px}
   body{padding-bottom:76px}
 }
@@ -901,6 +964,8 @@ a.f-social{width:44px;height:44px;text-decoration:none}
  ]
 }
 </script>
+<link rel="stylesheet" href="/css/nav-hover.css">
+<script defer src="/js/nav-hover.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -977,6 +1042,10 @@ a.f-social{width:44px;height:44px;text-decoration:none}
           <a href="/marketing-programs/local-seo/">
             <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="pin_drop"></span></span>
             <span class="drop-text"><span class="drop-name">Local SEO</span><span class="drop-headline">Dominate the Google Map Pack</span></span>
+          </a>
+          <a href="/chatgpt-business-listing/">
+            <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="auto_awesome"></span></span>
+            <span class="drop-text"><span class="drop-name">ChatGPT Listing</span><span class="drop-headline">Set up your profile in ChatGPT</span></span>
           </a>
           <a href="/marketing-services/ppc-advertising-services/">
             <span class="drop-icon-wrap"><span class="material-symbols-outlined" aria-hidden="true" data-icon="ads_click"></span></span>
@@ -1074,6 +1143,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
           <a href="/marketing-services/website-design-services/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="web"></span>Website Design</a>
           <a href="/marketing-services/organic-seo-services/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="search"></span>Organic SEO</a>
           <a href="/marketing-programs/local-seo/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="pin_drop"></span>Local SEO</a>
+          <a href="/chatgpt-business-listing/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="auto_awesome"></span>ChatGPT Listing</a>
           <a href="/marketing-services/ppc-advertising-services/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="ads_click"></span>Pay-Per-Click Ads</a>
           <a href="/marketing-services/local-services-ads/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="storefront"></span>Local Services Ads</a>
           <a href="/marketing-services/reputation-management-services/"><span class="drop-icon material-symbols-outlined" aria-hidden="true" data-icon="star_rate"></span>Reputation Mgmt</a>
@@ -1136,6 +1206,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
     <div class="kicker"><span class="label">Services</span><span class="rule"></span></div>
     <h2>Every Tool You Need to Win Online</h2>
     <p class="lead">From a high-converting website to search, paid ads, and reputation. We cover every channel that drives qualified leads for home service businesses like yours.</p>
+    <p class="lead">Homeowners also ask ChatGPT for a nearby company. Read how a <a href="/chatgpt-business-listing/" style="color:var(--orange-text)">ChatGPT business listing</a> fits next to local SEO.</p>
   </div>
   <div class="cols">
     <article class="svc">
@@ -1202,15 +1273,15 @@ a.f-social{width:44px;height:44px;text-decoration:none}
   </div>
   <div class="cards">
     <article class="pcard">
-      <div class="ph thumb filled" style="background-image:url('https://res.cloudinary.com/de0iy9a1o/image/upload/f_auto,q_auto,w_720/v1787095298/ComfortOneAC_BusinessBranding2026-8630_v9clce.jpg')"><span class="arrow"><span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_outward"></span></span></div>
+      <div class="ph thumb filled" style="background-image:url('/img/case-study-comfort-one.webp')"><span class="arrow"><span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_outward"></span></span></div>
       <h3><a href="/case-studies/comfort-one-air-conditioning-case-study/">Comfort One Air Conditioning, 900% ROI in six months</a></h3>
     </article>
     <article class="pcard">
-      <div class="ph thumb filled" style="background-image:url('https://res.cloudinary.com/de0iy9a1o/image/upload/f_auto,q_auto,w_720/v1787095874/Best-Remodelers-Chardon-Ohio-Janecek-Construction-And-Remodeling-2_z8csqo.webp')"><span class="arrow"><span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_outward"></span></span></div>
+      <div class="ph thumb filled" style="background-image:url('/img/case-study-janecek.webp')"><span class="arrow"><span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_outward"></span></span></div>
       <h3><a href="/case-studies/janecek-construction-remodeling-case-study/">Janecek Construction, $140,000 in eight months</a></h3>
     </article>
     <article class="pcard">
-      <div class="ph thumb filled" style="background-image:url('https://res.cloudinary.com/de0iy9a1o/image/upload/f_auto,q_auto,w_720/v1787159044/pb-max-2025-basket-1920_1_ktvxeh.jpg')"><span class="arrow"><span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_outward"></span></span></div>
+      <div class="ph thumb filled" style="background-image:url('/img/case-study-pool-boys.webp')"><span class="arrow"><span class="material-symbols-outlined" aria-hidden="true" data-icon="arrow_outward"></span></span></div>
       <h3><a href="/case-studies/pool-boys-case-study/">Pool Boys, 1,116 calls without paid ads</a></h3>
     </article>
   </div>
@@ -1224,8 +1295,8 @@ a.f-social{width:44px;height:44px;text-decoration:none}
     <p class="lead">We are here to change the narrative. We don't believe in quick fixes; instead, we offer complete transparency and cap our client roster to focus on your business's sustainable growth and lasting success.</p>
   </div>
   <div class="about-card">
-    <div class="ph photo filled" style="background-image:url('/img/marketing-that-makes-sense.webp')"
-         role="img" aria-label="A comic-strip illustration titled Finally, Marketing That Makes Sense. On the left, contractors in HVAC, roofing, plumbing and landscaping caps hold their heads over wasted ad spend, confusing reports and no results. On the right, two men present a Real Growth dashboard reading 1,248 leads, 892 calls, 317 jobs booked and $98,450 revenue, all rising, under the promise of clear strategy, real results and no fluff."></div>
+    <div class="ph photo filled" style="background-image:url('/img/stock/home-about-contractors-600.webp');background-image:image-set(url('/img/stock/home-about-contractors-600.webp') 1x,url('/img/stock/home-about-contractors-900.webp') 2x)"
+         role="img" aria-label="Two contractors in hard hats reviewing plans on a clipboard"></div>
     <div>
       <h3>A different approach: transparency &amp; real results</h3>
       <p>If you are like many home service contractors, you have likely had poor experiences with agencies that overpromise and underdeliver. We founded Outwork'em Digital to change that narrative. Unlike others, we cap our client roster to ensure you get the attention you deserve, maintain market exclusivity, and focus on your business's sustainable growth with complete transparency. We don't believe in quick fixes. We are here to build lasting success alongside you.</p>
@@ -1246,15 +1317,18 @@ a.f-social{width:44px;height:44px;text-decoration:none}
     </div>
     <div class="podcast-player">
       <div class="episode-embed">
-        <iframe src="https://www.youtube.com/embed/MUq0HZwJ-44?si=pEBvYXygdDUhWvDX"
-                title="Stop Competing on Price - How Jake's Certified Cleaning Built a Premium Brand"
-                loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+        <!-- YouTube facade: a thumbnail and play button; the real player
+             (and its ~1 MB of YouTube scripts) loads only when clicked. -->
+        <button type="button" class="yt-facade" data-yt="MUq0HZwJ-44"
+                data-title="Stop Competing on Price - How Jake's Certified Air Duct &amp; Carpet Cleaning Built a Premium Brand"
+                aria-label="Play video: Stop Competing on Price - How Jake's Certified Air Duct &amp; Carpet Cleaning Built a Premium Brand">
+          <img src="https://i.ytimg.com/vi/MUq0HZwJ-44/hqdefault.jpg" alt="" loading="lazy" decoding="async" width="480" height="360" onerror="this.style.visibility='hidden'">
+          <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.5 7.7A8.5 8.5 0 0 0 60.5 1.7C55.2.3 34 .3 34 .3S12.8.3 7.5 1.7a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6c5.3 1.4 26.5 1.4 26.5 1.4s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#f00"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>
+        </button>
       </div>
       <div class="ep-meta">
         <span class="ep-tag">Latest Episode</span>
-        <span class="ep-title">Stop Competing on Price: How Jake's Certified Cleaning Built a Premium Brand</span>
+        <span class="ep-title">Stop Competing on Price: How Jake's Certified Air Duct & Carpet Cleaning Built a Premium Brand</span>
         <span class="ep-dur">85 min</span>
       </div>
     </div>
@@ -1268,10 +1342,9 @@ a.f-social{width:44px;height:44px;text-decoration:none}
     <h2 style="font-size:clamp(28px,4.5vw,44px);text-transform:uppercase">Follow us on Instagram</h2>
     <p class="lead" style="margin:14px auto 0">Stay up to date on marketing tips, client wins, and behind-the-scenes content from the team working for your growth.</p>
   </div>
-  <!-- Elfsight Instagram Feed, replacing the mock account card. The script is
-       async and the widget carries data-elfsight-app-lazy, so it only fetches
-       once the section is close to view. -->
-  <script src="https://elfsightcdn.com/platform.js" async></script>
+  <!-- Elfsight Instagram Feed, replacing the mock account card. platform.js is
+       loaded by the script at the end of the page once this section is near
+       the screen, so it costs nothing on first load. -->
   <div class="elfsight-app-fc920788-46fc-4895-9301-6b1bb08484dd" data-elfsight-app-lazy></div>
   <noscript><p class="center" style="margin-top:28px"><a class="btn-cta" href="https://www.instagram.com/outworkem.digital/" target="_blank" rel="noopener noreferrer">See us on Instagram</a></p></noscript>
 </section>
@@ -1295,9 +1368,9 @@ a.f-social{width:44px;height:44px;text-decoration:none}
         <div class="f-phone"><a href="tel:8336951214" style="color:inherit;text-decoration:none">833-695-1214</a></div>
         <a class="f-cta" href="/schedule/">Book Discovery Call</a>
         <div class="f-socials">
-          <a class="f-social" href="https://www.instagram.com/outworkem.digital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
-          <a class="f-social" href="https://www.facebook.com/outworkem.digital" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
-          <a class="f-social" href="https://www.youtube.com/@outworkem.digital" target="_blank" rel="noopener noreferrer" aria-label="YouTube">&#9654;</a>
+          <a class="f-social" href="https://www.instagram.com/outworkem.digital/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in new tab)"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="display:block"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
+          <a class="f-social" href="https://www.facebook.com/outworkem.digital" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in new tab)"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="display:block"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+          <a class="f-social" href="https://www.youtube.com/@outworkem.digital" target="_blank" rel="noopener noreferrer" aria-label="YouTube (opens in new tab)"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="display:block"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
         </div>
       </div>
       <div class="footer-contact">
@@ -1327,6 +1400,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
           <li><a href="/marketing-services/website-design-services/">Website Design</a></li>
           <li><a href="/marketing-services/organic-seo-services/">Organic SEO</a></li>
           <li><a href="/marketing-programs/local-seo/">Local SEO</a></li>
+          <li><a href="/chatgpt-business-listing/">ChatGPT Listing</a></li>
           <li><a href="/marketing-services/ppc-advertising-services/">Pay-Per-Click Advertising</a></li>
           <li><a href="/marketing-services/local-services-ads/">Local Services Ads</a></li>
           <li><a href="/marketing-services/reputation-management-services/">Reputation Management</a></li>
@@ -1338,6 +1412,7 @@ a.f-social{width:44px;height:44px;text-decoration:none}
       <span class="legal">
         <a href="/privacy-policy/">Privacy Policy</a>
         <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
+        <a href="/accessibility-statement/">Accessibility Statement</a>
         <a href="/sitemap.xml">Sitemap</a>
       </span>
     </div>
@@ -1508,5 +1583,38 @@ a.f-social{width:44px;height:44px;text-decoration:none}
 })();
 </script>
 
+<script>
+/* Load third-party embeds only when needed: the YouTube player on click, and
+   the Elfsight Instagram script once its section is near the screen. */
+(function(){
+  [].forEach.call(document.querySelectorAll('.yt-facade'), function(b){
+    b.addEventListener('click', function(){
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube.com/embed/' + b.getAttribute('data-yt') + '?autoplay=1';
+      f.title = b.getAttribute('data-title');
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      f.allowFullscreen = true;
+      b.replaceWith(f);
+      f.focus();
+    });
+  });
+  var el = document.querySelector('[class^="elfsight-app-"]');
+  if (!el) return;
+  function load(){
+    if (window.__elfsightLoaded) return; window.__elfsightLoaded = true;
+    var s = document.createElement('script'); s.src = 'https://elfsightcdn.com/platform.js'; s.async = true;
+    document.body.appendChild(s);
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){ if (es[0].isIntersecting) { io.disconnect(); load(); } }, { rootMargin: '800px 0px' });
+    io.observe(el);
+  } else { addEventListener('load', load); }
+})();
+</script>
+<script defer src="/js/a11y-widget.js"></script>
+<script defer src="/js/cookie-consent.js"></script>
+<script defer src="/js/chatgpt-popup.js"></script>
+<script defer src="/js/nav-a11y.js"></script>
 </body>
 </html>
