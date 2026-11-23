@@ -1,7 +1,7 @@
 /* Shared styles for the two Superintelligence Opportunity Prescription landing pages. */
 :root{
   --bg:#F7F3EB;--card:#fffdf8;--line:#e4d9c8;--ink:#1a120c;--copy:#221E1F;
-  --orange:#c45c12;--orange-hot:#e07a22;--gold:#f0b27a;--navy:#0D2E58;
+  --orange:#b0500e;--orange-hot:#e07a22;--gold:#f0b27a;--navy:#0D2E58;
   --head:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   --body:'Lora',Georgia,'Times New Roman',serif;
 }
