@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Pre-launch offer. Remove these Disallow lines when Orion approves launch.
+Disallow: /superintelligence-prescription
+Disallow: /lp/superintelligence-prescription-a
+Disallow: /lp/superintelligence-prescription-b
+
 Sitemap: https://www.outworkemdigital.com/sitemap.xml
