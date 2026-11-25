@@ -58,7 +58,7 @@ html.lp-b .lp-amt{color:#fff}
 #TODO-booking-link{scroll-margin-top:88px;scroll-margin-bottom:120px}
 .lp-foot{padding:28px 0 110px;border-top:1px solid var(--line);font-family:var(--head);font-size:14px;color:#3d342c}
 .lp-foot p{margin:0 0 8px}
-.lp-foot a{color:#0D2E58;text-underline-offset:3px}
+.lp-foot a{color:#0D2E58;text-underline-offset:3px;display:inline-flex;align-items:center;min-height:24px}
 .lp-dock{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(247,243,235,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
 .lp-dock .lp-btn{flex:1;width:100%}
 .material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;line-height:1;display:inline-block;vertical-align:middle;font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24}
@@ -106,3 +106,7 @@ html.lp-a{color-scheme:light}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
 }
+/* Cookie banner (/js/cookie-consent.js) on these pages: white text on the darker LP orange (5.25:1), a darker privacy link (5.3:1 on the light card), and keep the banner title from inheriting LP-B's white headings. */
+html .owd-cc .owd-cc-yes{color:#fff}
+html.lp-b .owd-cc h2{color:inherit}
+html .owd-cc p a{color:#8a3d0a}
